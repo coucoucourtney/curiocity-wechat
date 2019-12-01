@@ -1,1 +1,54 @@
 /* pages/building_index/building_index.wxss */
+.banner {
+  /* background-size: cover; */
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* position: sticky; */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 45rpx; */
+  padding-bottom: 10rpx;
+}
+
+.img-logo{
+  height: 363rpx;
+  /* wtf!!!  just shrinking box around it but not shrinking img! */
+  padding-bottom: 60rpx;
+  padding-top:40rpx;
+}
+
+.btn-ghost {
+  color: white;
+  border: 4rpx solid white;
+  padding: 17rpx 70rpx;
+  /* padding-top: 5rpx; */
+  border-radius: 10rpx;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  width: 540rpx;
+  text-align: center; 
+  margin: 15rpx 0 0rpx 0;
+  font-size: 22rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: white; */
+}
+
+.banner-p {
+  color: white;
+  text-shadow: 4rpx 0rpx 4rpx rgba(0,0,0,0.25);
+  font-size: 30rpx;
+  /* font-weight: medium; */
+  /* font-family: OpenSans; */
+  opacity: .7;
+  text-align: center; 
+  margin-bottom: 20rpx;
+  font-style: oblique;
+}

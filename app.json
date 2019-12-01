@@ -5,10 +5,39 @@
     "pages/building_create/building_create",
     "pages/user/user",
     "pages/nearby/nearby",
-    "pages/routes_create/routes_create",
+    "pages/route_create/route_create",
     
 "pages/logs/logs"
   ],
+
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/building_index/building_index",
+        "iconPath": "images/icons/walk_black.png",
+        "selectedIconPath": "images/icons/walk_gray.png"
+      },
+      {
+        "pagePath": "pages/route_create/route_create",
+        "iconPath": "images/icons/list.png",
+        "selectedIconPath": "images/icons/list-gray.png"
+      },
+            {
+              "pagePath": "pages/nearby/nearby",
+              "iconPath": "images/icons/helmet.png",
+              "selectedIconPath": "images/icons/helmet-gray.png"
+            },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/icons/helmet.png",
+        "selectedIconPath": "images/icons/helmet-gray.png"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

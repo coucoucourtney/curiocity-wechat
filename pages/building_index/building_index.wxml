@@ -1,2 +1,9 @@
 <!--pages/building_index/building_index.wxml-->
-<text>pages/building_index/building_index.wxml</text>
+<view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1534732410958-631f08330310?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=335&q=80);">
+    <image class="img-logo" src='/logo/curiocity-logo-no-drop.png'/>
+    <!-- <view class=".banner-p">Discover cities through architecture...</view> -->
+    <view bindtap="goToCreateRoutePage" class="btn btn-ghost" >FIND A WALK</view>
+    <view bindtap="goToNearbyPage" class="btn btn-ghost" >DISCOVER</view>
+    <view bindtap="goToNewBuildingPage" class="btn btn-ghost" >ADD A BUILDING</view>
+    <view bindtap="scrollToDiv" class="btn btn-ghost" href="#">BROWSE BUILDINGS</view>
+</view>
