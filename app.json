@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/building_index/building_index",
+    "pages/building_show/building_show",
+    "pages/building_create/building_create",
+    "pages/user/user",
+    "pages/nearby/nearby",
+    "pages/routes_create/routes_create",
+    
+"pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
