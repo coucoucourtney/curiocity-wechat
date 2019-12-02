@@ -5,8 +5,7 @@
     "pages/building_create/building_create",
     "pages/user/user",
     "pages/nearby/nearby",
-    "pages/route_create/route_create",
-    "pages/logs/logs"
+    "pages/route_create/route_create"
   ],
 
   "tabBar":{
@@ -16,17 +15,31 @@
     "backgroundColor": "#ffffff",
     "list": [
           {
+            "text": "Buildings",
             "pagePath": "pages/building_index/building_index",
-            "iconPath": "images/icons/walk_black.png",
-            "selectedIconPath": "images/icons/walk_gray.png"
+            "iconPath": "icons/skyline_black.png",
+            "selectedIconPath": "icons/skyline_gray.png"
           },
       {
+              "text": "Walk",
               "pagePath": "pages/route_create/route_create",
-              "iconPath": "images/icons/walk_black.png",
-              "selectedIconPath": "images/icons/walk_gray.png"
+              "iconPath": "icons/walk_black.png",
+              "selectedIconPath": "icons/walk_gray.png"
+            },
+           {
+              "text": "Discover",
+              "pagePath": "pages/nearby/nearby",
+              "iconPath": "icons/map_black.png",
+              "selectedIconPath": "icons/map_gray.png"
             },
             
-        
+        {
+                "text": "Me",
+                "pagePath": "pages/user/user",
+                "iconPath": "icons/user_black.png",
+                "selectedIconPath": "icons/user_gray.png"
+              }
+            ]
   },
 
   "window": {
