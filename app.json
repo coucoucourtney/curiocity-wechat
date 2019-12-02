@@ -10,7 +10,7 @@
 
   "tabBar":{
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#3f104f",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -21,7 +21,7 @@
             "selectedIconPath": "icons/skyline_gray.png"
           },
       {
-              "text": "Walk",
+              "text": "Walks",
               "pagePath": "pages/route_create/route_create",
               "iconPath": "icons/walk_black.png",
               "selectedIconPath": "icons/walk_gray.png"
