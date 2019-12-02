@@ -1,6 +1,7 @@
 /* pages/building_index/building_index.wxss */
 .banner {
-  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100%;
@@ -12,33 +13,37 @@
   flex-direction: column;
   /* margin-bottom: 45rpx; */
   padding-bottom: 10rpx;
+  box-shadow: 3 3 3 .25;
+  /* check shadow syntax */
 }
 
 .img-logo{
-  height: 363rpx;
-  /* wtf!!!  just shrinking box around it but not shrinking img! */
-  padding-bottom: 60rpx;
-  padding-top:40rpx;
+  box-shadow: 3 3 3 .25;
+  padding-bottom: 230rpx;
+  height: 300rpx;
+  width: 750rpx;
 }
 
 .btn-ghost {
-  color: white;
-  border: 4rpx solid white;
+  color: black;
+  border: .5rpx solid rgba(255, 255, 255, .4);
   padding: 17rpx 70rpx;
   /* padding-top: 5rpx; */
-  border-radius: 10rpx;
+  border-radius: 50rpx;
   font-weight: bold;
+  text-shadow: 3 3 3 .5;
   opacity: 1;
   transition: opacity 0.3s ease;
-  width: 540rpx;
+  width: 450rpx;
   text-align: center; 
   margin: 15rpx 0 0rpx 0;
-  font-size: 22rpx;
-  height: 60rpx;
+  font-size: 25rpx;
+  height: 50rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: white; */
+  /* background: rgba(0, 0, 0, .6); */
+  background: rgba(255, 255, 255, .73);
 }
 
 .banner-p {
