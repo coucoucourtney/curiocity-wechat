@@ -1,2 +1,71 @@
 <!--pages/building_show/building_show.wxml-->
-<text>pages/building_show/building_show.wxml</text>
+ <image class="top-img" mode="aspectContain" src='{{building.main_picture}}'/>
+ <!-- title bar with name and author info -->
+<view class="title-bar">
+  <view class="h1">{{building.name}}</view>
+  <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png'/>
+</view>
+
+<view class="building-info">
+<!-- ARCHITECTURAL DETAILS -->
+  <view class="archi-details">
+    <view class="info-group">
+      <view class="text">Date Built</view>
+      <view class="text-p">{{building.year}}</view>
+    </view>
+    <view class="info-group">
+      <view class="text">Architect</view>
+      <view class="text-p">{{building.architects}}</view>
+    </view>
+    <view class="info-group">
+      <view class="text">Style</view>
+      <view class="text-p">{{building.architectural_style}}</view>
+    </view>
+  </view>
+<!-- LOCATION DETAILS -->
+  <view class="location-details">
+    <view class="info-group">
+      <view class="text">Address</view>
+      <view class="text-p">{{building.address}}</view>
+    </view>
+    <view class="info-group">
+      <view class="text-p">{{building.neighborhood}}</view>
+      <view class="text-p">{{building.city}}</view>
+    </view>
+    <view class="info-group">
+      <view class="text">Metro</view>
+      <view class="text-p">{{building.metro_stop}}</view>
+    </view>
+  </view>
+  <!-- end of info section. closed below -->
+</view>
+ <view>
+      <swiper class="slider-img" indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}">
+        <block wx:for="{{building.photo_slider}}" wx:key="*this">
+          <swiper-item >
+            <image class="slider-img" mode="aspectFill" src="{{item}}"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+ <!-- DESCRIPTION OF BUILDING -->
+ <view class="add-padding">
+ <view class="text space">More Information</view>
+ <view class="text-p justify">{{building.description}}</view>
+ </view>
+<!-- AUTHOR SECTION -->
+ <view class="end-bar add-padding">
+ <view>
+  <view class="space">Contributed by</view>
+    <view class="author-info">
+      <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
+      <view class="author-text">
+        <!-- <view class="h2">author.name</view>
+        <view class="text-p">author.level</view> -->
+         <view class="h2">Curiocity Team</view>
+        <view class="text-p">admin</view> 
+      </view>
+    </view>
+ </view>
+ </view>

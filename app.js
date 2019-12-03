@@ -1,7 +1,9 @@
 //app.js
+
+
 App({
   onLaunch: function () {
-    const host = 'http://localhost:3000/'
+    const host = 'host'
     console.log('beginning login')
     wx.login({
       success: (res) => {
@@ -20,5 +22,8 @@ App({
       }
     })
   },
-  globalData: {}
+  globalData: {
+    // host: "http://localhost:3000/"
+    host: "https://curiocity.wogengapp.cn/api/v1/"
+  }
 })

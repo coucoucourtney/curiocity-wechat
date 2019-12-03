@@ -57,6 +57,7 @@
   margin-bottom: 40rpx;
   font-style: oblique;
   font-size: 30rpx;
+  padding: 0 55rpx;
 }
 
 /* .category-bar{
@@ -100,7 +101,7 @@
   width: 45vw;
   /* height: 35vw; */
   margin: 6rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 10rpx;
 }
 
 .card-product .card-img{
@@ -119,18 +120,21 @@
   align-items: flex-end;
   position: relative;
   padding-left: 10rpx;
+  align-items: center;
 }
 
 .info-section{
   display: flex;
-  flex-direction: column;
-  position:relative;
+  /* flex-direction: column; */
+  /* position:relative; */
 }
 
 .h2{
-  font-size: 30rpx;
-  position: absolute;
-  bottom: 27rpx;
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  /* position: absolute; */
+  /* bottom: 27rpx; */
 }
 
 .p{
@@ -146,8 +150,10 @@
   height: 51rpx;
   width: 51rpx;
   margin-bottom: 7rpx;
-  margin-right: 15rpx;
+  margin-right: 7rpx;
   margin-top: 1rpx;
-  opacity: .9;
+  /* padding-left: 30 rpx; */
+  opacity: .7;
+
 }
 
