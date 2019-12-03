@@ -1,3 +1,18 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
+<!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button> -->
+
+<view class="container">
+  <image mode="aspectFill" src='https://images.unsplash.com/photo-1561893836-adae6b766f82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80' class="avatar"/>
+      <view class="h1-name">Alex Chung</view>
+      <navigator class="btn-small">edit</navigator>
+      <view class="h3">PREMIUM USER</view>
+
+    <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus.</view>
+</view>
+
+<image src="/icons/deco-bar.jpg" class="deco-bar"></image>
+
+<view class="h2">YOUR FAVORITE SPOTS</view>
+<view class="h2">YOUR FAVORITE ROUTES</view>
+<view class="h2">YOUR SPOTS</view>
+
+
