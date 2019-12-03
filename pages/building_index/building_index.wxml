@@ -1,7 +1,7 @@
 <!--pages/building_index/building_index.wxml-->
-<view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1525427430941-6e790698ba07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80);">
-    <image class="img-logo"  mode="aspectFit" src='/logo/curiocity-logo-no-drop.png'/>
-    <!-- <view class=".banner-p">Discover your city ...</view> -->
+<view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/210266e78c3d6e2903f4/background_img.jpeg);">
+    <image class="img-logo"  mode="aspectFit" src='/logo/curiocity_high_drop.png'/>
+    <view class=".banner-p">Discover Shanghai through its special architecture ...</view>
 
     <view bindtap="goToNearbyPage" class="btn btn-ghost" >DISCOVER</view>
     <view bindtap="goToNewBuildingPage" class="btn btn-ghost" >WALKS</view>
@@ -18,19 +18,19 @@
 
 <!-- cards section -->
 <view class="cards">
-  <!-- <view wx:for="{{buildings}}" wx:for-item="building" > -->
+  <view wx:for="{{buildings}}" wx:for-item="building" >
     <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
-      <image class="card-img" mode="aspectFill" src='https://images.unsplash.com/photo-1570338286694-e5e88de347a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'/>
+      <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
       <!-- check attr name for bdg pic -->
       <view class="card-product-infos">
         <view class="info-section">
-          <view class="h2">building.name</view>
-          <view class="p">building.district</view>
+          <view class="h2">{{building.name}}</view>
+          <!-- <view class="p">{{building.district}}</view> -->
         </view>
           <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
       </view>
     </view> 
-    <!-- </view> -->
+    </view>
   </view>
 <!-- put search bar here -->
 <!-- make search bar stick to bottom when start browsing (click browse buildings button-->

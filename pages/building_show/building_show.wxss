@@ -1,1 +1,115 @@
 /* pages/building_show/building_show.wxss */
+/* pages/building_show/building_show.wxss */
+.top-img {
+  width: 100%;
+  height:50vh;
+/* golden ratio (38.2vh of 100% vh  */
+}
+
+/* TOP SECTION WITH USER INFO */
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 27rpx;
+  margin-left: 27rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .7;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.author-avatar {
+  border-radius: 50%;
+  height: 70rpx;
+  width: 70rpx;
+  margin-bottom: 15rpx;
+}
+
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1 {
+  font-size: 47rpx;
+  /* font-weight: bold; */
+  text-justify: center;
+  overflow-wrap: break-word;
+  /* check this */
+}
+
+.h2 {
+  font-size: 31rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* SECTION WITH BUILDING INFO */
+
+.building-info {
+  background-color: rgba(0, 0, 0, .11);
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 27rpx 0rpx 27rpx; */
+  padding: 47rpx 30rpx 47rpx 30rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
+}
+
+.info-group {
+  margin-bottom: 11rpx;
+  width: 45vw;
+}
+
+.text {
+  font-size: 31rpx;
+  font-weight: bold;
+}
+
+.text-p {
+  font-size: 27rpx;
+  font-weight:300;
+}
+
+.slider-img {
+  width: 100%;
+  height:550rpx;
+  margin: 10rpx 0 20px 0;
+}
+
+.add-padding {
+  padding: 0 25rpx 47rpx 30rpx;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.space {
+  margin-bottom: 20rpx;
+}
+
+.end-bar {
+  background-color: rgba(0, 0, 0, .03);
+  padding: 47rpx 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,4 +1,7 @@
 // pages/building_index/building_index.js
+const app = getApp()
+const host = app.globalData.host;
+
 Page({
 
   /**
@@ -26,7 +29,30 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let page = this
+    // let id = this.data.userId || 1;
+    wx.request({
+      url: host + "buildings",
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        console.log(buildings);
+        page.setData({
+          buildings: buildings
+        });
 
+        wx.hideToast();
+      }
+    })
+  },
+
+  // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
+  tapCard: function (event) {
+    console.log(event)
+    let id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/building_show/building_show?id=${id}`
+    })
   },
 
   /**
@@ -66,7 +92,7 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
-      scrollTop: 531,
+      scrollTop: 590,
     })
   },
 })
