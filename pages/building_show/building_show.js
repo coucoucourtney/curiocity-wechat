@@ -1,4 +1,5 @@
 // pages/building_show/building_show.js
+const config = require('../../key');
 const app = getApp()
 const host = app.globalData.host;
 
@@ -10,7 +11,8 @@ Page({
   data: {
     indicatorDots: true,
     vertical: false,
-    autoplay: false
+    autoplay: false,
+    mapKey: config.mapKey
   },
 
   /**

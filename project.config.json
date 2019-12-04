@@ -79,6 +79,13 @@
 					"id": -1,
 					"name": "add",
 					"pathName": "pages/building_create/building_create",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "direction",
+					"pathName": "pages/direction/direction",
 					"scene": null
 				}
 			]

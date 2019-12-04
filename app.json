@@ -7,7 +7,8 @@
     "pages/route_show/route_show",
     "pages/user/user",
     "pages/nearby/nearby",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/direction/direction"
   ],
   "tabBar": {
     "color": "#7A7E83",

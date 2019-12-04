@@ -44,7 +44,7 @@ id="myMap"
 style="width: 100%; height: 300px;"
 longitude="{{building.longitude}}" latitude="{{building.latitude}}"
 scale='16'
-subkey="CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H"
+subkey="{{mapKey}}"
 polyline="{{polyline}}"
 markers="{{markers}}"
 ></map>
