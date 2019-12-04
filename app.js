@@ -1,5 +1,12 @@
 //app.js
+const config = require('./key');
 
+const AV = require('./utils/av-weapp-min.js');
+AV.init({
+  appId: config.appId,
+  appKey: config.appKey,
+  serverURLs: 'https://lyumbnqe.lc-cn-n1-shared.com'
+});
 
 App({
   onLaunch: function () {
@@ -23,7 +30,7 @@ App({
     })
   },
   globalData: {
-    // host: "http://localhost:3000/"
-    host: "https://curiocity.wogengapp.cn/api/v1/"
+     host: "http://localhost:3000/api/v1/"
+    // host: "https://curiocity.wogengapp.cn/api/v1/"
   }
 })

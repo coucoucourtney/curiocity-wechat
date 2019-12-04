@@ -3,57 +3,56 @@
     "pages/building_index/building_index",
     "pages/building_show/building_show",
     "pages/building_create/building_create",
+    "pages/route_index/route_index",
+    "pages/route_show/route_show",
     "pages/user/user",
     "pages/nearby/nearby",
-    "pages/route_create/route_create",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/direction/direction"
   ],
-
-  "tabBar":{
+  "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3f104f",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
-          {
-            "text": "Buildings",
-            "pagePath": "pages/building_index/building_index",
-            "iconPath": "icons/building_black.png",
-            "selectedIconPath": "icons/building_gray.png"
-          },
       {
-              "text": "Walks",
-              "pagePath": "pages/route_create/route_create",
-              "iconPath": "icons/walk_black.png",
-              "selectedIconPath": "icons/walk_gray.png"
-            },
-           {
-              "text": "Discover",
-              "pagePath": "pages/nearby/nearby",
-              "iconPath": "icons/map_black.png",
-              "selectedIconPath": "icons/map_gray.png"
-            },
-            
-        {
-                "text": "Me",
-                "pagePath": "pages/user/user",
-                "iconPath": "icons/user_black.png",
-                "selectedIconPath": "icons/user_gray.png"
-              }
-            ]
+        "text": "Buildings",
+        "pagePath": "pages/building_index/building_index",
+        "iconPath": "icons/building_black.png",
+        "selectedIconPath": "icons/building_gray.png"
+      },
+      {
+        "text": "Walks",
+        "pagePath": "pages/route_show/route_show",
+        "iconPath": "icons/walk_black.png",
+        "selectedIconPath": "icons/walk_gray.png"
+      },
+      {
+        "text": "Discover",
+        "pagePath": "pages/nearby/nearby",
+        "iconPath": "icons/map_black.png",
+        "selectedIconPath": "icons/map_gray.png"
+      },
+      {
+        "text": "Me",
+        "pagePath": "pages/user/user",
+        "iconPath": "icons/user_black.png",
+        "selectedIconPath": "icons/user_gray.png"
+      }
+    ]
   },
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-    "permission": {
-      "scope.userLocation": {
-        "desc": "你的位置信息将用于小程序定位"
-      }
-    },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
   "plugins": {
     "routePlan": {
       "version": "1.0.5",

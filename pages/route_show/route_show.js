@@ -1,46 +1,18 @@
-// pages/building_show/building_show.js
-const config = require('../../key');
-const app = getApp()
-const host = app.globalData.host;
-
+// pages/route_show/route_show.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    indicatorDots: true,
-    vertical: false,
-    autoplay: false,
-    mapKey: config.mapKey
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const page = this
-    const id = options.id
-    console.log(1, options)
-    console.log(options)
-    wx.request({
-      url: host + `buildings/${id}`,
-      success: function (res) {
-        const building = res.data
-        console.log(building)
-        page.setData({ building })
 
-        const markers = [
-          {
-            iconPath: "/icons/map/user_marker_large.png", // **1
-            latitude: building.latitude,
-            longitude: building.longitude,
-            width: 30,
-            height: 45
-      }]
-      page.setData({ markers})
-      }
-    })
   },
 
   /**

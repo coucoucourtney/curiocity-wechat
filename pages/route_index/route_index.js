@@ -1,4 +1,4 @@
-// pages/route_create/route_create.js
+// pages/route_index/route_index.js
 Page({
 
   /**
