@@ -13,7 +13,7 @@
     <view class="element-name">Style</view>
       <input name="style" placeholder="ex. modern, art deco, victorian..."></input>
       <view class="element-name">Building Description</view>
-        <input name="description" placeholder="ex. special elements, who lived here, stories about the building..."></input>
+        <input class= "wide" name="description" placeholder="ex. special elements, who lived here, stories about the building..."></input>
   <view class="element-section">Location information</view>
     <view class="element-name">Metro Stop</view>
       <input name="Metro Stop" placeholder="nearest metro stop"></input>
