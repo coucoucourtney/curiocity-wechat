@@ -107,19 +107,22 @@ input {
   border: 5rpx dashed rgb(150, 150, 150, .7);
   margin: 25rpx;
   position: relative;
+  flex-shrink: 0;
 }
-
+.add-image-2 {
+  position: relative;
+}
 .cam-2 {
   height: 50rpx;
   width: 50rpx;
   opacity: .5;
   margin-top: 20rpx;
   position: absolute;
-  left: 165rpx;
-  top: 2175rpx;
+  right: 40rpx;
+  top: 107rpx;
 }
 
-.align-pics {
+.align-pic {
   display: flex;
   flex-direction: row;
   overflow: scroll;
@@ -128,7 +131,20 @@ input {
 .img-upload-slider {
 width: 80px;
 height: 80px;
-overflow: scroll;
+/* overflow: scroll; */
 border: 5rpx dashed rgb(150, 150, 150, .7);
 margin: 25rpx;
+}
+
+.remove{
+  width: 30rpx;
+  height: 30rpx;
+  box-shadow: 2rpx 2rpx 3rpx rgba(0, 0, 0, .1);
+  position: absolute;
+  top: 14rpx;
+  right: 13rpx;
+}
+
+.added-pic{
+  position: relative;
 }
