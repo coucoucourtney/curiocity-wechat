@@ -8,7 +8,7 @@ Page({
   },
   onLoad: function () {
   },
-  takePhoto: function () {
+  takeMainPhoto: function () {
     let page = this;
     wx.chooseImage({
       count: 1,
@@ -47,6 +47,35 @@ Page({
    * Lifecycle function--Called when page load
    */
 
+  takeSliderPhoto: function () {
+    let page = this;
+    wx.chooseImage({
+      // count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        let tempFilePath = res.tempFilePaths[0];
+        page.setData({
+          tempFilePath
+        })
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {
+            let imgSliderUrl = [];
+            imgSliderUrl.push(file.url());
+            page.setData({
+              imgSliderUrl
+            })
+            console.log(page.data.imgSliderUrl);
+          }
+        ).catch(console.error);
+      }
+    });
+  },
+
 
   createBuilding: function (event) {
     console.log(event)
@@ -54,15 +83,18 @@ Page({
     const id = 1
     let newBuilding = {};
     newBuilding.name = event.detail.value.name
+    newBuilding.main_picture = this.data.imgUrl
+    newBuilding.address = event.detail.value.address
     newBuilding.year = event.detail.value.year
     newBuilding.architects = event.detail.value.architects
     newBuilding.architectural_style = event.detail.value.architectural_style
     newBuilding.description = event.detail.value.description
     newBuilding.metro_stop = event.detail.value.metro_stop
     newBuilding.address = event.detail.value.address
-    newBuilding.address = event.detail.value.address
+    newBuilding.photo_slider = this.data.imgSliderUrl
+    // computer generated info
+    
     newBuilding.user_id = id
-    newBuilding.picture = this.data.imgUrl;
     console.log(newBuilding.picture);
     console.log(newBuilding)
     wx.request({
@@ -75,6 +107,7 @@ Page({
         wx.switchTab({
           url: `/pages/user/user?id=${id}`,
         })
+        
       }
     })
   },
