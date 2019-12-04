@@ -17,8 +17,8 @@
           {
             "text": "Buildings",
             "pagePath": "pages/building_index/building_index",
-            "iconPath": "icons/skyline_black.png",
-            "selectedIconPath": "icons/skyline_gray.png"
+            "iconPath": "icons/building_black.png",
+            "selectedIconPath": "icons/building_gray.png"
           },
       {
               "text": "Walks",
