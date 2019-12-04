@@ -1,41 +1,47 @@
 /* pages/building_create/building_create.wxss */
+.create-form {
+  margin: 20rpx 40rpx;
+}
+
+
 .h1 {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  font-size: 20px;
-  margin-bottom: 70rpx;
-  margin-top: 15rpx;
+  font-size: 40rpx;
 }
 
-
-.btn-black {
-  color: white;
-  background-color: black;
-  padding: 20rpx;
-  padding-top: 25rpx;
-  border-radius: 10rpx;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  font-size: 12px;
-  margin-top: 70rpx;
+.element-section {
+  padding-bottom: 30rpx;
+  padding-top: 40rpx;
+  margin-left: 10rpx;
+  text-align: center;
 }
 
-.button-light {
-  color: rgb(150, 150, 150);
-  background-color: white;
-  padding: 20rpx;
-  padding-top: 25rpx;
-  border-radius: 10rpx;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-  font-size: 12px;
+.element-name {
+  font-size: 25rpx;
+  margin-left: 25rpx;
 }
 
 .new-form {
   /* text-align: center; */
   margin-top: 100rpx;
   margin-left: 100rpx;
+}
+
+.wide{
+  height: 400rpx;
+  margin-bottom: 20rpx;
+  margin: 25rpx auto;
+  padding: 15rpx;
+  border: 2rpx solid black;
+  border-radius: 2rpx;
+  width: 600rpx;
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 35rpx;
+  /* word-wrap: overflow-wrap; */
+  font-style: italic;
 }
 
 input {
@@ -46,27 +52,83 @@ input {
   width: 600rpx;
   text-align: left;
   font-size: 12px;
+  margin-bottom: 35rpx;
+  word-wrap: break-word;
+  font-style: italic;
 }
 
-image {
+.btn {
+  padding: 20rpx;
+  padding-top: 30rpx;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  margin-top: 15rpx;
+  width: 640rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  text-align: center;
+}
+
+.btn-black {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.btn-light {
+  border: 1px solid rgb(163, 163, 163);
+  color: rgb(150, 150, 150);
+  background-color: white;
+}
+
+
+.img-upload {
   height: 80px;
   width: 80px;
-  border: 1px solid lightgrey;
-  margin-bottom: 20rpx;
+  border: 5rpx dashed rgb(150, 150, 150, .7);
+  margin: 25rpx;
+  position: relative;
 }
 
-.btn-size {
-  margin: 0 auto;
-  width: 640rpx;
-  background-color: black;
-  border-radius: 10rpx;
-  margin-bottom: 25rpx;
+.cam-icon{
+  height: 50rpx;
+  width: 50rpx;
+  opacity: .5;
+  margin-top: 20rpx;
+  position: absolute;
+  left: 165rpx;
+  top: 545rpx;
 }
 
-.btn-size2 {
-  margin: 0 auto;
-  width: 640rpx;
-  background-color: white;
-  border-radius: 10rpx;
-  border: 1px solid rgb(163, 163, 163);
+.img-upload2 {
+  height: 80px;
+  width: 80px;
+  border: 5rpx dashed rgb(150, 150, 150, .7);
+  margin: 25rpx;
+  position: relative;
+}
+
+.cam-2 {
+  height: 50rpx;
+  width: 50rpx;
+  opacity: .5;
+  margin-top: 20rpx;
+  position: absolute;
+  left: 165rpx;
+  top: 2175rpx;
+}
+
+.align-pics {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.img-upload-slider {
+width: 80px;
+height: 80px;
+overflow: scroll;
+border: 5rpx dashed rgb(150, 150, 150, .7);
+margin: 25rpx;
 }
