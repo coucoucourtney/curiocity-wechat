@@ -10,7 +10,7 @@ Page({
   data: {
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: false
   },
 
   /**
@@ -27,6 +27,16 @@ Page({
         const building = res.data
         console.log(building)
         page.setData({ building })
+
+        const markers = [
+          {
+            iconPath: "/icons/map/user_marker_large.png", // **1
+            latitude: building.latitude,
+            longitude: building.longitude,
+            width: 30,
+            height: 45
+      }]
+      page.setData({ markers})
       }
     })
   },
