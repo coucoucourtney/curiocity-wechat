@@ -49,3 +49,109 @@ p {
   font-size: 14px;
   font-weight: bold;
 }
+
+/* .cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 40rpx;
+} */
+
+.card-product{
+  /* border: 1rpx solid grey; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  /* height: 35vw; */
+  margin: 6rpx;
+  margin-bottom: 10rpx;
+}
+
+.card-product .card-img{
+  width: 100% !important;
+  height: 200rpx !important;
+  display: block !important;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 6rpx rgba(0,0,0,0.20);
+  border: 3.5rpx solid white;
+  margin-bottom: 12rpx;
+}
+
+.card-product-infos{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding-left: 10rpx;
+  align-items: center;
+}
+
+.info-section{
+  display: flex;
+  /* flex-direction: column; */
+  /* position:relative; */
+}
+
+.h2{
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  /* position: absolute; */
+  /* bottom: 27rpx; */
+}
+
+.favorite-spots-section {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 60rpx;
+}
+
+
+.create-spots-section {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.favorite-spots-section .p{
+  font-size: 25rpx;
+  width: 160rpx;
+  font-weight: 200;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  /* padding-left: 30 rpx; */
+  opacity: .7;
+}
+
+.sub-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-small2 {
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 10px;
+  width: 150rpx;
+  color: rgb(136, 136, 136);
+}
+
+.user-info{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
