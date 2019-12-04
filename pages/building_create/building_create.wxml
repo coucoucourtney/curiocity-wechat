@@ -19,10 +19,10 @@
         <textarea class="wide" name="description" placeholder="ex. special elements, who lived here, stories about the building..."></textarea>
   <view class="element-section">Location information</view>
     <view class="element-name">Address*</view>
-      <input name="Address" placeholder="address of building"></input>
+      <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}"></input>
     <!-- try making a map pop up and enter address/name of building -->
     <view class="element-name">Metro Stop</view>
-      <input name="Metro Stop" placeholder="nearest metro stop"></input>
+      <input name="Metro Stop" placeholder="nearest metro stop" bindtap="nearby_search" value="{{metro_stop}}"></input>
     <view class="element-section">Additional Images</view>
       <!-- <view class="btn btn-light" bindtap="takeSliderPhoto">Upload   </view> -->
       <view class="align-pic">
