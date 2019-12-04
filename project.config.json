@@ -70,8 +70,9 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/user/user",
-					"pathName": "pages/user/user",
+					"name": "map",
+					"pathName": "pages/map/map",
+          "query": "",
 					"scene": null
 				}
 			]
