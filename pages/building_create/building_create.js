@@ -1,13 +1,23 @@
 // pages/building_create/building_create.js
+// 引入SDK核心类
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+var qqmapsdk;
 const app = getApp()
 const host = app.globalData.host;
 const AV = require('../../utils/av-weapp-min.js');
+const config = require('../../key');
+
 Page({
   data: {
     items: [],
-    imgSliderUrl: []
+    imgSliderUrl: [],
+    mapKey: config.mapKey
+
   },
   onLoad: function () {
+    qqmapsdk = new QQMapWX({
+      key: this.data.mapKey
+    });
   },
   takeMainPhoto: function () {
     let page = this;
@@ -87,22 +97,62 @@ Page({
     // imgSliderUrl.splice(index, 1);
   },
 
+  // choose location on map and get the coordinates and name/address
+  chooseLocation: function () {
+    let that = this
+    wx.authorize({
+      scope: 'scope.userLocation',
+      success(res) {
+        wx.chooseLocation({
+          success: function (res) {
+            console.log(res)
+            const address = res.address
+            const name = res.name
+            const latitude = res.latitude
+            const longitude = res.longitude
+            that.setData({ address, name, latitude, longitude })
+          }
+        })
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
+  },
+
+  nearby_search: function () {
+    var _this = this;
+    const lat = _this.data.latitude;
+    const lgt = _this.data.longitude;
+    // 调用接口
+    qqmapsdk.search({
+      keyword: '地铁',  //搜索关键词
+      location: `${lat},${lgt}`,  //设置周边搜索中心点
+      success: function (res) { //搜索成功后的回调
+        const metro_stop = res.data[0].title;
+        _this.setData({metro_stop})
+      },
+    });
+  },
 
   createBuilding: function (event) {
     console.log(event)
+    const page = this;
     // let id = this.data.user.id
     const id = 1
     let newBuilding = {};
     newBuilding.name = event.detail.value.name
-    newBuilding.main_picture = this.data.imgUrl
+    newBuilding.main_picture = page.data.imgUrl
     newBuilding.address = event.detail.value.address
     newBuilding.year = event.detail.value.year
     newBuilding.architects = event.detail.value.architects
     newBuilding.architectural_style = event.detail.value.architectural_style
     newBuilding.description = event.detail.value.description
-    newBuilding.metro_stop = event.detail.value.metro_stop
-    newBuilding.address = event.detail.value.address
-    newBuilding.photo_slider = this.data.imgSliderUrl
+    newBuilding.metro_stop = page.data.metro_stop
+    newBuilding.address = page.data.address
+    newBuilding.latitude = page.data.latitude
+    newBuilding.longitude = page.data.longitude
+    newBuilding.photo_slider = page.data.imgSliderUrl
     // computer generated info
     
     newBuilding.user_id = id
