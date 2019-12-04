@@ -1,1 +1,72 @@
 /* pages/building_create/building_create.wxss */
+.h1 {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 70rpx;
+  margin-top: 15rpx;
+}
+
+
+.btn-black {
+  color: white;
+  background-color: black;
+  padding: 20rpx;
+  padding-top: 25rpx;
+  border-radius: 10rpx;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+  margin-top: 70rpx;
+}
+
+.button-light {
+  color: rgb(150, 150, 150);
+  background-color: white;
+  padding: 20rpx;
+  padding-top: 25rpx;
+  border-radius: 10rpx;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+.new-form {
+  /* text-align: center; */
+  margin-top: 100rpx;
+  margin-left: 100rpx;
+}
+
+input {
+  margin: 25rpx auto;
+  padding: 15rpx;
+  border: 2rpx solid black;
+  border-radius: 2rpx;
+  width: 600rpx;
+  text-align: left;
+  font-size: 12px;
+}
+
+image {
+  height: 80px;
+  width: 80px;
+  border: 1px solid lightgrey;
+  margin-bottom: 20rpx;
+}
+
+.btn-size {
+  margin: 0 auto;
+  width: 640rpx;
+  background-color: black;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+}
+
+.btn-size2 {
+  margin: 0 auto;
+  width: 640rpx;
+  background-color: white;
+  border-radius: 10rpx;
+  border: 1px solid rgb(163, 163, 163);
+}
