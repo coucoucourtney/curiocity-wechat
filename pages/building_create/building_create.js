@@ -4,7 +4,8 @@ const host = app.globalData.host;
 const AV = require('../../utils/av-weapp-min.js');
 Page({
   data: {
-    items: []
+    items: [],
+    imgSliderUrl: []
   },
   onLoad: function () {
   },
@@ -58,13 +59,14 @@ Page({
         page.setData({
           tempFilePath
         })
+          console.log(tempFilePath)
         new AV.File('file-name', {
           blob: {
             uri: tempFilePath,
           },
         }).save().then(
           file => {
-            let imgSliderUrl = [];
+            let imgSliderUrl = page.data.imgSliderUrl
             imgSliderUrl.push(file.url());
             page.setData({
               imgSliderUrl
@@ -74,6 +76,15 @@ Page({
         ).catch(console.error);
       }
     });
+  },
+
+  removePic: function(e) {
+    let page = this
+    let imgSliderUrl = page.data.imgSliderUrl
+    console.log(1, e)
+    const index = e.data-index;
+    console.log(index)
+    // imgSliderUrl.splice(index, 1);
   },
 
 
