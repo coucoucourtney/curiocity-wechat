@@ -72,7 +72,13 @@
 					"id": -1,
 					"name": "map",
 					"pathName": "pages/map/map",
-          "query": "",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "add",
+					"pathName": "pages/building_create/building_create",
 					"scene": null
 				}
 			]
