@@ -10,7 +10,7 @@
 <!--form表单-->
 <form bindsubmit="formSubmit">
     <!--地址描述输入框,示例：北京市海淀区彩和坊路海淀西大街74号-->
-    <input style="border:1px solid #000;" name="geocoder"></input>
+    <input style="border:1px solid #000;" name="geocoder" bindtap="chooseLocation" value="{{address}}"></input>
     <!--提交表单数据-->
     <button form-type="submit">地址解析</button>
 </form>
@@ -31,3 +31,5 @@
     <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
     </view>
 </view>
+<!--pages/map/map.wxml-->
+<map class="navi_map"  style="width:100%;height:300px;" longitude="102.67484140406796" latitude="25.03682953251695" scale="100" include-points='{{points}}' polyline="{{polyline}}" ></map>

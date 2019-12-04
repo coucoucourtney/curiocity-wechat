@@ -10,27 +10,85 @@ Page({
    * Page initial data
    */
   data: {
-
+    longitude: '',
+    latitude: '',
+    points: [],
+    polyline: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    qqmapsdk = new QQMapWX({
-      key: 'CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H'
-    });
+  //   qqmapsdk = new QQMapWX({
+  //     key: 'CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H'
+  //   });
+  // },
+  // backfill: function (e) {
+  //   var id = e.currentTarget.id;
+  //   for (var i = 0; i < this.data.suggestion.length; i++) {
+  //     if (i == id) {
+  //       this.setData({
+  //         backfill: this.data.suggestion[i].title
+  //       });
+  //     }
+  //   }
+    var lat = 25.03682953251695, lng = 102.67484140406796;
+    var temp = [{
+      latitude: 25.03682953251695,
+      longitude: 102.67484140406796
+    },
+    {
+      latitude: 25.036132223872958,
+      longitude: 102.67386832053477
+    },
+    {
+      latitude: 25.035328234772695,
+      longitude: 102.67441722093537
+    },
+    {
+      latitude: 25.03587706184719,
+      longitude: 102.67548958617391
+    },
+    {
+      latitude: 25.03682953251695,
+      longitude: 102.67484140406796
+    },
+    ]
+    var polyline = [{
+      points: temp,
+      color: "#ff0000",
+      width: 2,
+      dottedLine: false
+    }];
+    this.setData({
+      longitude: lng,
+      latitude: lat,
+      polyline: polyline,
+      points: temp
+    })
   },
-  backfill: function (e) {
-    var id = e.currentTarget.id;
-    for (var i = 0; i < this.data.suggestion.length; i++) {
-      if (i == id) {
-        this.setData({
-          backfill: this.data.suggestion[i].title
-        });
-      }
+  // choose location on map and get the coordinates and name/address
+chooseLocation: function () {
+  let that = this
+  wx.authorize({
+    scope: 'scope.userLocation',
+    success(res) {
+      console.log(res)
+      wx.chooseLocation({
+        success: function (res) {
+          console.log(res)
+          const address = res.address
+          const name = res.name
+          that.setData({address, name})
+        }
+      })
+    },
+    fail(err) {
+      console.log(err)
     }
-  },
+  })
+},
 
   nearby_search: function () {
     var _this = this;
