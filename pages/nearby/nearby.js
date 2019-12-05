@@ -11,8 +11,8 @@ Page({
    * Page initial data
    */
   data: {
-    mapKey: config.mapKey
-
+    mapKey: config.mapKey,
+    show: false
   },
 
   /**
@@ -39,7 +39,12 @@ Page({
         longitude: that.data.buildings[i].longitude,
         iconPath: '/icons/map/flag.png', //图标路径
         width: 30,
-        height: 50
+        height: 50,
+        callout: { //可根据需求是否展示经纬度
+          content: that.data.buildings[i].name,
+          color: '#000',
+          display: 'ALWAYS'
+        }
       })
     }
         that.setData({
@@ -53,7 +58,7 @@ Page({
         const latitude = res.latitude
         const longitude = res.longitude
         const markers = that.data.markers
-        console.log("1",markers)
+        // console.log("1",markers)
         // set user location and marker
         markers.push({
             id: markers.length,
@@ -78,7 +83,18 @@ Page({
   onReady: function () {
 
   },
-
+bindMarkertap: function(e) {
+  const page = this;
+  const building = page.data.buildings[e.markerId]
+  console.log(building)
+  const name = building.name
+  const description = building.description
+  const style = building.architectural_style
+  page.setData({ name, description, style, show: true });
+},
+  onClose() {
+    this.setData({ show: false });
+  },
   /**
    * Lifecycle function--Called when page show
    */
