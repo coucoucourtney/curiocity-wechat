@@ -91,8 +91,9 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/route_index/route_index",
-					"pathName": "pages/route_index/route_index",
+					"name": "nearby",
+					"pathName": "pages/nearby/nearby",
+          "query": "",
 					"scene": null
 				}
 			]

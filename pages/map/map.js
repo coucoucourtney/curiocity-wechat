@@ -104,7 +104,7 @@ chooseLocation: function () {
         //   mks.push({ // 获取返回结果，放到mks数组中
         //     title: res.data[i].title,
         //     id: res.data[i].id,
-        //     latitude: res.data[i].location.lat,
+        //     latitude: res.data[i].location.lat,'
         //     longitude: res.data[i].location.lng,
         //     iconPath: "/resources/my_marker.png", //图标路径
         //     width: 20,
