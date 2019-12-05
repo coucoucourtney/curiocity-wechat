@@ -1,1 +1,54 @@
-/* pages/route_index/route_index.wxss */
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0rpx 2rpx 6rpx rgba(0,0,0,0.20);
+  border: 3.5rpx solid white;
+  margin-bottom: 30rpx;
+  /* box-shadow: 0 0 15px rgba(0,0,0,0.2); */
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.card-product .main-image {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-product .h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product .p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.h1 {
+  font-size: 47rpx;
+  padding: 30rpx;
+}
+
+.card-product .favorite {
+  height: 51rpx;
+  width: 51rpx;
+  position: absolute;
+  margin-left: 330px;
+  margin-top: 40px;
+}
