@@ -52,6 +52,32 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
+    const page = this;
+    const checkpoints = page.data.route.checkpoints;
+    console.log(3, checkpoints)
+    const latitude = checkpoints[0].latitude
+    const longitude = checkpoints[0].longitude
+    var temp = []
+    for (var i = 0; i < checkpoints.length; i++) {
+    temp.push({
+      latitude: checkpoints[i].latitude,
+      longitude: checkpoints[i].longitude
+    })
+    }
+    var polyline = [{
+      points: temp,
+      color: "#ff0000",
+      width: 2,
+      dottedLine: false
+    }];
+    this.setData({
+      longitude: longitude,
+      latitude: latitude,
+      polyline: polyline,
+    })
+
+
+  
 
   },
 

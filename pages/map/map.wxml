@@ -10,7 +10,7 @@
 <!--form表单-->
 <form bindsubmit="formSubmit">
     <!--地址描述输入框,示例：北京市海淀区彩和坊路海淀西大街74号-->
-    <input style="border:1px solid #000;" name="geocoder" bindtap="chooseLocation" value="{{address}}"></input>
+    <input style="border:1px solid #000;" name="geocoder" bindtap="chooseLocation" value="{{name}}"></input>
     <!--提交表单数据-->
     <button form-type="submit">地址解析</button>
 </form>
