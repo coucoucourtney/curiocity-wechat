@@ -80,6 +80,7 @@ chooseLocation: function () {
           console.log(res)
           const address = res.address
           const name = res.name
+          console.log(res)
           that.setData({address, name})
         }
       })
@@ -129,7 +130,7 @@ chooseLocation: function () {
     //调用地址解析接口
     qqmapsdk.geocoder({
       //获取表单传入地址
-      address: e.detail.value.geocoder, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
+      address: _this.data.name, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
       success: function (res) {//成功后的回调
         console.log(res);
         var res = res.result;
