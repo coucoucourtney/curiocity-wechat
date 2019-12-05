@@ -9,3 +9,6 @@ polyline="{{polyline}}"
 markers="{{markers}}"
 bindmarkertap="bindMarkertap"
 ></map>
+<van-action-sheet show="{{ show }}" title="{{name}}" bind:close="onClose" >
+  <view>description: {{description}}</view>
+</van-action-sheet>
