@@ -1,6 +1,6 @@
 <view class="h1">Routes</view>
 
-<view class="card-product">
+<view class="card-product" bindtap="tapCard">
   <image class="main-image" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/50ad3115b24219f519fc/route1.jpeg" />
   <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
   <view class="card-product-infos">
