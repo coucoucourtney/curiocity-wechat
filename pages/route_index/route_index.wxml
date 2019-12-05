@@ -1,2 +1,16 @@
-<!--pages/route_index/route_index.wxml-->
-<text>pages/route_index/route_index.wxml</text>
+<view class="h1">Routes</view>
+
+<view class="card-product">
+  <image class="main-image" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/50ad3115b24219f519fc/route1.jpeg" />
+  <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+  <view class="card-product-infos">
+    <view class="h2">French Concession</view>
+    <view class="list">
+      <view class="p">Xintiandi Station line 10 or line 13</view>
+      <view class="p">2h walk</view>
+      <view class="p">5 buildings</view>
+    </view>
+  </view>
+</view>
+
+
