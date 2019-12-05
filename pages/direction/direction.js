@@ -25,9 +25,7 @@ Page({
         const latitude = res.latitude
         const longitude = res.longitude
         const start = `$(latitude),$(longitude)`
-        console.log(latitude)
         that.setData( {latitude, longitude, start} )
-        console.log(longitude)
       }
     })
   },

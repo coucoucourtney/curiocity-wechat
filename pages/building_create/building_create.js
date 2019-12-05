@@ -111,6 +111,7 @@ Page({
             const latitude = res.latitude
             const longitude = res.longitude
             that.setData({ address, name, latitude, longitude })
+            that.nearby_search();
           }
         })
       },
