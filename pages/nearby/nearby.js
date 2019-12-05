@@ -34,12 +34,17 @@ Page({
         var markers = [];
           for (var i = 0; i < that.data.buildings.length; i++) {
       markers.push({ // 获取返回结果，放到mks数组中
-        id: i,
+        id: that.data.buildings[i].id,
         latitude: that.data.buildings[i].latitude,
         longitude: that.data.buildings[i].longitude,
         iconPath: '/icons/map/flag.png', //图标路径
         width: 30,
-        height: 50
+        height: 50,
+        callout: { //可根据需求是否展示经纬度
+          content: that.data.buildings[i].name,
+          color: '#000',
+          display: 'ALWAYS'
+        }
       })
     }
         that.setData({
@@ -78,7 +83,18 @@ Page({
   onReady: function () {
 
   },
-
+bindMarkertap: function(e) {
+console.log(e)
+  wx.showActionSheet({
+    itemList: ['More info', 'Direction'],
+    success(res) {
+      console.log(res.tapIndex)
+    },
+    fail(res) {
+      console.log(res.errMsg)
+    }
+  })
+},
   /**
    * Lifecycle function--Called when page show
    */

@@ -7,4 +7,5 @@ scale='17'
 subkey="{{mapKey}}"
 polyline="{{polyline}}"
 markers="{{markers}}"
+bindmarkertap="bindMarkertap"
 ></map>
