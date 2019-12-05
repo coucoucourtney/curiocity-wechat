@@ -87,6 +87,17 @@ Page({
     })
   },
 
+  goToWalksPage: function () {
+    wx.switchTab({
+      url: '/pages/route_index/route_index',
+    })
+  },
+
+  goToDiscoverPage: function () {
+    wx.switchTab({
+      url: '/pages/nearby/nearby',
+    })
+  },
   // clearInput: function () {
   //   this.setData({
   //     inputVal: ""
