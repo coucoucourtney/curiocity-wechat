@@ -3,8 +3,8 @@
     <image class="img-logo"  mode="aspectFit" src='/logo/curiocity_high_drop.png'/>
     <view class=".banner-p">Discover Shanghai through its special architecture ...</view>
 
-    <view bindtap="goToNearbyPage" class="btn btn-ghost" >DISCOVER</view>
-    <view bindtap="goToNewBuildingPage" class="btn btn-ghost" >WALKS</view>
+    <view bindtap="goToDiscoverPage" class="btn btn-ghost" >DISCOVER</view>
+    <view bindtap="goToWalksPage" class="btn btn-ghost" >WALKS</view>
     <view bindtap="scrollToDiv" class="btn btn-ghost" href="#">BUILDINGS</view>
 </view>
 
@@ -17,7 +17,8 @@
 </view>
 </view> -->
 <!-- make search bar & building title stick to top when start browsing (click browse buildings button-->
-
+<view class="top">
+<!-- <view class="h1 title">Buildings</view> -->
 <!-- SEARCH BAR COPY BEGIN -->
 <!-- put search bar here -->
 <view class="page">
@@ -26,8 +27,7 @@
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
                     <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="district, building name, metro, style..." bindinput="inputTyping" />
-                    
+                    <input type="text" class="weui-search-bar__input" placeholder="district, building name, metro, style..." bindinput="inputTyping" />   
                 </view>
                 <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
                     <icon class="weui-icon-search" type="search" size="14"></icon>
@@ -40,6 +40,7 @@
     </view>
 </view>
 <!-- SEARCH BAR COPY END -->
+</view>
 
 <!-- cards section -->
 <view class="cards">

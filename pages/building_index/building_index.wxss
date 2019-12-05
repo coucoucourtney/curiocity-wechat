@@ -61,6 +61,7 @@
   padding: 0 55rpx;
 }
 
+
 /* .category-bar{
   display: flex;
   background-color: black;
@@ -89,10 +90,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   flex-flow: row wrap;
+  flex-shrink: 0;
   /* align-content: space-between; */
   justify-content: center;
   /* margin: 0 20rpx; */
   width: 100vw;
+  min-height: 100vh;
+  align-content: flex-start;
 }
 
 .card-product{
@@ -159,6 +163,16 @@
 }
 
 /* SEARCH BAR COPY ALL BELOW */
+
+.top {
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
 
 .searchbar-result{
     margin-top: 0;

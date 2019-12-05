@@ -29,6 +29,20 @@ App({
       }
     })
   },
+
+  fetchFontFamily() {
+    // wx.loadFontFace({
+    //   family: ""
+    //   source: 'url("")'
+    //   success: console.log
+    // });
+    // wx.loadFontFace({
+    //   family: ""
+    //   source: 'url("")'
+    //   success: console.log
+    // });
+  },
+
   globalData: {
      host: "http://localhost:3000/api/v1/"
     // host: "https://curiocity.wogengapp.cn/api/v1/"
