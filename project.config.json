@@ -93,7 +93,7 @@
 					"id": -1,
 					"name": "nearby",
 					"pathName": "pages/nearby/nearby",
-          "query": "",
+					"query": "",
 					"scene": null
 				}
 			]
