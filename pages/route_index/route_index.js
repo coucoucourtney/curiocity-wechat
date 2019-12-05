@@ -8,6 +8,14 @@ Page({
 
   },
 
+  tapCard: function (event) {
+    console.log(event)
+    let id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/route_show/route_show?id=${id}`
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */

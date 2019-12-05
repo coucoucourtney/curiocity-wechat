@@ -92,9 +92,13 @@ Page({
     let page = this
     let imgSliderUrl = page.data.imgSliderUrl
     console.log(1, e)
-    const index = e.data-index;
+    const index = e.currentTarget.dataset.index;
     console.log(index)
-    // imgSliderUrl.splice(index, 1);
+    imgSliderUrl.splice(index, 1);
+    page.setData({
+      imgSliderUrl
+    })
+    console.log(page.data.imgSliderUrl);
   },
 
   // choose location on map and get the coordinates and name/address
@@ -154,7 +158,7 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    // computer generated info
+
     
     newBuilding.user_id = id
     console.log(newBuilding.picture);
