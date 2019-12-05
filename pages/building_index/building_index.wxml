@@ -9,12 +9,37 @@
 </view>
 
 <!-- put title bar here & add button-->
+
 <!-- <view class="category-bar">
 <view class="title">Buildings </view>
 <view bindTap="goToNewBuildingPage">
 <image mode="aspectFit" class="add-icon" src="/icons/round-add-button.png"/>
 </view>
 </view> -->
+<!-- make search bar & building title stick to top when start browsing (click browse buildings button-->
+
+<!-- SEARCH BAR COPY BEGIN -->
+<!-- put search bar here -->
+<view class="page">
+    <view >
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="district, building name, metro, style..." bindinput="inputTyping" />
+                    
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">Search buildings...</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Cancel</view>
+        </view>
+        
+    </view>
+</view>
+<!-- SEARCH BAR COPY END -->
 
 <!-- cards section -->
 <view class="cards">
@@ -32,5 +57,3 @@
     </view> 
     </view>
   </view>
-<!-- put search bar here -->
-<!-- make search bar stick to bottom when start browsing (click browse buildings button-->

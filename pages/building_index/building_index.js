@@ -8,8 +8,49 @@ Page({
    * Page initial data
    */
   data: {
-
+    // SEARCH BAR COPY BEGIN -1
+    inputShowed: true,
+    
+    // SEARCH BAR COPY END -2
   },
+
+// SEARCH BAR COPY BEGIN -2
+  // showInput: function () {
+  //   this.setData({
+  //     inputShowed: true
+  //   });
+  // },
+
+  // hideInput: function () {
+  //   this.setData({
+  //     inputVal: "",
+  //     inputShowed: false
+  //   });
+  // },
+
+  // clearInput: function () {
+  //   this.setData({
+  //     inputVal: ""
+  //   });
+  // },
+
+  inputTyping: function (e) {
+    console.log(e)
+    let page = this
+    wx.request({
+        url: host + `buildings?query=${e.detail.value}`,
+        success: function (res) {
+          // const user = res.data
+          const buildings = res.data.buildings;
+          console.log(buildings);
+          page.setData({
+            buildings: buildings
+          });
+        }  
+    })
+  },
+
+  // SEARCH BAR COPY END -2
 
   /**
    * Lifecycle function--Called when page load
@@ -45,6 +86,13 @@ Page({
       }
     })
   },
+
+  // clearInput: function () {
+  //   this.setData({
+  //     inputVal: ""
+  //   });
+  // },
+  
 
   // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
   tapCard: function (event) {
@@ -92,7 +140,7 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
-      scrollTop: 590,
+      scrollTop: 545,
     })
   },
 })
