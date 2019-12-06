@@ -18,7 +18,6 @@ Page({
     const userId = app.globalData.userId;
     console.log("user", userId)
     const page = this
-    const userId = app.globalData.userId;
     const id = options.id
     console.log(1, options)
     wx.request({
