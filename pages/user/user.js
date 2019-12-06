@@ -1,6 +1,6 @@
 // pages/user/user.js
 const app = getApp()
-const host = app.globalData.host;
+const host = app.globalData.host; 
 
 Page({
   getUserInfo: function (e) {

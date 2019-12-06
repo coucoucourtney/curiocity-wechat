@@ -1,4 +1,6 @@
 // pages/map/map.js
+const app = getApp()
+const host = app.globalData.host;
 
 // 引入SDK核心类
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
