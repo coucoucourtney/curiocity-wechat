@@ -9,44 +9,59 @@ Page({
    */
   data: {
     // SEARCH BAR COPY BEGIN -1
-    inputShowed: true,
+    inputShowed: false,
+    inputVal: ""
     
     // SEARCH BAR COPY END -2
   },
 
 // SEARCH BAR COPY BEGIN -2
-  // showInput: function () {
-  //   this.setData({
-  //     inputShowed: true
-  //   });
-  // },
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
 
-  // hideInput: function () {
-  //   this.setData({
-  //     inputVal: "",
-  //     inputShowed: false
-  //   });
-  // },
+  hideInput: function () {
+    let page = this
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+    wx.request({
+      url: host + "buildings",
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        console.log(buildings);
+        page.setData({
+          buildings: buildings
+        });
 
-  // clearInput: function () {
-  //   this.setData({
-  //     inputVal: ""
-  //   });
-  // },
+        wx.hideToast();
+      }
+    })
+  },
+
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
 
   inputTyping: function (e) {
     console.log(e)
     let page = this
     wx.request({
-        url: host + `buildings?query=${e.detail.value}`,
-        success: function (res) {
-          // const user = res.data
-          const buildings = res.data.buildings;
-          console.log(buildings);
-          page.setData({
-            buildings: buildings
-          });
-        }  
+      url: host + `buildings?query=${e.detail.value}`,
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        console.log(buildings);
+        page.setData({
+          buildings: buildings
+        });
+      }  
     })
   },
 
@@ -71,6 +86,9 @@ Page({
    */
   onShow: function () {
     let page = this
+    this.setData({
+      inputVal: ''
+    })
     // let id = this.data.userId || 1;
     wx.request({
       url: host + "buildings",
@@ -79,7 +97,7 @@ Page({
         const buildings = res.data.buildings;
         console.log(buildings);
         page.setData({
-          buildings: buildings
+          buildings: buildings,
         });
 
         wx.hideToast();

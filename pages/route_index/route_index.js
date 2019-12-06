@@ -10,29 +10,43 @@ Page({
   data: {
     // SEARCH BAR COPY BEGIN -1
     inputShowed: true,
-
+    inputVal: ""
     // SEARCH BAR COPY END -2
   },
 
   // SEARCH BAR COPY BEGIN -2
-  // showInput: function () {
-  //   this.setData({
-  //     inputShowed: true
-  //   });
-  // },
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
 
-  // hideInput: function () {
-  //   this.setData({
-  //     inputVal: "",
-  //     inputShowed: false
-  //   });
-  // },
+  hideInput: function () {
+    let page = this
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+    wx.request({
+      url: host + "routes",
+      success: function (res) {
+        // const user = res.data
+        const routes = res.data.routes;
+        console.log(routes);
+        page.setData({
+          routes: routes
+        });
 
-  // clearInput: function () {
-  //   this.setData({
-  //     inputVal: ""
-  //   });
-  // },
+        wx.hideToast();
+      }
+    })
+  },
+
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
 
   inputTyping: function (e) {
     console.log(e)
@@ -80,6 +94,9 @@ Page({
   onShow: function () {
     let page = this
     // let id = this.data.userId || 1;
+    this.setData ({
+      inputVal: ''
+    })
     wx.request({
       url: host + "routes",
       success: function (res) {
