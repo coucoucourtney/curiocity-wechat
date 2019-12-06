@@ -10,11 +10,11 @@ AV.init({
 
 App({
   onLaunch: function () {
-    const host = 'host'
+    const host = this.globalData.host
     console.log('beginning login')
     wx.login({
       success: (res) => {
-        console.log(res)
+        console.log("res",res)
         wx.request({
           url: host + 'login',
           method: 'post',
@@ -24,6 +24,7 @@ App({
           success: (res) => {
             console.log(res)
             this.globalData.userId = res.data.userId
+            console.log(this.globalData.userId)
           }
         })
       }
@@ -44,7 +45,8 @@ App({
   },
 
   globalData: {
-     host: "http://localhost:3000/api/v1/"
-    // host: "https://curiocity.wogengapp.cn/api/v1/"
+     host: "http://localhost:3000/api/v1/",
+    // host: "https://curiocity.wogengapp.cn/api/v1/",
+    userId:""
   }
 })

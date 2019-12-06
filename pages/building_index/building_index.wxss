@@ -91,9 +91,7 @@
   flex-wrap: wrap;
   flex-flow: row wrap;
   flex-shrink: 0;
-  /* align-content: space-between; */
   justify-content: center;
-  /* margin: 0 20rpx; */
   width: 100vw;
   min-height: 100vh;
   align-content: flex-start;
@@ -106,8 +104,9 @@
   flex-direction: column;
   width: 45vw;
   /* height: 35vw; */
-  margin: 6rpx;
-  margin-bottom: 10rpx;
+  /* margin: 6rpx; */
+  /* margin-bottom: 10rpx; */
+   margin: 0 8rpx 10rpx 8rpx;
 }
 
 .card-product .card-img{
@@ -153,8 +152,8 @@
 }
 
 .favorite{
-  height: 51rpx;
-  width: 51rpx;
+  height: 48rpx;
+  width: 48rpx;
   margin-bottom: 7rpx;
   margin-right: 7rpx;
   margin-top: 1rpx;
