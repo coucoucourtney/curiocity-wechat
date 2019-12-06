@@ -1,5 +1,8 @@
 // pages/direction/direction.js
+const app = getApp()
 const config = require('../../key');
+
+
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 var qqmapsdk = new QQMapWX({
   key: config.mapKey // 必填

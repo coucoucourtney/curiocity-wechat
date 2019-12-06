@@ -10,7 +10,6 @@ AV.init({
 
 App({
   onLaunch: function () {
-
     const host = this.globalData.hostLogin
     console.log('beginning login')
     wx.login({
@@ -35,8 +34,8 @@ App({
 
   fetchFontFamily() {
     // wx.loadFontFace({
-    //   family: ""
-    //   source: 'url("")'
+    //   family: "yesteryear"
+    //   source: 'url(""https://fonts.googleapis.com/css?family=Yesteryear&display=swap" rel="stylesheet"")'
     //   success: console.log
     // });
     // wx.loadFontFace({
@@ -48,8 +47,9 @@ App({
 
   globalData: {
     hostLogin: "http://localhost:3000/",
-     host: "http://localhost:3000/api/v1/"
+     host: "http://localhost:3000/api/v1/",
     //  hostLogin: "https://curiocity.wogengapp.cn/",
-    // host: "https://curiocity.wogengapp.cn/api/v1/"
+    // host: "https://curiocity.wogengapp.cn/api/v1/",
+    userId: ""
   }
 })
