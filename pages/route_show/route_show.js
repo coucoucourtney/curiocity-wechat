@@ -19,23 +19,51 @@ Page({
     const page = this
     const id = options.id
     console.log(1, options)
-    console.log(options)
     wx.request({
       url: host + `routes/${id}`,
       success: function (res) {
         const route = res.data
-        console.log(route)
+        console.log(2, route)
         page.setData({ route })
 
-        // const markers = [
-        //   {
-        //     iconPath: "/icons/map/user_marker_large.png", // **1
-        //     latitude: building.latitude,
-        //     longitude: building.longitude,
-        //     width: 30,
-        //     height: 45
-        //   }]
-        // page.setData({ markers })
+        const checkpoints = route.checkpoints;
+        console.log(3, checkpoints)
+        const latitude = checkpoints[0].latitude
+        const longitude = checkpoints[0].longitude
+        var temp = []
+        var markers = []
+        for (var i = 0; i < checkpoints.length; i++) {
+          temp.push({
+            latitude: checkpoints[i].latitude,
+            longitude: checkpoints[i].longitude
+          })
+          markers.push({ // 获取返回结果，放到mks数组中
+            id: i,
+            latitude: checkpoints[i].latitude,
+            longitude: checkpoints[i].longitude,
+            iconPath: '/icons/map/flag.png', //图标路径
+            width: 30,
+            height: 50,
+            callout: { //可根据需求是否展示经纬度
+              content: checkpoints[i].name,
+              color: '#000',
+              display: 'ALWAYS'
+            }
+          })
+        }
+        var polyline = [{
+          points: temp,
+          color: "#C90E9D",
+          width: 4,
+          dottedLine: true
+        }];
+        page.setData({
+          longitude: longitude,
+          latitude: latitude,
+          polyline: polyline,
+          markers: markers
+        })
+      console.log(4, polyline)
       }
     })
   },
@@ -52,40 +80,18 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    const page = this;
-    const checkpoints = page.data.route.checkpoints;
-    console.log(3, checkpoints)
-    const latitude = checkpoints[0].latitude
-    const longitude = checkpoints[0].longitude
-    var temp = []
-    for (var i = 0; i < checkpoints.length; i++) {
-    temp.push({
-      latitude: checkpoints[i].latitude,
-      longitude: checkpoints[i].longitude
-    })
-    }
-    var polyline = [{
-      points: temp,
-      color: "#ff0000",
-      width: 2,
-      dottedLine: false
-    }];
-    this.setData({
-      longitude: longitude,
-      latitude: latitude,
-      polyline: polyline,
-    })
 
-
-  
 
   },
+
+bindMarkertap: function(e) {
+  console.log(e)
+},
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**

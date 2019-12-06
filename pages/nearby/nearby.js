@@ -34,7 +34,7 @@ Page({
         var markers = [];
           for (var i = 0; i < that.data.buildings.length; i++) {
       markers.push({ // 获取返回结果，放到mks数组中
-        id: markers.length,
+        id: i,
         latitude: that.data.buildings[i].latitude,
         longitude: that.data.buildings[i].longitude,
         iconPath: '/icons/map/flag.png', //图标路径
