@@ -53,9 +53,9 @@ Page({
         }
         var polyline = [{
           points: temp,
-          color: "#ff0000",
-          width: 2,
-          dottedLine: false
+          color: "#C90E9D",
+          width: 4,
+          dottedLine: true
         }];
         page.setData({
           longitude: longitude,
@@ -63,9 +63,7 @@ Page({
           polyline: polyline,
           markers: markers
         })
-
-
-
+      console.log(4, polyline)
       }
     })
   },

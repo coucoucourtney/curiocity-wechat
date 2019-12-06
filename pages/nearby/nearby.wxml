@@ -11,4 +11,6 @@ bindmarkertap="bindMarkertap"
 ></map>
 <van-action-sheet show="{{ show }}" title="{{name}}" bind:close="onClose" >
   <view class="p">{{description}}</view>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> Direction </button>
 </van-action-sheet>
