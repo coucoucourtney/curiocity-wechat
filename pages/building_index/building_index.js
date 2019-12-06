@@ -8,8 +8,64 @@ Page({
    * Page initial data
    */
   data: {
-
+    // SEARCH BAR COPY BEGIN -1
+    inputShowed: false,
+    inputVal: ""
+    
+    // SEARCH BAR COPY END -2
   },
+
+// SEARCH BAR COPY BEGIN -2
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+
+  hideInput: function () {
+    let page = this
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
+    wx.request({
+      url: host + "buildings",
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        console.log(buildings);
+        page.setData({
+          buildings: buildings
+        });
+
+        wx.hideToast();
+      }
+    })
+  },
+
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
+
+  inputTyping: function (e) {
+    console.log(e)
+    let page = this
+    wx.request({
+      url: host + `buildings?query=${e.detail.value}`,
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        console.log(buildings);
+        page.setData({
+          buildings: buildings
+        });
+      }  
+    })
+  },
+
+  // SEARCH BAR COPY END -2
 
   /**
    * Lifecycle function--Called when page load
@@ -30,6 +86,9 @@ Page({
    */
   onShow: function () {
     let page = this
+    this.setData({
+      inputVal: ''
+    })
     // let id = this.data.userId || 1;
     wx.request({
       url: host + "buildings",
@@ -38,13 +97,31 @@ Page({
         const buildings = res.data.buildings;
         console.log(buildings);
         page.setData({
-          buildings: buildings
+          buildings: buildings,
         });
 
         wx.hideToast();
       }
     })
   },
+
+  goToWalksPage: function () {
+    wx.switchTab({
+      url: '/pages/route_index/route_index',
+    })
+  },
+
+  goToDiscoverPage: function () {
+    wx.switchTab({
+      url: '/pages/nearby/nearby',
+    })
+  },
+  // clearInput: function () {
+  //   this.setData({
+  //     inputVal: ""
+  //   });
+  // },
+  
 
   // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
   tapCard: function (event) {
@@ -92,7 +169,7 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
-      scrollTop: 590,
+      scrollTop: 545,
     })
   },
 })

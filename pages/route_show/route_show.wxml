@@ -1,2 +1,49 @@
-<!--pages/route_show/route_show.wxml-->
-<text>pages/route_show/route_show.wxml</text>
+<view class="page">
+  <!--pages/route_show/route_show.wxml-->
+<map
+id="myMap"
+style="width: 100%; height: 50vh;"
+longitude="{{longitude}}" latitude="{{latitude}}"
+scale='14'
+subkey="{{mapKey}}"
+polyline="{{polyline}}"
+markers="{{markers}}"
+bindmarkertap="bindMarkertap"
+></map>
+  <view class="route-info">
+    <view class="h1">{{route.name}}</view>
+    <view class="p">{{route.description}}</view>
+    <view class="list">
+          <view class="block-pair">
+            <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
+            <view class="p">{{route.metro_station_start}} - {{route.metro_station_stop}}</view>
+          </view>
+          <view class="block-pair">
+            <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
+            <view class="p space-t">{{route.approximate_duration}}</view>
+          </view>
+          <view class="block-pair">
+            <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
+            <view class="p space-p">{{route.approximate_distance}}
+    </view>
+          </view>
+         </view> 
+      </view>
+  </view>
+
+  <view class="h2">Stops on Walk</view>
+  <view class="user-info">
+      <view class="cards">
+        <view wx:for="{{route.checkpoints}}" wx:for-item="checkpoint" >
+          <view class="card-product" bindtap="tapCard" data-id="{{checkpoint.id}}">
+            <image class="card-img" mode="aspectFill" src='{{checkpoint.main_picture}}'/>
+            <view class="card-product-infos">
+              <view class="info-section">
+                <view class="h2">{{checkpoint.name}}</view>
+              </view>
+                <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+            </view>
+          </view> 
+        </view> 
+      </view> 
+    </view>

@@ -10,7 +10,10 @@ Page({
    * Page initial data
    */
   data: {
-
+    longitude: '',
+    latitude: '',
+    points: [],
+    polyline: []
   },
 
   /**
@@ -20,41 +23,98 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H'
     });
+  // },
+  // backfill: function (e) {
+  //   var id = e.currentTarget.id;
+  //   for (var i = 0; i < this.data.suggestion.length; i++) {
+  //     if (i == id) {
+  //       this.setData({
+  //         backfill: this.data.suggestion[i].title
+  //       });
+  //     }
+  //   }
+    var lat = 25.03682953251695, lng = 102.67484140406796;
+    var temp = [{
+      latitude: 25.03682953251695,
+      longitude: 102.67484140406796
+    },
+    {
+      latitude: 25.036132223872958,
+      longitude: 102.67386832053477
+    },
+    {
+      latitude: 25.035328234772695,
+      longitude: 102.67441722093537
+    },
+    {
+      latitude: 25.03587706184719,
+      longitude: 102.67548958617391
+    },
+    {
+      latitude: 25.03682953251695,
+      longitude: 102.67484140406796
+    },
+    ]
+    var polyline = [{
+      points: temp,
+      color: "#ff0000",
+      width: 2,
+      dottedLine: false
+    }];
+    this.setData({
+      longitude: lng,
+      latitude: lat,
+      polyline: polyline,
+      points: temp
+    })
   },
-  backfill: function (e) {
-    var id = e.currentTarget.id;
-    for (var i = 0; i < this.data.suggestion.length; i++) {
-      if (i == id) {
-        this.setData({
-          backfill: this.data.suggestion[i].title
-        });
-      }
+  // choose location on map and get the coordinates and name/address
+chooseLocation: function () {
+  let that = this
+  wx.authorize({
+    scope: 'scope.userLocation',
+    success(res) {
+      console.log(res)
+      wx.chooseLocation({
+        success: function (res) {
+          console.log(res)
+          const address = res.address
+          const name = res.name
+          console.log(res)
+          that.setData({address, name})
+        }
+      })
+    },
+    fail(err) {
+      console.log(err)
     }
-  },
+  })
+},
 
+  // 事件触发，调用接口
   nearby_search: function () {
     var _this = this;
     // 调用接口
     qqmapsdk.search({
-      keyword: 'cafe',  //搜索关键词
+      keyword: '地铁',  //搜索关键词
       location: '39.980014,116.313972',  //设置周边搜索中心点
       success: function (res) { //搜索成功后的回调
-      console.log(res)
-        var mks = []
-        for (var i = 0; i < res.data.length; i++) {
-          mks.push({ // 获取返回结果，放到mks数组中
-            title: res.data[i].title,
-            id: res.data[i].id,
-            latitude: res.data[i].location.lat,
-            longitude: res.data[i].location.lng,
-            iconPath: "/icons/map/user_marker_large.png", //图标路径
-            width: 10,
-            height: 15
-          })
-        }
-        _this.setData({ //设置markers属性，将搜索结果显示在地图中
-          markers: mks
-        })
+      console.log(res.data[0].title)
+        // var mks = []
+        // for (var i = 0; i < res.data.length; i++) {
+        //   mks.push({ // 获取返回结果，放到mks数组中
+        //     title: res.data[i].title,
+        //     id: res.data[i].id,
+        //     latitude: res.data[i].location.lat,'
+        //     longitude: res.data[i].location.lng,
+        //     iconPath: "/resources/my_marker.png", //图标路径
+        //     width: 20,
+        //     height: 20
+        //   })
+        // }
+        // _this.setData({ //设置markers属性，将搜索结果显示在地图中
+        //   markers: mks
+        // })
       },
       fail: function (res) {
         console.log(res);
@@ -70,7 +130,7 @@ Page({
     //调用地址解析接口
     qqmapsdk.geocoder({
       //获取表单传入地址
-      address: e.detail.value.geocoder, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
+      address: _this.data.name, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
       success: function (res) {//成功后的回调
         console.log(res);
         var res = res.result;

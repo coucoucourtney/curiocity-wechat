@@ -3,7 +3,7 @@
 <view class="container">
   <image mode="aspectFill" src='https://images.unsplash.com/photo-1561893836-adae6b766f82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80' class="avatar"/>
       <view class="h1-name">Alex Chung</view>
-      <navigator class="btn-small">edit</navigator>
+      <navigator class="btn-small" bindtap="editUser">edit</navigator>
       <view class="h3">PREMIUM USER</view>
 
     <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus.</view>
@@ -11,8 +11,47 @@
 
 <image src="/icons/deco-bar.jpg" class="deco-bar"></image>
 
-<view class="h2">YOUR FAVORITE SPOTS</view>
-<view class="h2">YOUR FAVORITE ROUTES</view>
-<view class="h2">YOUR SPOTS</view>
 
+<view class="favorite-spots-section">
+    <text class="h2">YOUR FAVORITE SPOTS</text>
+    <view class="user-info">
+    <!-- <view class="cards"> -->
+      <view wx:for="{{buildings}}" wx:for-item="building" >
+        <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
+          <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
+          <view class="card-product-infos">
+            <view class="info-section">
+              <view class="h2">{{building.name}}</view>
+            </view>
+              <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+          </view>
+        </view> 
+        <!-- </view> -->
+      </view>
+  </view>
+</view>
+
+  <!-- <view class="h2">YOUR FAVORITE ROUTES</view> -->
+
+  <view class="create-spots-section">
+      <view class="sub-section">
+        <view class="h2">YOUR SPOTS</view>
+        <navigator class="btn-small2" bindtap="addBuilding">Add a spot</navigator>
+      </view>
+      <view class="user-info">
+      <!-- <view class="cards"> -->
+        <view wx:for="{{buildings}}" wx:for-item="building" >
+          <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
+            <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
+            <view class="card-product-infos">
+              <view class="info-section">
+                <view class="h2">{{building.name}}</view>
+              </view>
+                <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+            </view>
+          </view> 
+          <!-- </view> -->
+        </view>
+    </view>
+  </view>
 

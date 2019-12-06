@@ -1,1 +1,120 @@
 /* pages/route_show/route_show.wxss */
+
+/* MAP STYLING */
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map {
+  border: 1rpx solid black;
+  height: 50vh;
+  width: 100vw;
+}
+
+/* ROUTE INFO */
+
+.space-p {
+  margin-top: 8rpx;
+}
+
+.space-t {
+  margin-top: 6rpx;
+}
+
+
+.block-pair{
+  display: flex;
+  justify-content: flex-start;
+  /* margin: 10rpx 0 0 0; */
+  /* vertical-align: -webkit-baseline-middle; */
+}
+
+.marker-time{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+.marker-distance{
+  height: 45rpx;
+  width: 45rpx;
+  margin-right: 10rpx;
+}
+
+/* CARD SPACING */
+
+.card {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+/* CARD */
+
+.card-product{
+  /* border: 1rpx solid grey; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  /* height: 35vw; */
+  margin: 6rpx;
+  margin-bottom: 10rpx;
+}
+
+.card-product .card-img{
+  width: 100% !important;
+  height: 200rpx !important;
+  display: block !important;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 6rpx rgba(0,0,0,0.20);
+  border: 3.5rpx solid white;
+  margin-bottom: 12rpx;
+}
+
+.card-product-infos{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding-left: 10rpx;
+  align-items: center;
+}
+
+.info-section{
+  display: flex;
+  /* flex-direction: column; */
+  /* position:relative; */
+}
+
+.h2{
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  /* position: absolute; */
+  /* bottom: 27rpx; */
+}
+
+.p{
+  font-size: 25rpx;
+  width: 160rpx;
+  font-weight: 200;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  /* padding-left: 30 rpx; */
+  opacity: .7;
+}

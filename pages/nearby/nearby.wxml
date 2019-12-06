@@ -1,2 +1,16 @@
-<!--pages/nearby/nearby.wxml-->
-<text>pages/nearby/nearby.wxml</text>
+<!--longitude及latitude为设置为调转到指定地址位置，默认不显示-->
+<map
+id="myMap"
+style="width: 100%; height: 100vh;"
+longitude="{{longitude}}" latitude="{{latitude}}"
+scale='14'
+subkey="{{mapKey}}"
+polyline="{{polyline}}"
+markers="{{markers}}"
+bindmarkertap="bindMarkertap"
+></map>
+<van-action-sheet show="{{ show }}" title="{{name}}" bind:close="onClose" >
+  <view class="p">{{description}}</view>
+  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> Direction </button>
+</van-action-sheet>

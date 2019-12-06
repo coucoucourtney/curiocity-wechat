@@ -52,7 +52,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -76,9 +76,36 @@
 					"scene": null
 				},
 				{
+					"name": "add",
+					"pathName": "pages/building_create/building_create",
+					"query": "",
+					"scene": null
+				},
+				{
 					"id": -1,
-					"name": "direction",
-					"pathName": "pages/direction/direction",
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "nearby",
+					"pathName": "pages/nearby/nearby",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "walks",
+					"pathName": "pages/route_index/route_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "route show",
+					"pathName": "pages/route_show/route_show",
 					"scene": null
 				}
 			]

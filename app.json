@@ -24,7 +24,7 @@
       },
       {
         "text": "Walks",
-        "pagePath": "pages/route_show/route_show",
+        "pagePath": "pages/route_index/route_index",
         "iconPath": "icons/walk_black.png",
         "selectedIconPath": "icons/walk_gray.png"
       },

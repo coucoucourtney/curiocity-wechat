@@ -1,2 +1,55 @@
-<!--pages/route_index/route_index.wxml-->
-<text>pages/route_index/route_index.wxml</text>
+<view class="top">
+<view class="h1 title">Walks</view>
+
+<!-- SEARCH BAR COPY BEGIN -->
+<!-- put search bar here -->
+<view class="page">
+    <view >
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="district, walk name, duration, distance..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />   
+                  <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                  <icon type="clear" size="14"></icon>
+                  </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">Search walks...</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Cancel</view>
+        </view>
+        
+    </view>
+</view>
+<!-- SEARCH BAR COPY END -->
+</view>
+
+<!-- CARD AREA -->
+<view wx:for="{{routes}}" wx:for-item="route">
+  <view class="card-product" bindtap="tapCard" data-id="{{route.id}}">
+    <image class="main-image" src="{{route.main_picture}}" />
+    <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+    <view class="card-product-infos">
+      <view class="h2">{{route.name}}</view>
+      <view class="list">
+        <view class="block-pair">
+          <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
+          <view class="p">{{route.metro_station_start}} - {{route.metro_station_stop}}</view>
+        </view>
+        <view class="block-pair">
+          <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
+          <view class="p space-t">{{route.approximate_duration}}</view>
+        </view>
+        <view class="block-pair">
+          <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
+          <view class="p space-p">{{route.approximate_distance}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
