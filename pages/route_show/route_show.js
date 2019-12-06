@@ -18,10 +18,11 @@ Page({
     const userId = app.globalData.userId;
     console.log("user", userId)
     const page = this
+    const userId = app.globalData.userId;
     const id = options.id
     console.log(1, options)
     wx.request({
-      url: host + `routes/${id}`,
+      url: host + `routes/${id}?user_id=${userId}`,
       success: function (res) {
         const route = res.data
         console.log(2, route)

@@ -23,12 +23,13 @@ Page({
 
   hideInput: function () {
     let page = this
+    const userId = app.globalData.userId;
     this.setData({
       inputVal: "",
       inputShowed: false
     });
     wx.request({
-      url: host + "routes",
+      url: host + `routes?user_id=${userId}`,
       success: function (res) {
         // const user = res.data
         const routes = res.data.routes;
@@ -49,10 +50,11 @@ Page({
   },
 
   inputTyping: function (e) {
+    const userId = app.globalData.userId;
     console.log(e)
     let page = this
     wx.request({
-      url: host + `routes?query=${e.detail.value}`,
+      url: host + `routes?query=${e.detail.value}&user_id=${userId}`,
       success: function (res) {
         // const user = res.data
         const routes = res.data.routes;
@@ -61,8 +63,7 @@ Page({
           routes: routes
         });
       }
-    })
-  },
+  }) },
 
   // SEARCH BAR COPY END -2
 
@@ -93,12 +94,12 @@ Page({
    */
   onShow: function () {
     let page = this
-    // let id = this.data.userId || 1;
+    const userId = app.globalData.userId;
     this.setData ({
       inputVal: ''
     })
     wx.request({
-      url: host + "routes",
+      url: host + `routes?user_id=${userId}`,
       success: function (res) {
         // const user = res.data
         const routes = res.data.routes;

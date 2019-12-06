@@ -2,10 +2,12 @@
 // 引入SDK核心类
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 var qqmapsdk;
+
 const app = getApp()
 const host = app.globalData.host;
 const AV = require('../../utils/av-weapp-min.js');
 const config = require('../../key');
+
 
 Page({
   data: {
@@ -143,7 +145,7 @@ Page({
   createBuilding: function (event) {
     console.log(event)
     const page = this;
-    // let id = this.data.user.id
+    const userId = app.globalData.userId;
     const id = 1
     let newBuilding = {};
     newBuilding.name = event.detail.value.name
@@ -158,9 +160,8 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
+    newBuilding.user_id = userId
 
-    
-    newBuilding.user_id = id
     console.log(newBuilding.picture);
     console.log(newBuilding)
     wx.request({
@@ -171,7 +172,7 @@ Page({
         console.log(res)
         const id = res.data.user_id
         wx.switchTab({
-          url: `/pages/user/user?id=${id}`,
+          url: `/pages/user/user`,
         })
         
       }

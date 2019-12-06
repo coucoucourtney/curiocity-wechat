@@ -2,6 +2,7 @@
 const app = getApp()
 const host = app.globalData.host;
 
+
 Page({
 
   /**
@@ -23,13 +24,14 @@ Page({
   },
 
   hideInput: function () {
+    const userId = app.globalData.userId;
     let page = this
     this.setData({
       inputVal: "",
       inputShowed: false
     });
     wx.request({
-      url: host + "buildings",
+      url: host + `buildings?user_id=${userId}`,
       success: function (res) {
         // const user = res.data
         const buildings = res.data.buildings;
@@ -50,10 +52,11 @@ Page({
   },
 
   inputTyping: function (e) {
+    const userId = app.globalData.userId;
     console.log(e)
     let page = this
     wx.request({
-      url: host + `buildings?query=${e.detail.value}`,
+      url: host + `buildings?user_id=${userId}&query=${e.detail.value}`,
       success: function (res) {
         // const user = res.data
         const buildings = res.data.buildings;
@@ -85,13 +88,13 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    const userId = app.globalData.userId;
     let page = this
     this.setData({
       inputVal: ''
     })
-    // let id = this.data.userId || 1;
     wx.request({
-      url: host + "buildings",
+      url: host + `buildings`,
       success: function (res) {
         // const user = res.data
         const buildings = res.data.buildings;
@@ -125,10 +128,11 @@ Page({
 
   // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
   tapCard: function (event) {
+    const userId = app.globalData.userId;
     console.log(event)
     let id = event.currentTarget.dataset.id
     wx.navigateTo({
-      url: `/pages/building_show/building_show?id=${id}`
+      url: `/pages/building_show/building_show?id=${id}&user_id=${userId}`
     })
   },
 
