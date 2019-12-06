@@ -10,5 +10,5 @@ markers="{{markers}}"
 bindmarkertap="bindMarkertap"
 ></map>
 <van-action-sheet show="{{ show }}" title="{{name}}" bind:close="onClose" >
-  <view>description: {{description}}</view>
+  <view class="p">{{description}}</view>
 </van-action-sheet>
