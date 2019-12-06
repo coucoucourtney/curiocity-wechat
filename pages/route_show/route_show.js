@@ -2,7 +2,6 @@
 const config = require('../../key');
 const app = getApp()
 const host = app.globalData.host;
-
 Page({
 
   /**
@@ -16,6 +15,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const userId = app.globalData.userId;
+    console.log("user", userId)
     const page = this
     const id = options.id
     console.log(1, options)
@@ -80,7 +81,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
 
   },
 
