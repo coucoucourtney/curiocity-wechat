@@ -46,7 +46,6 @@ longitude="{{building.longitude}}" latitude="{{building.latitude}}"
 scale='16'
 subkey="{{mapKey}}"
 markers="{{markers}}"
-enable-zoom=false
 ></map>
 
  <view>
