@@ -11,38 +11,57 @@ Page({
    * Page initial data
    */
   data: {
-    mapKey: config.mapKey
-
+    mapKey: config.mapKey,
+    show: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // get userlocation
     const that = this
+    //  get the buildings from server
+    wx.request({
+      url: host + "buildings",
+      success: function (res) {
+        // const user = res.data
+        const buildings = res.data.buildings;
+        that.setData({
+          buildings: buildings
+        });
+        wx.hideToast();
+        var markers = [];
+          for (var i = 0; i < that.data.buildings.length; i++) {
+      markers.push({ // 获取返回结果，放到mks数组中
+        id: markers.length,
+        latitude: that.data.buildings[i].latitude,
+        longitude: that.data.buildings[i].longitude,
+        iconPath: '/icons/map/flag.png', //图标路径
+        width: 30,
+        height: 50,
+        callout: { //可根据需求是否展示经纬度
+          content: that.data.buildings[i].name,
+          color: '#000',
+          display: 'ALWAYS'
+        }
+      })
+    }
+        that.setData({
+          markers: markers
+        });
+      }
+    })
     wx.getLocation({
       type: 'wgs84', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
-
-        wx.request({
-          url: host + "buildings",
-          success: function (res) {
-            // const user = res.data
-            const buildings = res.data.buildings;
-            console.log(buildings);
-            that.setData({
-              buildings: buildings
-            });
-
-            wx.hideToast();
-          }
-        })
-
-        that.setData({ latitude, longitude,
-          markers: [{
-            id: 0,
+        const markers = that.data.markers
+        // console.log("1",markers)
+        // set user location and marker
+        markers.push({
+            id: markers.length,
             latitude: latitude,
             longitude: longitude,
             iconPath: '/icons/map/user.png',//图标路径
@@ -52,9 +71,8 @@ Page({
               content: latitude + ',' + longitude,
               color: '#000',
               display: 'ALWAYS'
-            }
-          }],
-         })
+            }})
+        that.setData({ latitude, longitude, markers })
       }
     })
   },
@@ -65,7 +83,18 @@ Page({
   onReady: function () {
 
   },
-
+bindMarkertap: function(e) {
+  const page = this;
+  const building = page.data.buildings[e.markerId]
+  console.log(building)
+  const name = building.name
+  const description = building.description
+  const style = building.architectural_style
+  page.setData({ name, description, style, show: true });
+},
+  onClose() {
+    this.setData({ show: false });
+  },
   /**
    * Lifecycle function--Called when page show
    */
