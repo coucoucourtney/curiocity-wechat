@@ -46,18 +46,25 @@
 </view>
 
 <!-- cards section -->
-<view class="cards">
-  <view wx:for="{{buildings}}" wx:for-item="building" >
-    <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
-      <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
-      <!-- check attr name for bdg pic -->
-      <view class="card-product-infos">
-        <view class="info-section">
-          <view class="h2">{{building.name}}</view>
-          <!-- <view class="p">{{building.district}}</view> -->
+<view class="bottom-view">
+  <view class="cards">
+    <view wx:for="{{buildings}}" wx:for-item="building" >
+      <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
+        <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
+        <!-- check attr name for bdg pic -->
+        <view class="card-product-infos">
+          <view class="info-section">
+            <view class="h2">{{building.name}}</view>
+            <!-- <view class="p">{{building.district}}</view> -->
+          </view>
+          <!-- can we do this for getting user info-->
+            <image open-type="getUserInfo" bindgetuserinfo="getUserInfo"  class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
         </view>
-          <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
-      </view>
-    </view> 
+      </view> 
     </view>
   </view>
+  <view class="end-pair" bindtap="goToCreateBuilding" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    <view class="end-list">Don't see what you're looking for?  Add it! ;)</view>
+    <image class="plus" src="/icons/plus_solid.png" mode="aspectFit"></image>
+  </view>
+</view>

@@ -44,7 +44,7 @@ Page({
             longitude: checkpoints[i].longitude,
             iconPath: '/icons/map/flag.png', //图标路径
             width: 30,
-            height: 50,
+            height: 30,
             callout: { //可根据需求是否展示经纬度
               content: checkpoints[i].name,
               color: '#000',

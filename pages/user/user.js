@@ -22,7 +22,8 @@ Page({
     let id = e.currentTarget.dataset.id
     console.log(e)
     wx.navigateTo({
-      url: `/pages//?id=${id}`,
+      url: `/pages/user_edit/user_edit?id=${id}`,
+      // do we need this id? just use user id
     })
   },
 
@@ -31,6 +32,7 @@ Page({
     console.log(e)
     wx.navigateTo({
       url: `/pages/building_create/building_create?id=${id}`,
+      // do we need this id? just use user id
     })
   },
 
@@ -47,8 +49,12 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
-  },
+      console.log(options)
+      app.globalData.userInfo = options.detail.userInfo
+      this.setData({
+        userInfo: options.detail.userInfo
+      })
+    },
 
   /**
    * Lifecycle function--Called when page is initially rendered

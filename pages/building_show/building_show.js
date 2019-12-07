@@ -5,7 +5,13 @@ const host = app.globalData.host;
 
 
 Page({
-
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+  },
   /**
    * Page initial data
    */
@@ -26,6 +32,7 @@ Page({
     console.log(1, options)
     console.log(options)
     wx.request({
+      // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
         const building = res.data
@@ -34,11 +41,11 @@ Page({
 
         const markers = [
           {
-            iconPath: "/icons/map/user_marker_large.png", // **1
+            iconPath: "/icons/map/flag.png", // **1
             latitude: building.latitude,
             longitude: building.longitude,
             width: 30,
-            height: 45
+            height: 30
       }]
       page.setData({ markers})
       }

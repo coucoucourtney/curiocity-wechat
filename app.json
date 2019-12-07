@@ -6,9 +6,11 @@
     "pages/route_index/route_index",
     "pages/route_show/route_show",
     "pages/user/user",
+    "pages/user_edit/user_edit",
     "pages/nearby/nearby",
     "pages/map/map",
-    "pages/direction/direction"
+    "pages/direction/direction",
+    "pages/user_test/user_test",
   ],
   "tabBar": {
     "color": "#7A7E83",
