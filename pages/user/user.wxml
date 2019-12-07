@@ -1,22 +1,48 @@
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 <!-- USER INFO SECTION -->
 <view class="container">
-  <image mode="aspectFill" src='https://images.unsplash.com/photo-1561893836-adae6b766f82?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80' class="avatar"/>
-      <view class="h1-name">Alex Chung</view>
-      <navigator class="btn-small" bindtap="editUser">edit</navigator>
+  <image mode="aspectFill" src='{{userInfo.avatarUrl}}' class="avatar"/>
+      <view class="h1-name">{{userInfo.nickName}}</view>
+      <!-- <navigator class="btn-small" bindtap="editUser">edit</navigator> -->
+       <!-- <view class="h3">{{user.level}}</view>
+        <view class="p">{{user.description}}</view> -->
       <view class="h3">AMBASSADOR</view>
+      <image class="user-level" src="/icons/ambassador.png"></image>
 
-    <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus.</view>
+          <!-- <image wx:if="{{user.level == 0}}" mode="aspectFit" class="star-level" src="/icons/1.png"></image> -->
+        
+      
+      <!-- <view>
+      
+        <view wx:if="{{user.level == 0}}">
+          <image class="user-level" src="/icons/1.png"></image>
+        </view>
+        
+        <view wx:elif="{{user.level>4 && user.level<10}">
+          <image class="user-level" src="/icons/1.png"></image>
+        </view>
+        <image class="user-level" src="/icons/2.png"></image>
+
+        <view wx:else="{{user.level>9}}" class="h3">Ambassador!</view>
+      </view> -->
+      <!-- <view class="description"> -->
+      <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus. </view>
+  <image  bindtap="editUser" class="edit" mode="aspectFit" bindTap="" src='/icons/edit.png'/>
+      <!-- </view> -->
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 </view>
 
-<image src="/icons/deco-bar.jpg" class="deco-bar"></image>
+<!-- <image src="/icons/deco-bar.jpg" class="deco-bar"></image> -->
 <!-- END----------------------------------------------------------- -->
 
 <!-- FAVORITED BUILDINGS --------------------------------------------->
-<view class="favorite-spots-section">
-    <text class="h2">YOUR FAVORITE BUILDINGS</text>
-    <view class="user-info">
-    <!-- <view class="cards"> -->
+<view class="end-pair" bindtap="goToCreateBuilding">
+  <!-- <view class="end-list">
+  </view> -->
+  <view class="end-list">YOUR FAVORITE BUILDINGS</view>
+</view>
+
+<view class="spots-section">
+  <view class="user-info">
       <view wx:for="{{buildings}}" wx:for-item="building" >
         <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
           <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
@@ -27,27 +53,48 @@
               <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
           </view>
         </view> 
-        <!-- </view> -->
       </view>
   </view>
+  <view>nothing here? check out some buildings!</view>
 </view>
 
   <!-- <view class="h2">YOUR FAVORITE ROUTES</view> -->
 
+  <!-- FAVORITED ROUTES --------------------------------------------->
+<view class="end-pair" bindtap="goToCreateBuilding">
+  <!-- <view class="end-list">
+  </view> -->
+  <view class="end-list">YOUR FAVORITE WALKS</view>
+</view>
+
+<view class="spots-section">
+  <view class="user-info">
+      <view wx:for="{{routes}}" wx:for-item="route" >
+        <view class="card-product" bindtap="tapCard" data-id="{{route.id}}">
+          <image class="card-img" mode="aspectFill" src='{{route.main_picture}}'/>
+          <view class="card-product-infos">
+            <view class="info-section">
+              <view class="h2">{{route.name}}</view>
+            </view>
+              <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+          </view>
+        </view> 
+      </view>
+  </view>
+  <view>nothing here? check out some walks!</view>
+</view>
+
+<!-- YOUR CONTRIBUTIONS ------------------------------------ -->
     <view class="end-pair" bindtap="goToCreateBuilding">
-      <!-- <view class="end-list">
-      </view> -->
       <view class="end-list">YOUR CONTRIBUTIONS</view>
         <view>
-          <!-- <view class="end-list">Add</view> -->
           <image class="plus" src="/icons/plus.png" bindtap="addBuilding" mode="aspectFit"></image>
         </view>
     </view>
-  <view class="create-spots-section">
+  <view class="spots-section">
       <view class="sub-section">
       </view>
       <view class="user-info">
-      <!-- <view class="cards"> -->
         <view wx:for="{{buildings}}" wx:for-item="building" >
           <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
             <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
@@ -58,10 +105,18 @@
                 <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
             </view>
           </view> 
-          <!-- </view> -->
         </view>
     </view>
-    <view>about us </view>
-    <view>user agreement</view>
+  <view>add a building :)</view>
+</view>
+  <view class="end-pair" bindtap="goToCreateBuilding">
+    <!-- <view class="end-list">
+    </view> -->
+    <view class="end-list">ABOUT US</view>
   </view>
+  <view class="end-pair" bindtap="goToCreateBuilding">
+  <!-- <view class="end-list">
+  </view> -->
+  <view class="end-list">USER AGREEMENT</view>
+</view>
 

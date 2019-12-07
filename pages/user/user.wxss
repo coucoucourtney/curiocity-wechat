@@ -1,6 +1,7 @@
 .container {
-  text-align: center;
-  padding: 60rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 60rpx 60rpx 30rpx 60rpx;
 }
 
 .avatar {
@@ -20,8 +21,21 @@
 .h3 {
   font-size: 20rpx;
   font-weight: bold;
-  margin-bottom: 50rpx;
-  font-family: 
+  /* margin-bottom: 50rpx; */
+  opacity: .8;
+}
+
+.user-level {
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 30rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: 1;
+}
+
+.star-level {
+  width: 100rpx;
 }
 
 .p {
@@ -30,7 +44,14 @@
   opacity: .7;
   font-weight: 400;
   margin-bottom: 0;
+  text-align: center;
+}
 
+
+.edit {
+  margin-top: 10rpx;
+  opacity: .5;
+  height: 45rpx;
 }
 
 .end-pair {
@@ -39,12 +60,17 @@
   justify-content: space-between;
   width: 100%;
   height: 70rpx;
-  /* background-color: #EDEDED; */
-  margin-top: 20rpx;
+  background-color: #EDEDED;
+  /* margin-top: 20rpx; */
+}
+
+.nothing-here {
+  font-size: 
+  color: #EDEDED;
 }
 
 .end-list{
-  font-size: 28rpx;
+  font-size: 25rpx;
   margin-left: 30rpx;
   /* color: rgba(0,0,0,0.8); */
   /* color: white; */
@@ -133,19 +159,16 @@
   /* bottom: 27rpx; */
 }
 
-.favorite-spots-section {
-  margin-left: 40rpx;
+.spots-section {
+  margin-left: 80rpx;
   margin-right: 40rpx;
-  margin-bottom: 60rpx;
+  margin-bottom: 5rpx;
+  min-height: 100rpx;
+  margin-top: 15rpx;
 }
 
 
-.create-spots-section {
-  margin-left: 50rpx;
-  margin-right: 40rpx;
-}
-
-.favorite-spots-section .p{
+.spots-section .p{
   font-size: 25rpx;
   width: 160rpx;
   font-weight: 200;

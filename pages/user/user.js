@@ -3,6 +3,7 @@ const app = getApp()
 const host = app.globalData.host; 
 
 Page({
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -49,23 +50,70 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-      console.log(options)
-      app.globalData.userInfo = options.detail.userInfo
-      this.setData({
-        userInfo: options.detail.userInfo
+    console.log("options line 53", options)
+
+    const page = this
+    const userId = app.globalData.userId;
+    console.log(1,)
+    wx.request({
+      url: host + `users/${userId}`,
+      success: function (res) {
+        const user = res.data.userId
+        page.setData({ 
+          user 
+          });
+        }
       })
-    },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
+    console.log("buildings", user.buildings);
+    
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log("res line75" ,res.userInfo)
+    app.globalData.userInfo = res.userInfo
+      page.setData({
+        userInfo: res.userInfo
+        // trying to send to db
+      });
+      // console log below not showing not setting info until click login
+      console.log("test name line 82", userInfo.nickName)
+        }
+      })
+      // want to send to db??? -----------------------------------?
+      // let updatedUser = {}
+      //   updatedUser.wechat_name = userInfo.nickName
+      //   updatedUser.avatar = userInfo.avatarUrl
+      //   updatedUser.language = userInfo.language
+      //   updatedUser.gender = userInfo.gender
+      //   updatedUser.province = userInfo.province
+      //     wx.request({
+      //       url: host + `users/${id}`,
+      //       method: 'put',
+      //       data: updatedUser,
+      //       success: function (res) {
+      //         console.log(res)
+      //         console.log("name", user.name)
+      //       }
+          // })
+  }
+  }
+    })
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
+
+//   /**
+//    * Lifecycle function--Called when page is initially rendered
+//    */
+//   onReady: function () {
+
+//   },
+
+//   /**
+//    * Lifecycle function--Called when page show
+//    */
   onShow: function () {
     let page = this
     // let id = this.data.userId || 1;
