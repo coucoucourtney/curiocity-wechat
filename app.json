@@ -10,7 +10,8 @@
     "pages/direction/direction",
     "pages/user_test/user_test",
     "pages/about_us/about_us",
-    "pages/user_agreement/user_agreement"
+    "pages/user_agreement/user_agreement",
+    "pages/user_edit/user_edit"
   ],
 
   "tabBar": {
