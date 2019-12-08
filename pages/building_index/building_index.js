@@ -149,6 +149,7 @@ Page({
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
     this.setData({
       userInfo: e.detail.userInfo
     })

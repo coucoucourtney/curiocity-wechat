@@ -73,7 +73,7 @@ align-items: center;
 .edit {
   margin-top: 10rpx;
   opacity: .5;
-  height: 45rpx;
+  height: 31rpx;
 }
 
 .end-pair {

@@ -76,14 +76,35 @@
 <!-- AUTHOR SECTION -->
  <view class="end-bar add-padding">
  <view>
-  <view class="space">Contributed by</view>
+  <view class="space h2">Contributed by</view>
     <view class="author-info">
-      <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
+      <image mode="aspectFit" class="author-avatar" src="{{buildnig.user.avatar}}"/>
       <view class="author-text">
         <!-- <view class="h2">author.name</view>
         <view class="text-p">author.level</view> -->
-         <view class="h2">Curiocity Team</view>
-        <view class="text-p">admin</view> 
+         <view class="h2">{{building.user.wechat_name}}</view>
+        <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
+      <view class="level-status" wx:if="{{user.level > 10}}">
+        <image class="user-level" src="/icons/ambassador.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 10 || building.user.level == 9 }}" >
+        <image class="star-level" src="/icons/5.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 8 || building.user.level == 7 }}">
+        <image class="star-level" src="/icons/4.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 6 || building.user.level == 5 }}">
+        <image class="star-level" src="/icons/3.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 4 || building.user.level == 3 }}">
+        <image class="star-level" src="/icons/3.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 2 || building.user.level == 1 }}">
+        <image class="star-status" class="user-level" src="/icons/2.png"></image>
+      </view>  
+      <view class="level-status" wx:if="{{building.user.level == 0 }}">
+        <image class="star-level" src="/icons/1.png"></image>
+      </view> 
       </view>
     </view>
  </view>

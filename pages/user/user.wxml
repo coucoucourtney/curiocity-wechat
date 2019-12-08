@@ -2,14 +2,12 @@
 <view class="container">
   <image mode="aspectFill" src='{{userInfo.avatarUrl}}' class="avatar"/>
       <view class="h1-name">{{userInfo.nickName}}</view>
-      <!-- <navigator class="btn-small" bindtap="editUser">edit</navigator> -->
-       <!-- <view class="h3">{{user.level}}</view>
-        <view class="p">{{user.description}}</view> -->
+      <!-- USER LEVEL HARD CODE -->
       <view class="level-status">
         <view class="h3">AMBASSADOR</view>
         <image class="user-level" src="/icons/ambassador.png"></image>
       </view>
-        <!-- USER LEVEL RATINGS AND ICONS -->
+        <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
       <view class="level-status" wx:if="{{user.level > 10}}">
         <view class="h3">AMBASSADOR</view>
         <image class="user-level" src="/icons/ambassador.png"></image>
@@ -33,18 +31,19 @@
         <view class="h3">BEGINNER :)</view>
         <image class="user-level" src="/icons/1.png"></image>
       </view>
-      <view>
-        
-        <!-- <view wx:if="{{user.level>4 && user.level<10}">
-          <image class="user-level" src="/icons/1.png"></image>
-        </view>
-        <image class="user-level" src="/icons/2.png"></image>
-
-        <view wx:if="{{user.level>9}}" class="h3">Ambassador!</view> -->
-      </view>
+    
       <!-- <view class="description"> -->
-      <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus. </view>
-  <image bindtap="editUser" class="edit" mode="aspectFit" bindTap="" src='/icons/edit.png'/>
+      <view>
+        <view class="p" wx:if="{{user.description == null}}" bindtap="editUser">
+        <view>Hey there!</view>
+        <view>Tell us something about yourself!<image bindtap="editUser" class="edit" mode="aspectFit" bindTap="" src='/icons/edit.png'/></view> 
+        </view>
+        <view wx:else bindtap="editUser">
+          <view class="p">{{user.description}}</view>
+          <image bindtap="editUser" class="edit" mode="aspectFit" src='/icons/edit.png'/>
+        </view>
+        </view>
+      <!-- <view class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae expedita corrupti, soluta perspiciatis perferendis, magni neque dolorem consequatur non aut fugiat corporis est quod at sed optio quia libero! Ducimus. </view> -->
       <!-- </view> -->
 <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 </view>
