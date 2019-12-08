@@ -33,6 +33,7 @@ Page({
         });
         wx.hideToast();
         var markers = [];
+        var coordinates = [];
           for (var i = 0; i < that.data.buildings.length; i++) {
       markers.push({ // 获取返回结果，放到mks数组中
         id: i,
@@ -47,9 +48,14 @@ Page({
           display: 'TAP'
         }
       })
+      // coordinates.push({
+      //   latitude: that.data.buildings[i].latitude,
+      //   longitude: that.data.buildings[i].longitude
+      //  })
     }
+        // console.log("coordinates", coordinates)
         that.setData({
-          markers: markers
+          markers: markers,
         });
       }
     })
@@ -92,10 +98,21 @@ bindMarkertap: function(e) {
   const name = building.name
   const description = building.description
   const style = building.architectural_style
-  page.setData({ name, description, style, show: true });
+  const coordinates = `${building.latitude},${building.longitude}`
+  page.setData({ name, description, style, show: true, coordinates });
 },
   onClose() {
     this.setData({ show: false });
+  },
+
+  goToDirection: function(e) {
+    console.log("direction", e.currentTarget.dataset.coordinates)
+    const coordinates = e.currentTarget.dataset.coordinates;
+    wx.navigateTo({
+      url: `/pages/direction/direction?coordinates=${coordinates}`,
+    })
+
+
   },
   /**
    * Lifecycle function--Called when page show
