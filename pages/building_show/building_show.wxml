@@ -78,7 +78,7 @@
  <view>
   <view class="space h2">Contributed by</view>
     <view class="author-info">
-      <image mode="aspectFit" class="author-avatar" src="{{buildnig.user.avatar}}"/>
+      <image mode="aspectFit" class="author-avatar" src="{{building.user.avatar}}"/>
       <view class="author-text">
         <!-- <view class="h2">author.name</view>
         <view class="text-p">author.level</view> -->
