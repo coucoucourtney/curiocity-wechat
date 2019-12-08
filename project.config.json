@@ -114,6 +114,13 @@
 					"id": -1,
 					"name": "pages/building_show/building_show",
 					"pathName": "pages/building_show/building_show",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "direction",
+					"pathName": "pages/direction/direction",
 					"scene": null
 				}
 			]
