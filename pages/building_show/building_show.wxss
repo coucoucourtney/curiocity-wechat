@@ -86,6 +86,7 @@
 .text-p {
   font-size: 27rpx;
   font-weight:300;
+  padding-right: 20rpx;
 }
 
 .slider-img {
@@ -112,4 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20rpx;
 }
+
+/* LOCATION INFO */

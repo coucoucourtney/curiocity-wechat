@@ -40,11 +40,11 @@ Page({
         longitude: that.data.buildings[i].longitude,
         iconPath: '/icons/map/flag.png', //图标路径
         width: 30,
-        height: 50,
+        height: 30,
         callout: { //可根据需求是否展示经纬度
           content: that.data.buildings[i].name,
           color: '#000',
-          display: 'ALWAYS'
+          display: 'TAP'
         }
       })
     }
@@ -66,13 +66,14 @@ Page({
             latitude: latitude,
             longitude: longitude,
             iconPath: '/icons/map/user.png',//图标路径
-            width: 30,
-            height: 50,
-            callout: { //可根据需求是否展示经纬度
-              content: latitude + ',' + longitude,
-              color: '#000',
-              display: 'ALWAYS'
-            }})
+            width: 28,
+            height: 28,
+            // callout: { //可根据需求是否展示经纬度
+            //   content: latitude + ',' + longitude,
+            //   color: '#000',
+            //   display: 'ALWAYS'
+            // }
+            })
         that.setData({ latitude, longitude, markers })
       }
     })

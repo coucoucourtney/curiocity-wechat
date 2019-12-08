@@ -3,6 +3,7 @@ const app = getApp()
 const host = app.globalData.host; 
 
 Page({
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -19,26 +20,28 @@ Page({
 
 
   editUser: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages//?id=${id}`,
+      url: `/pages/user_edit/user_edit?user_id=${userId}`,
+      // do we need this id? just use user id
     })
   },
 
   addBuilding: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages/building_create/building_create?id=${id}`,
+      url: `/pages/building_create/building_create?user_id=${userId}`,
+      // do we need this id? just use user id
     })
   },
 
   tapCard: function (event) {
     console.log(event)
-    let id = event.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     wx.navigateTo({
-      url: `/pages/building_show/building_show?id=${id}`
+      url: `/pages/building_show/building_show?user_id=${userId}`
     })
   },
 
@@ -47,19 +50,70 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log("options line 53", options)
 
+    const page = this
+    const userId = app.globalData.userId;
+    console.log(1,)
+    wx.request({
+      url: host + `users/${userId}`,
+      success: function (res) {
+        const user = res.data.userId
+        page.setData({ 
+          user 
+          });
+        }
+      })
+    console.log("buildings", user.buildings);
+    
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function (res) {
+              console.log("res line75" ,res.userInfo)
+    app.globalData.userInfo = res.userInfo
+      page.setData({
+        userInfo: res.userInfo
+        // trying to send to db
+      });
+      // console log below not showing not setting info until click login
+      console.log("test name line 82", userInfo.nickName)
+        }
+      })
+      // want to send to db??? -----------------------------------?
+      // let updatedUser = {}
+      //   updatedUser.wechat_name = userInfo.nickName
+      //   updatedUser.avatar = userInfo.avatarUrl
+      //   updatedUser.language = userInfo.language
+      //   updatedUser.gender = userInfo.gender
+      //   updatedUser.province = userInfo.province
+      //     wx.request({
+      //       url: host + `users/${id}`,
+      //       method: 'put',
+      //       data: updatedUser,
+      //       success: function (res) {
+      //         console.log(res)
+      //         console.log("name", user.name)
+      //       }
+          // })
+  }
+  }
+    })
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
 
-  },
+//   /**
+//    * Lifecycle function--Called when page is initially rendered
+//    */
+//   onReady: function () {
 
-  /**
-   * Lifecycle function--Called when page show
-   */
+//   },
+
+//   /**
+//    * Lifecycle function--Called when page show
+//    */
   onShow: function () {
     let page = this
     // let id = this.data.userId || 1;
@@ -112,5 +166,29 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  goToWalks: function () {
+    wx.switchTab({
+      url: '/pages/route_index/route_index',
+    })
+  },
+
+  goToBuildings: function () {
+    wx.switchTab({
+      url: '/pages/building_index/building_index',
+    })
+  },
+
+    goToAboutUs: function () {
+    wx.navigateTo({
+      url: '/pages/about_us/about_us',
+    })
+  },
+
+    goToUserAgreement: function () {
+      wx.navigateTo({
+      url: '/pages/user_agreement/user_agreement',
+    })
+  },
 })

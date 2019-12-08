@@ -85,6 +85,11 @@
 } */
 
 /* BUILDING CARD SECTION */
+.bottom-view{
+  min-height: 100vh;
+  width: 100vw;
+}
+
 .cards {
   display: flex;
   flex-direction: row;
@@ -93,7 +98,6 @@
   flex-shrink: 0;
   justify-content: center;
   width: 100vw;
-  min-height: 100vh;
   align-content: flex-start;
 }
 
@@ -159,6 +163,33 @@
   margin-top: 1rpx;
   /* padding-left: 30 rpx; */
   opacity: .7;
+}
+
+.end-pair {
+  display: flex;
+  width: 100%;
+  height: 70rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDEDED;
+  /* background-color: #C8039D; */
+  margin-top: 20rpx;
+}
+
+.end-list{
+  font-size: 25rpx;
+  /* color: rgba(0,0,0,0.8); */
+  color: white;
+  font-weight: bold;
+  /* margin-left: 15px; */
+ 
+}
+
+.plus {
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  height: 30rpx;
+  width: 30rpx;
 }
 
 /* SEARCH BAR COPY ALL BELOW */

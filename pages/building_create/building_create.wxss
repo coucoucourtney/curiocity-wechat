@@ -58,16 +58,15 @@ input {
 }
 
 .btn {
-  padding: 20rpx;
-  padding-top: 30rpx;
+  padding-top: 20rpx;
   font-weight: bold;
   transition: opacity 0.3s ease;
-  font-size: 12px;
+  font-size: 28rpx;
   margin-top: 15rpx;
   width: 640rpx;
   height: 50rpx;
   border-radius: 50rpx;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .btn-black {
@@ -148,3 +147,4 @@ margin: 25rpx;
 .added-pic{
   position: relative;
 }
+
