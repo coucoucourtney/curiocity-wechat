@@ -8,3 +8,6 @@
   background-color: blue;
 }
 button {margin: 10px;}
+.btn-box {
+  display: flex;
+}
