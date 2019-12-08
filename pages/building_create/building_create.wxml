@@ -23,10 +23,10 @@
     <view class="element-name">Address*</view>
       <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}"></input>
     <!-- try making a map pop up and enter address/name of building -->
-    <view class="element-name">Metro Stop</view>
+    <!-- <view class="element-name">Metro Stop</view>
       <input name="Metro Stop" placeholder="nearest metro stop" value="{{metro_stop}}"></input>
     <view class="element-name">District</view>
-      <input name="district" placeholder="ex. Huangpu, Luwan" value="{{district}}"></input>
+      <input name="district" placeholder="ex. Huangpu, Luwan" value="{{district}}"></input> -->
      <view class="element-name">Old Street Names</view>
         <input maxlength="100" name="old_address" placeholder="if known"></input>
       <view class="element-name">Former Neighborhood</view>
@@ -52,3 +52,5 @@
   <button class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
   </form>
 </view>
+<van-toast id="van-toast" />
+

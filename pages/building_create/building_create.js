@@ -1,5 +1,7 @@
 // pages/building_create/building_create.js
 // 引入SDK核心类
+import Toast from '../../dist/toast/toast';
+
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 var qqmapsdk;
 
@@ -16,7 +18,8 @@ Page({
     mapKey: config.mapKey,
     city: "",
     metro: "",
-    district: ""
+    district: "",
+    address: ""
   },
   onLoad: function () {
     qqmapsdk = new QQMapWX({
@@ -113,18 +116,23 @@ Page({
       success(res) {
         wx.chooseLocation({
           success: function (res) {
-            console.log(res)
+            console.log("res",res)
             const address = res.address
             const name = res.name
             const latitude = res.latitude
             const longitude = res.longitude
-            page.setData({ address, name, latitude, longitude })
-            page.nearby_search();
+            const district = address.substr(3, 3)
+            if (name.length == 0) {
+              Toast.fail('Please choose an address in the list again');
+            } else {
+              page.setData({ address, name, latitude, longitude, district })
+              page.nearby_search();
+            }
           }
         })
       },
       fail(err) {
-        console.log(err)
+        console.log("err", err)
       }
     })
   },
@@ -144,15 +152,7 @@ Page({
         })
       },
     });
-    // SEARCH FOR DISTRICT
-    qqmapsdk.search({
-      keyword: '区', 
-      location: `${lat},${lgt}`,  //设置周边搜索中心点
-      success: function (res) { //搜索成功后的回调
-        const district = res.data[0].title;
-        _this.setData({ district })
-      },
-    });
+
     // SEARCH FOR CITY DOESNT WORK BECAUSE NOT NEARBY ... NEEDS TO BE DONE EARLIER IN ANOTHER FUNCTION
     // qqmapsdk.search({
     //   keyword: '市',
@@ -180,7 +180,7 @@ Page({
     newBuilding.address = event.detail.value.address
     newBuilding.old_address = event.detail.value.old_address
     newBuilding.neighborhood = event.detail.value.neighborhood
-    newBuilding.district = event.detail.value.district
+    newBuilding.district = page.data.district
     newBuilding.year = event.detail.value.year
     newBuilding.architects = event.detail.value.architects
     newBuilding.architectural_style = event.detail.value.architectural_style
@@ -196,21 +196,27 @@ Page({
     // ---------------------------------------- 
     console.log(newBuilding.picture);
     console.log(newBuilding)
-    wx.request({
-      url: host + `buildings?user_id${userId}`,
-      method: 'post',
-      data: newBuilding,
-      success: function (res) {
-        console.log(res)
-        const id = res.data.user_id
-        wx.showToast({
-          title: 'Yay!',
-        })
-        wx.switchTab({
-          url: `/pages/user/user`,
-        })
-      }
-    })
+
+    if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
+      Toast.fail('Please fill in all the * field');
+
+    } else {
+      wx.request({
+        url: host + `buildings?user_id${userId}`,
+        method: 'post',
+        data: newBuilding,
+        success: function (res) {
+          console.log(res)
+          const id = res.data.user_id
+          wx.showToast({
+            title: 'Yay!',
+          })
+          wx.switchTab({
+            url: `/pages/user/user`,
+          })
+        }
+      })
+    }
   },
 
 

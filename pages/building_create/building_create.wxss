@@ -94,7 +94,7 @@ input {
   height: 50rpx;
   width: 50rpx;
   opacity: .5;
-  margin-top: 20rpx;
+  margin-top: -3%;
   position: absolute;
   left: 165rpx;
   top: 545rpx;

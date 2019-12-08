@@ -23,7 +23,6 @@ App({
             code: res.code
           },
           success: (res) => {
-            console.log("res",res)
             this.globalData.userId = res.data.userId
             console.log(this.globalData.userId)
           }
