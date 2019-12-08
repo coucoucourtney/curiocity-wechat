@@ -24,7 +24,15 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
-  opacity: .7;
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
 }
 
 .author-info {

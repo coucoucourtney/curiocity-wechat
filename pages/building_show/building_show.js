@@ -22,6 +22,50 @@ Page({
     mapKey: config.mapKey
   },
 
+  // toggleFavorites: function (e) {
+  //   const page = this
+  //   page.setData({ favorited: !page.data.favorited })
+  //   const building_id = e.currentTarget.dataset.id
+  //   const favorite = { building_id: building_id }
+  //   const user_id = parseInt(app.globalData.userId);
+  //   console.log('user_id', user_id)
+  //   console.log('building_id', building_id)
+  //   console.log('favorite', favorite)
+  //   wx.request({
+  //     url: app.globalData.host + `favorites?user_id=${user_id}`,
+  //     method: 'POST',
+  //     data: favorite,
+  //     success(res) {
+  //       console.log("result", res.data.favorite)
+  //       const favorite = res.data.favorite;
+  //       app.globalData.favorite = favorite;
+  //     }
+  //   })
+  // },
+
+  // toggleFavorites: function (event) {
+  //   let page = this;
+  //   let user_id = app.globalData.userId
+  //   let spot_id = event.currentTarget.dataset.id
+  //   console.log("spot_id", spot_id)
+  //   console.log("user_id", user_id)
+  //   wx.request({
+  //     url: getApp().globalData.host + `favorites?user_id=${userId}`,
+  //     method: 'POST',
+  //     success(res) {
+  //       console.log("result", res.data.favorite)
+  //       const favorite = res.data.favorite;
+  //       app.globalData.favorite = favorite;
+  //     }
+  //   })
+  //   wx.navigateTo({
+  //     url: '/pages/user/user'
+  //   })
+  // },
+
+
+
+
   /**
    * Lifecycle function--Called when page load
    */
