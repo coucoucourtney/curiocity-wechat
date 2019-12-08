@@ -20,28 +20,28 @@ Page({
 
 
   editUser: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages/user_edit/user_edit?id=${id}`,
+      url: `/pages/user_edit/user_edit?user_id=${userId}`,
       // do we need this id? just use user id
     })
   },
 
   addBuilding: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages/building_create/building_create?id=${id}`,
+      url: `/pages/building_create/building_create?user_id=${userId}`,
       // do we need this id? just use user id
     })
   },
 
   tapCard: function (event) {
     console.log(event)
-    let id = event.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     wx.navigateTo({
-      url: `/pages/building_show/building_show?id=${id}`
+      url: `/pages/building_show/building_show?user_id=${userId}`
     })
   },
 
@@ -166,5 +166,29 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  goToWalks: function () {
+    wx.switchTab({
+      url: '/pages/route_index/route_index',
+    })
+  },
+
+  goToBuildings: function () {
+    wx.switchTab({
+      url: '/pages/building_index/building_index',
+    })
+  },
+
+    goToAboutUs: function () {
+    wx.navigateTo({
+      url: '/pages/about_us/about_us',
+    })
+  },
+
+    goToUserAgreement: function () {
+      wx.navigateTo({
+      url: '/pages/user_agreement/user_agreement',
+    })
+  },
 })

@@ -12,9 +12,9 @@
 }
 
 .h1-name {
-  font-size: 30rpx;
+  font-size: 35rpx;
   font-weight: bold;
-  margin-bottom: 15rpx;
+  margin-bottom: 5rpx;
   position: relative;
 }
 
@@ -22,7 +22,7 @@
   font-size: 20rpx;
   font-weight: bold;
   /* margin-bottom: 50rpx; */
-  opacity: .8;
+  opacity: .7;
 }
 
 .user-level {
@@ -32,6 +32,12 @@
   margin-right: 7rpx;
   margin-top: 1rpx;
   opacity: 1;
+}
+
+.level-status {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .star-level {
@@ -47,6 +53,22 @@
   text-align: center;
 }
 
+/* .deco-bar {
+  height: 30rpx;
+  width: 100%;
+}
+
+.btn-small {
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 10px;
+  width: 100rpx;
+  color: rgb(136, 136, 136);
+  position: absolute;
+  margin-top: 235rpx;
+  margin-left: 260rpx;
+} */
 
 .edit {
   margin-top: 10rpx;
@@ -61,12 +83,16 @@
   width: 100%;
   height: 70rpx;
   background-color: #EDEDED;
-  /* margin-top: 20rpx; */
+  margin-bottom: 18rpx;
 }
 
 .nothing-here {
-  font-size: 
-  color: #EDEDED;
+  font-size: 28rpx;
+  color: #C8039D;
+  opacity: .7;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20rpx;
 }
 
 .end-list{
@@ -84,25 +110,6 @@
   height: 45rpx;
   width: 45rpx;
 }
-
-
-.deco-bar {
-  height: 30rpx;
-  width: 100%;
-}
-
-.btn-small {
-  text-align: center;
-  font-size: 12px;
-  border: 1px solid rgb(136, 136, 136);
-  border-radius: 10px;
-  width: 100rpx;
-  color: rgb(136, 136, 136);
-  position: absolute;
-  margin-top: 235rpx;
-  margin-left: 260rpx;
-}
-
 
 
 /* .cards {

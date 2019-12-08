@@ -8,7 +8,9 @@
     "pages/nearby/nearby",
     "pages/map/map",
     "pages/direction/direction",
-    "pages/user_test/user_test"
+    "pages/user_test/user_test",
+    "pages/about_us/about_us",
+    "pages/user_agreement/user_agreement"
   ],
 
   "tabBar": {
