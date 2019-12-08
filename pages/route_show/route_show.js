@@ -18,6 +18,7 @@ Page({
   onLoad: function (options) {
     const page = this
     const userId = app.globalData.userId;
+    // const id = 4 AC: testing
     const id = options.id
     console.log(1, options)
     wx.request({
