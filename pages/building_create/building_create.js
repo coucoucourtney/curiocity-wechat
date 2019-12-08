@@ -111,7 +111,7 @@ Page({
       success(res) {
         wx.chooseLocation({
           success: function (res) {
-            console.log(res)
+            console.log("res",res)
             const address = res.address
             const name = res.name
             const latitude = res.latitude
