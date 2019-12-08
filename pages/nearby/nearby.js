@@ -106,13 +106,16 @@ bindMarkertap: function(e) {
   },
 
   goToDirection: function(e) {
-    console.log("direction", e.currentTarget.dataset.coordinates)
     const coordinates = e.currentTarget.dataset.coordinates;
     wx.navigateTo({
       url: `/pages/direction/direction?coordinates=${coordinates}`,
     })
-
-
+  },
+  goToBuilding: function (e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/building_show/building_show?id=${id}`,
+    })
   },
   /**
    * Lifecycle function--Called when page show
