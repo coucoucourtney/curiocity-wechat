@@ -22,6 +22,7 @@ Page({
     // get userlocation
     const that = this
     const userId = app.globalData.userId;
+    console.log("user", userId)
     //  get the buildings from server
     wx.request({
       url: host + `buildings?user_id=${userId}`,
@@ -99,7 +100,7 @@ bindMarkertap: function(e) {
   const description = building.description
   const style = building.architectural_style
   const coordinates = `${building.latitude},${building.longitude}`
-  page.setData({ name, description, style, show: true, coordinates });
+  page.setData({ building, name, description, style, show: true, coordinates });
 },
   onClose() {
     this.setData({ show: false });
