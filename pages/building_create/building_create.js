@@ -13,8 +13,10 @@ Page({
   data: {
     items: [],
     imgSliderUrl: [],
-    mapKey: config.mapKey
-
+    mapKey: config.mapKey,
+    city: "",
+    metro: "",
+    district: ""
   },
   onLoad: function () {
     qqmapsdk = new QQMapWX({
@@ -105,7 +107,7 @@ Page({
 
   // choose location on map and get the coordinates and name/address
   chooseLocation: function () {
-    let that = this
+    let page = this
     wx.authorize({
       scope: 'scope.userLocation',
       success(res) {
@@ -116,8 +118,8 @@ Page({
             const name = res.name
             const latitude = res.latitude
             const longitude = res.longitude
-            that.setData({ address, name, latitude, longitude })
-            that.nearby_search();
+            page.setData({ address, name, latitude, longitude })
+            page.nearby_search();
           }
         })
       },
@@ -137,20 +139,48 @@ Page({
       location: `${lat},${lgt}`,  //设置周边搜索中心点
       success: function (res) { //搜索成功后的回调
         const metro_stop = res.data[0].title;
-        _this.setData({metro_stop})
+        _this.setData({
+          metro_stop
+        })
       },
     });
+    // SEARCH FOR DISTRICT
+    qqmapsdk.search({
+      keyword: '区', 
+      location: `${lat},${lgt}`,  //设置周边搜索中心点
+      success: function (res) { //搜索成功后的回调
+        const district = res.data[0].title;
+        _this.setData({ district })
+      },
+    });
+    // SEARCH FOR CITY DOESNT WORK BECAUSE NOT NEARBY ... NEEDS TO BE DONE EARLIER IN ANOTHER FUNCTION
+    // qqmapsdk.search({
+    //   keyword: '市',
+    //   location: `${lat},${lgt}`,  //设置周边搜索中心点
+    //   success: function (res) { //搜索成功后的回调
+    //     const city = res.data[0].title;
+    //     _this.setData({ 
+    //         city 
+    //       })
+    //   console.log('city' , _this.data.city)
+    //   },
+
+    // });
   },
 
   createBuilding: function (event) {
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
-    const id = 1
     let newBuilding = {};
+    // BUILDING VALUES -----------------------------
     newBuilding.name = event.detail.value.name
     newBuilding.main_picture = page.data.imgUrl
+    newBuilding.main_photo_credit = event.detail.main_photo_credit
     newBuilding.address = event.detail.value.address
+    newBuilding.old_address = event.detail.value.old_address
+    newBuilding.neighborhood = event.detail.value.neighborhood
+    newBuilding.district = event.detail.value.district
     newBuilding.year = event.detail.value.year
     newBuilding.architects = event.detail.value.architects
     newBuilding.architectural_style = event.detail.value.architectural_style
@@ -161,20 +191,24 @@ Page({
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
     newBuilding.user_id = userId
-
+    // testing city setting data in backend
+    newBuilding.city = this.data.city
+    // ---------------------------------------- 
     console.log(newBuilding.picture);
     console.log(newBuilding)
     wx.request({
-      url: host + `buildings/`,
+      url: host + `buildings?user_id${userId}`,
       method: 'post',
       data: newBuilding,
       success: function (res) {
         console.log(res)
         const id = res.data.user_id
+        wx.showToast({
+          title: 'Yay!',
+        })
         wx.switchTab({
           url: `/pages/user/user`,
         })
-        
       }
     })
   },

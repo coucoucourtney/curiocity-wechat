@@ -16,7 +16,7 @@ bindmarkertap="bindMarkertap"
     <view class="list">
           <view class="block-pair">
             <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
-            <view class="p">{{route.metro_station_start}} - {{route.metro_station_stop}}</view>
+            <view class="p">{{route.district}}</view>
           </view>
           <view class="block-pair">
             <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
