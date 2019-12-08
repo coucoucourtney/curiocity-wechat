@@ -1,0 +1,15 @@
+<!--pages/user_edit/user_edit.wxml-->
+
+<view class='create-form'>
+  <view class="h1">Update Your Info</view>
+
+  <form class="new-form" bindsubmit="updateUser">
+  <!-- NAME -->
+    <view class="element-name">Name*</view>
+      <input maxlength="25" name="wechat_name" value="{{userInfo.nickName}}" placeholder="enter your name"></input>
+  <!-- DESCRIPTION -->
+    <view class="element-name">Description</view>
+        <textarea maxlength="250" class="wide" name="description" placeholder="say something about yourself" value="{{user.description}}"></textarea>
+  <button class="btn btn-black"form-type="submit" data-id="{{user.id}}">UPDATE</button>
+  </form>
+</view>

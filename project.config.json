@@ -119,6 +119,10 @@
 				},
 				{
 					"id": -1,
+
+					"name": "pages/user_edit/user_edit",
+					"pathName": "pages/user_edit/user_edit",
+          
 					"name": "direction",
 					"pathName": "pages/direction/direction",
 					"scene": null
