@@ -22,7 +22,6 @@ Page({
     // get userlocation
     const that = this
     const userId = app.globalData.userId;
-    console.log("user", userId)
     //  get the buildings from server
     wx.request({
       url: host + `buildings?user_id=${userId}`,

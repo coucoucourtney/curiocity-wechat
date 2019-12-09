@@ -22,79 +22,79 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    qqmapsdk = new QQMapWX({
-      key: 'CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H'
-    });
-  // },
-  // backfill: function (e) {
-  //   var id = e.currentTarget.id;
-  //   for (var i = 0; i < this.data.suggestion.length; i++) {
-  //     if (i == id) {
-  //       this.setData({
-  //         backfill: this.data.suggestion[i].title
-  //       });
-  //     }
-  //   }
-    var lat = 25.03682953251695, lng = 102.67484140406796;
-    var temp = [{
-      latitude: 25.03682953251695,
-      longitude: 102.67484140406796
-    },
-    {
-      latitude: 25.036132223872958,
-      longitude: 102.67386832053477
-    },
-    {
-      latitude: 25.035328234772695,
-      longitude: 102.67441722093537
-    },
-    {
-      latitude: 25.03587706184719,
-      longitude: 102.67548958617391
-    },
-    {
-      latitude: 25.03682953251695,
-      longitude: 102.67484140406796
-    },
-    ]
-    var polyline = [{
-      points: temp,
-      color: "#ff0000",
-      width: 2,
-      dottedLine: false
-    }];
-    this.setData({
-      longitude: lng,
-      latitude: lat,
-      polyline: polyline,
-      points: temp
-    })
+  //   qqmapsdk = new QQMapWX({
+  //     key: 'CNSBZ-V5BKX-KO24V-T2TXY-2XVET-YYB6H'
+  //   });
+  // // },
+  // // backfill: function (e) {
+  // //   var id = e.currentTarget.id;
+  // //   for (var i = 0; i < this.data.suggestion.length; i++) {
+  // //     if (i == id) {
+  // //       this.setData({
+  // //         backfill: this.data.suggestion[i].title
+  // //       });
+  // //     }
+  // //   }
+  //   var lat = 25.03682953251695, lng = 102.67484140406796;
+  //   var temp = [{
+  //     latitude: 25.03682953251695,
+  //     longitude: 102.67484140406796
+  //   },
+  //   {
+  //     latitude: 25.036132223872958,
+  //     longitude: 102.67386832053477
+  //   },
+  //   {
+  //     latitude: 25.035328234772695,
+  //     longitude: 102.67441722093537
+  //   },
+  //   {
+  //     latitude: 25.03587706184719,
+  //     longitude: 102.67548958617391
+  //   },
+  //   {
+  //     latitude: 25.03682953251695,
+  //     longitude: 102.67484140406796
+  //   },
+  //   ]
+  //   var polyline = [{
+  //     points: temp,
+  //     color: "#ff0000",
+  //     width: 2,
+  //     dottedLine: false
+  //   }];
+  //   this.setData({
+  //     longitude: lng,
+  //     latitude: lat,
+  //     polyline: polyline,
+  //     points: temp
+  //   })
   },
   // choose location on map and get the coordinates and name/address
-chooseLocation: function () {
-  let that = this
-  wx.authorize({
-    scope: 'scope.userLocation',
-    success(res) {
-      console.log(res)
-      wx.chooseLocation({
-        success: function (res) {
-          console.log(res)
-          const address = res.address
-          const name = res.name
-          console.log(res)
-          that.setData({address, name})
-        }
-      })
-    },
-    fail(err) {
-      console.log(err)
-    }
-  })
-},
+// chooseLocation: function () {
+//   let that = this
+//   wx.authorize({
+//     scope: 'scope.userLocation',
+//     success(res) {
+//       console.log(res)
+//       wx.chooseLocation({
+//         success: function (res) {
+//           console.log(res)
+//           const address = res.address
+//           const name = res.name
+//           console.log(res)
+//           that.setData({address, name})
+//         }
+//       })
+//     },
+//     fail(err) {
+//       console.log(err)
+//     }
+//   })
+// },
 
   // 事件触发，调用接口
-  nearby_search: function () {
+  // nearby_search: function () {
     // var _this = this;
     // // 调用接口
     // qqmapsdk.search({
@@ -125,19 +125,19 @@ chooseLocation: function () {
     //     console.log(res);
     //   }
     // });
-    wx.getLocation({
-      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-      success(res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        wx.openLocation({
-          latitude,
-          longitude,
-          scale: 18
-        })
-      }
-    })
-  },
+    // wx.getLocation({
+    //   type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    //   success(res) {
+    //     const latitude = res.latitude
+    //     const longitude = res.longitude
+    //     wx.openLocation({
+    //       latitude,
+    //       longitude,
+    //       scale: 18
+    //     })
+    //   }
+    // })
+  // },
 // //** geocode form submit */
 //   formSubmit(e) {
 //     var _this = this;
@@ -181,111 +181,111 @@ chooseLocation: function () {
 //     })
 //   },
 
-  formSubmit(e) {
-    var _this = this;
-    qqmapsdk.reverseGeocoder({
-      //位置坐标，默认获取当前位置，非必须参数
-      /**
-       * 
-       //Object格式
-        location: {
-          latitude: 39.984060,
-          longitude: 116.307520
-        },
-      */
-      /**
-       *
-       //String格式
-        location: '39.984060,116.307520',
-      */
-      location: e.detail.value.reverseGeo || '', //获取表单传入的位置坐标,不填默认当前位置,示例为string格式
-      //get_poi: 1, //是否返回周边POI列表：1.返回；0不返回(默认),非必须参数
-      success: function (res) {//成功后的回调
-        console.log(res);
-        var res = res.result;
-        var mks = [];
-        /**
-         *  当get_poi为1时，检索当前位置或者location周边poi数据并在地图显示，可根据需求是否使用
-         *
-            for (var i = 0; i < result.pois.length; i++) {
-            mks.push({ // 获取返回结果，放到mks数组中
-                title: result.pois[i].title,
-                id: result.pois[i].id,
-                latitude: result.pois[i].location.lat,
-                longitude: result.pois[i].location.lng,
-                iconPath: './resources/placeholder.png', //图标路径
-                width: 20,
-                height: 20
-            })
-            }
-        *
-        **/
-        //当get_poi为0时或者为不填默认值时，检索目标位置，按需使用
-        mks.push({ // 获取返回结果，放到mks数组中
-          title: res.address,
-          id: 0,
-          latitude: res.location.lat,
-          longitude: res.location.lng,
-          iconPath: './resources/placeholder.png',//图标路径
-          width: 20,
-          height: 20,
-          callout: { //在markers上展示地址名称，根据需求是否需要
-            content: res.address,
-            color: '#000',
-            display: 'ALWAYS'
-          }
-        });
-        _this.setData({ //设置markers属性和地图位置poi，将结果在地图展示
-          markers: mks,
-          poi: {
-            latitude: res.location.lat,
-            longitude: res.location.lng
-          }
-        });
-      },
-      fail: function (error) {
-        console.error(error);
-      },
-      complete: function (res) {
-        console.log("complete", res);
-      }
-    })
-  },
+  // formSubmit(e) {
+    // var _this = this;
+    // qqmapsdk.reverseGeocoder({
+    //   //位置坐标，默认获取当前位置，非必须参数
+    //   /**
+    //    * 
+    //    //Object格式
+    //     location: {
+    //       latitude: 39.984060,
+    //       longitude: 116.307520
+    //     },
+    //   */
+    //   /**
+    //    *
+    //    //String格式
+    //     location: '39.984060,116.307520',
+    //   */
+    //   location: e.detail.value.reverseGeo || '', //获取表单传入的位置坐标,不填默认当前位置,示例为string格式
+    //   //get_poi: 1, //是否返回周边POI列表：1.返回；0不返回(默认),非必须参数
+    //   success: function (res) {//成功后的回调
+    //     console.log(res);
+    //     var res = res.result;
+    //     var mks = [];
+    //     /**
+    //      *  当get_poi为1时，检索当前位置或者location周边poi数据并在地图显示，可根据需求是否使用
+    //      *
+    //         for (var i = 0; i < result.pois.length; i++) {
+    //         mks.push({ // 获取返回结果，放到mks数组中
+    //             title: result.pois[i].title,
+    //             id: result.pois[i].id,
+    //             latitude: result.pois[i].location.lat,
+    //             longitude: result.pois[i].location.lng,
+    //             iconPath: './resources/placeholder.png', //图标路径
+    //             width: 20,
+    //             height: 20
+    //         })
+    //         }
+    //     *
+    //     **/
+    //     //当get_poi为0时或者为不填默认值时，检索目标位置，按需使用
+    //     mks.push({ // 获取返回结果，放到mks数组中
+    //       title: res.address,
+    //       id: 0,
+    //       latitude: res.location.lat,
+    //       longitude: res.location.lng,
+    //       iconPath: './resources/placeholder.png',//图标路径
+    //       width: 20,
+    //       height: 20,
+    //       callout: { //在markers上展示地址名称，根据需求是否需要
+    //         content: res.address,
+    //         color: '#000',
+    //         display: 'ALWAYS'
+    //       }
+    //     });
+    //     _this.setData({ //设置markers属性和地图位置poi，将结果在地图展示
+    //       markers: mks,
+    //       poi: {
+    //         latitude: res.location.lat,
+    //         longitude: res.location.lng
+    //       }
+    //     });
+    //   },
+    //   fail: function (error) {
+    //     console.error(error);
+    //   },
+    //   complete: function (res) {
+    //     console.log("complete", res);
+    //   }
+    // })
+  // },
 
   //触发关键词输入提示事件
-  getsuggest: function (e) {
-    var _this = this;
-    //调用关键词提示接口
-    qqmapsdk.getSuggestion({
-      //获取输入框值并设置keyword参数
-      keyword: e.detail.value, //用户输入的关键词，可设置固定值,如keyword:'KFC'
-      //region:'北京', //设置城市名，限制关键词所示的地域范围，非必填参数
-      success: function (res) {//搜索成功后的回调
-        console.log(res);
-        var sug = [];
-        for (var i = 0; i < res.data.length; i++) {
-          sug.push({ // 获取返回结果，放到sug数组中
-            title: res.data[i].title,
-            id: res.data[i].id,
-            addr: res.data[i].address,
-            city: res.data[i].city,
-            district: res.data[i].district,
-            latitude: res.data[i].location.lat,
-            longitude: res.data[i].location.lng
-          });
-        }
-        _this.setData({ //设置suggestion属性，将关键词搜索结果以列表形式展示
-          suggestion: sug
-        });
-      },
-      fail: function (error) {
-        console.error(error);
-      },
-      complete: function (res) {
-        console.log(res);
-      }
-    });
-  },
+  // getsuggest: function (e) {
+  //   var _this = this;
+  //   //调用关键词提示接口
+  //   qqmapsdk.getSuggestion({
+  //     //获取输入框值并设置keyword参数
+  //     keyword: e.detail.value, //用户输入的关键词，可设置固定值,如keyword:'KFC'
+  //     //region:'北京', //设置城市名，限制关键词所示的地域范围，非必填参数
+  //     success: function (res) {//搜索成功后的回调
+  //       console.log(res);
+  //       var sug = [];
+  //       for (var i = 0; i < res.data.length; i++) {
+  //         sug.push({ // 获取返回结果，放到sug数组中
+  //           title: res.data[i].title,
+  //           id: res.data[i].id,
+  //           addr: res.data[i].address,
+  //           city: res.data[i].city,
+  //           district: res.data[i].district,
+  //           latitude: res.data[i].location.lat,
+  //           longitude: res.data[i].location.lng
+  //         });
+  //       }
+  //       _this.setData({ //设置suggestion属性，将关键词搜索结果以列表形式展示
+  //         suggestion: sug
+  //       });
+  //     },
+  //     fail: function (error) {
+  //       console.error(error);
+  //     },
+  //     complete: function (res) {
+  //       console.log(res);
+  //     }
+  //   });
+  // },
   /**
    * Lifecycle function--Called when page is initially rendered
    */
