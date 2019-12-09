@@ -30,11 +30,11 @@ bindmarkertap="bindMarkertap"
           </view>
           <view class="block-pair">
             <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
-            <view class="p space-t">{{route.approximate_duration}}</view>
+            <view class="p space-t">{{route.approximate_duration}} mins</view>
           </view>
           <view class="block-pair">
             <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
-            <view class="p space-p">{{route.approximate_distance}}
+            <view class="p space-p">{{route.approximate_distance}} meters
     </view>
           </view>
          </view> 

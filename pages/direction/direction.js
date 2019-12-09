@@ -27,7 +27,7 @@ Page({
     const name = options.name
     const page = this
     wx.getLocation({
-      type: 'wgs84', // **1
+      type: 'gcj02', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
