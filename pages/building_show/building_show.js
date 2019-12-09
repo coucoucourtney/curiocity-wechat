@@ -33,6 +33,7 @@ Page({
     newFavorite.user_id = parseInt(app.globalData.userId)
     console.log(newFavorite);
     console.log('url: ', app.globalData.host + `favorite`)
+    let building = page.data.building
 
     wx.request({
       url: app.globalData.host + `favorite`,
@@ -40,6 +41,13 @@ Page({
       data: newFavorite,
       success(res) {
         console.log("result", res)
+        if (building.favorited) {
+          building.favorited = false
+          page.setData({building})
+        } else {
+          building.favorited = true
+          page.setData({ building })
+        }
       }
     })
   },
@@ -57,13 +65,15 @@ Page({
       // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
+        let favorite = res.data.favorited
+        console.log("favorite", favorite)
+        page.setData({ favorited: !page.data.favorited })
+
         const building = res.data
         console.log(building)
         page.setData({ building })
 
-        let favorite = res.data.favorited
-        console.log("favorite", favorite)
-        page.setData({ favorited: !page.data.favorited })
+        
 
         const markers = [
           {
