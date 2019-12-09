@@ -142,8 +142,7 @@ Page({
     })
   },
 
-  tapStar: function (event) {
-
+  tapStar: function () {
   },
 
   getUserInfo: function (e) {

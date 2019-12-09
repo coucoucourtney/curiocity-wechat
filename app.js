@@ -52,10 +52,10 @@ App({
   },
 
   globalData: {
-    // hostLogin: "http://localhost:3000/",
-    //  host: "http://localhost:3000/api/v1/",
-     hostLogin: "https://curiocity.wogengapp.cn/",
-    host: "https://curiocity.wogengapp.cn/api/v1/",
+    hostLogin: "http://localhost:3000/",
+     host: "http://localhost:3000/api/v1/",
+    //  hostLogin: "https://curiocity.wogengapp.cn/",
+    // host: "https://curiocity.wogengapp.cn/api/v1/",
     userId: "",
     userInfo: ""
   }
