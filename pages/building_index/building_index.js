@@ -33,7 +33,6 @@ Page({
     wx.request({
       url: host + `buildings?user_id=${userId}`,
       success: function (res) {
-        // const user = res.data
         const buildings = res.data.buildings;
         console.log(buildings);
         page.setData({
@@ -159,11 +158,11 @@ Page({
       url: '/pages/building_create/building_create',
     })
   },
-  // clearInput: function () {
-  //   this.setData({
-  //     inputVal: ""
-  //   });
-  // },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
   
 
   // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
@@ -176,43 +175,13 @@ Page({
     })
   },
 
-  tapStar: function () {
+  scrollToDiv: function () {
+    wx.pageScrollTo({
+      scrollTop: 545,
+    })
   },
-
-  getUserInfo: function (e) {
-    const page = this
-    console.log("E", e)
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.login = true
-    const userId = app.globalData.userId;
-    console.log("userId line 12", userId)
-
-    page.setData({
-      userInfo: e.detail.userInfo
-    })
-    console.log("line 16", page.data.userInfo)
-    // success: (res) => {
-    // console.log("getuserinfores", res);
-    const userDetails = page.data.userInfo
-    // saving user info in user instance in backend
-    let updatedUser = {}
-    updatedUser.wechat_name = userDetails.nickName
-    updatedUser.avatar = userDetails.avatarUrl
-    updatedUser.language = userDetails.language
-    updatedUser.gender = userDetails.gender
-    updatedUser.language = userDetails.language
-    console.log("updateduser", updatedUser)
-    page.setData({ updatedUser })
-    wx.request({
-      url: host + `users/${userId}`,
-
-      method: 'put',
-      data: updatedUser,
-      success: (res) => {
-        console.log("line 33 successfully saved to user", res)
-      }
-    })
-    // }
+  
+  tapStar: function () {
   },
   
   /**
@@ -250,9 +219,4 @@ Page({
 
   // },
 
-  scrollToDiv: function () {
-    wx.pageScrollTo({
-      scrollTop: 545,
-    })
-  },
 })

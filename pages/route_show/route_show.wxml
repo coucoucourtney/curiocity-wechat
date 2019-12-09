@@ -4,7 +4,7 @@
 id="myMap"
 style="width: 100%; height: 50vh;"
 longitude="{{longitude}}" latitude="{{latitude}}"
-scale='14'
+scale='13'
 subkey="{{mapKey}}"
 polyline="{{polyline}}"
 markers="{{markers}}"
@@ -14,7 +14,9 @@ bindmarkertap="bindMarkertap"
  <!-- title bar with name and author info -->
 <view class="title-bar">
   <view class="h1">{{route.name}}</view>
-  <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/>
+  <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
+  
+<image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
 </view>
 
   <view class="route-info">
@@ -28,11 +30,11 @@ bindmarkertap="bindMarkertap"
           </view>
           <view class="block-pair">
             <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
-            <view class="p space-t">{{route.approximate_duration}}</view>
+            <view class="p space-t">{{route.approximate_duration}} mins</view>
           </view>
           <view class="block-pair">
             <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
-            <view class="p space-p">{{route.approximate_distance}}
+            <view class="p space-p">{{route.approximate_distance}} meters
     </view>
           </view>
          </view> 
@@ -58,13 +60,12 @@ bindmarkertap="bindMarkertap"
 
     <!-- AUTHOR SECTION -->
   <view class="end-bar add-padding">
-    <view>
-      <view class="space">Contributed by</view>
+    <view class="">
+      <view class="space h2-contributed">Contributed by</view>
         <view class="author-info">
           <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
             <view class="author-text">
-              <view class="h2">Curiocity Team</view>
-              <view class="text-p">admin</view> 
+              <view class="h2-contributed">The Curiocity Team</view>
             </view>
         </view>
     </view>

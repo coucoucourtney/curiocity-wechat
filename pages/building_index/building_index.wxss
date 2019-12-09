@@ -180,7 +180,7 @@
   height: 70rpx;
   align-items: center;
   justify-content: center;
-  background-color: #EDEDED;
+  background-color: #C8039D;
   /* background-color: #C8039D; */
   margin-top: 20rpx;
 }

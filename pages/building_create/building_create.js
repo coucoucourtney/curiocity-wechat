@@ -22,6 +22,7 @@ Page({
     address: ""
   },
   onLoad: function () {
+    console.log(getApp().globalData)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
     });
@@ -138,40 +139,63 @@ Page({
   },
 
   nearby_search: function () {
-    var _this = this;
-    const lat = _this.data.latitude;
-    const lgt = _this.data.longitude;
+    var page = this;
+    const lat = page.data.latitude;
+    const lgt = page.data.longitude;
     // 调用接口
     qqmapsdk.search({
       keyword: '地铁',  //搜索关键词
       location: `${lat},${lgt}`,  //设置周边搜索中心点
       success: function (res) { //搜索成功后的回调
         const metro_stop = res.data[0].title;
-        _this.setData({
+        page.setData({
           metro_stop
         })
       },
-    });
+  },
 
-    // SEARCH FOR CITY DOESNT WORK BECAUSE NOT NEARBY ... NEEDS TO BE DONE EARLIER IN ANOTHER FUNCTION
-    // qqmapsdk.search({
-    //   keyword: '市',
-    //   location: `${lat},${lgt}`,  //设置周边搜索中心点
-    //   success: function (res) { //搜索成功后的回调
-    //     const city = res.data[0].title;
-    //     _this.setData({ 
-    //         city 
-    //       })
-    //   console.log('city' , _this.data.city)
-    //   },
+  getUserInfo: function (e) {
 
-    // });
+    const page = this
+    console.log("E", e)
+    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
+    const userId = app.globalData.userId;
+    console.log("userId line 12", userId)
+    // can you do an if statement back here to run login if person doesnt have avatar using url /users 
+    page.setData({
+      userInfo: e.detail.userInfo
+    })
+    console.log("line 16", page.data.userInfo)
+
+    const userDetails = page.data.userInfo
+    // saving user info in user instance in backend
+    let updatedUser = {}
+    updatedUser.wechat_name = userDetails.nickName
+    updatedUser.avatar = userDetails.avatarUrl
+    updatedUser.language = userDetails.language
+    updatedUser.gender = userDetails.gender
+    updatedUser.language = userDetails.language
+    console.log("updateduser", updatedUser)
+    page.setData({ updatedUser })
+    wx.request({
+      url: host + `users/${userId}`,
+
+      method: 'put',
+      data: updatedUser,
+      success: (res) => {
+        console.log("line 33 successfully saved to user", res)
+        page.createBuilding(e)
+      }
+    })
+    // }
   },
 
   createBuilding: function (event) {
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
+
     let newBuilding = {};
     // BUILDING VALUES -----------------------------
     newBuilding.name = event.detail.value.name
@@ -190,10 +214,6 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    newBuilding.user_id = userId
-    // testing city setting data in backend
-    newBuilding.city = this.data.city
-    // ---------------------------------------- 
     console.log(newBuilding.picture);
     console.log(newBuilding)
 
