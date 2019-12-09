@@ -121,6 +121,7 @@ Page({
     console.log('inside onShow')
     const userId = app.globalData.userId;
     console.log('userId', userId)
+    
     let page = this
     this.setData({
       inputVal: ''

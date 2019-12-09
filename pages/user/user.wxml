@@ -1,5 +1,5 @@
 <!-- USER INFO SECTION -->
-<view class="login-page" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/c18ca975635a640a4479/yiran-ding-cxf33hXpVec-unsplash.jpg);" wx:if="{{user.avatar == nil}}" >
+<view class="login-page" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/c18ca975635a640a4479/yiran-ding-cxf33hXpVec-unsplash.jpg);" wx:if="{{!loggedIn}}" >
 <view class="p-login">Login to see your favorites!</view>
   <button class="btn btn-white" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 </view>
