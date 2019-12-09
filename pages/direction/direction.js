@@ -51,7 +51,7 @@ Page({
             for (var i = 0; i < coors.length; i += 2) {
               pl.push({ latitude: coors[i], longitude: coors[i + 1] })
             }
-            console.log(pl)
+            // console.log(pl)
             //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
             page.setData({
               latitude: pl[0].latitude,
@@ -65,10 +65,10 @@ Page({
             })
           },
           fail: function (error) {
-            console.error(error);
+            // console.error(error);
           },
           complete: function (res) {
-            console.log("res", res);
+            // console.log("res", res);
             const walk = res.result.routes[0]
             page.setData({ walk })
           }
