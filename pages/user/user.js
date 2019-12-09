@@ -75,6 +75,14 @@ Page({
     })
   },
 
+  tapRoute: function (event) {
+    console.log(event)
+    let id = event.currentTarget.dataset.id
+    const userId = app.globalData.userId;
+    wx.navigateTo({
+      url: `/pages/route_show/route_show?id=${id}&user_id=${userId}`
+    })
+  },
 
   /**
    * Lifecycle function--Called when page load
