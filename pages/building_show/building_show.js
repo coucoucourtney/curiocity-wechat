@@ -57,7 +57,6 @@ Page({
       // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
-        x
         const building = res.data
         console.log(building)
         page.setData({ building })
@@ -94,7 +93,15 @@ Page({
   onShow: function () {
 
   },
+  //Go to direction page 
+  goToDirection: function(e) {
+    const building = e.currentTarget.dataset.building;
+    const coordinates = `${building.latitude},${building.longitude}`
 
+    wx.navigateTo({
+      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */

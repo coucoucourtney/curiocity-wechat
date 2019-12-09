@@ -75,6 +75,8 @@
   scale='16'
   subkey="{{mapKey}}"
   markers="{{markers}}"
+  bindtap="goToDirection"
+  data-building="{{building}}"
   ></map>
 
 
