@@ -131,13 +131,13 @@
       <view wx:if="{{user.buildings.length == 0}}" bindtap="addBuilding" class="nothing-here">Sharing is caring. <text class="link">Add a building</text> :)</view>
     </view>
 </block>
-  <view  class="end-pair" bindtap="goToAboutUs">
+  <!-- <view  class="end-pair" bindtap="goToAboutUs">
     <!-- <view class="end-list">
     </view> -->
-    <view class="end-list">ABOUT US</view>
+    <!-- <view class="end-list">ABOUT US</view>
   </view>
-  <view  class="end-pair" bindtap="goToUserAgreement">
+  <view  class="end-pair" bindtap="goToUserAgreement"> -->
   <!-- <view class="end-list">
   </view> -->
-  <view class="end-list">USER AGREEMENT</view>
-</view>
+  <!-- <view class="end-list">USER AGREEMENT</view> --> 
+  <!-- </view> -->

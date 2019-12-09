@@ -152,21 +152,6 @@ Page({
           metro_stop
         })
       },
-    });
-
-    // SEARCH FOR CITY DOESNT WORK BECAUSE NOT NEARBY ... NEEDS TO BE DONE EARLIER IN ANOTHER FUNCTION
-    // qqmapsdk.search({
-    //   keyword: '市',
-    //   location: `${lat},${lgt}`,  //设置周边搜索中心点
-    //   success: function (res) { //搜索成功后的回调
-    //     const city = res.data[0].title;
-    //     _this.setData({ 
-    //         city 
-    //       })
-    //   console.log('city' , _this.data.city)
-    //   },
-
-    // });
   },
 
   getUserInfo: function (e) {
@@ -182,8 +167,7 @@ Page({
       userInfo: e.detail.userInfo
     })
     console.log("line 16", page.data.userInfo)
-    // success: (res) => {
-    // console.log("getuserinfores", res);
+
     const userDetails = page.data.userInfo
     // saving user info in user instance in backend
     let updatedUser = {}
@@ -212,8 +196,6 @@ Page({
     const page = this;
     const userId = app.globalData.userId;
 
-    // this.getUserInfo(event);
-
     let newBuilding = {};
     // BUILDING VALUES -----------------------------
     newBuilding.name = event.detail.value.name
@@ -232,10 +214,6 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    newBuilding.user_id = userId
-    // testing city setting data in backend
-    newBuilding.city = this.data.city
-    // ---------------------------------------- 
     console.log(newBuilding.picture);
     console.log(newBuilding)
 
