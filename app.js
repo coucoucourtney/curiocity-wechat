@@ -30,19 +30,19 @@ App({
       }
     })
     // LOADING FONTS IN APP ---> CHOOSE NEW ONES
-    wx.loadFontFace({
-      family: "yesteryear",
-      source: 'url("http://lc-lyUmBNQE.cn-n1.lcfile.com/ada4f6f932b39049dc67/Yesteryear-Regular.ttf")',
-      success: function (res) {
-        console.log(res.status) //  loaded
-      },
-      fail: function (res) {
-        console.log(res.status) //  error
-      },
-      complete: function (res) {
-        console.log(res.status);
-      }
-    });
+    // wx.loadFontFace({
+    //   family: "yesteryear",
+    //   source: 'url("http://lc-lyUmBNQE.cn-n1.lcfile.com/ada4f6f932b39049dc67/Yesteryear-Regular.ttf")',
+    //   success: function (res) {
+    //     console.log(res.status) //  loaded
+    //   },
+    //   fail: function (res) {
+    //     console.log(res.status) //  error
+    //   },
+    //   complete: function (res) {
+    //     console.log(res.status);
+    //   }
+    // });
 
     // wx.loadFontFace({
     //   family: ""

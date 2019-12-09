@@ -48,14 +48,14 @@ Page({
   },
 
 
-  editUser: function (e) {
-    const userId = app.globalData.userId;
-    console.log(e)
-    wx.navigateTo({
-      url: `/pages/user_edit/user_edit?user_id=${userId}`,
-      // do we need this id? just use user id
-    })
-  },
+  // editUser: function (e) {
+  //   const userId = app.globalData.userId;
+  //   console.log(e)
+  //   wx.navigateTo({
+  //     url: `/pages/user_edit/user_edit?user_id=${userId}`,
+  //     // do we need this id? just use user id
+  //   })
+  // },
 
   addBuilding: function (e) {
     const userId = app.globalData.userId;
@@ -80,41 +80,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-  //   wx.getSetting({
-  //     success(res) {
-  //       if (res.authSetting['scope.userInfo']) {
-  //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-  //         wx.getUserInfo({
-  //           success: function (res) {
-  //             console.log("res line75" ,res.userInfo)
-  //   app.globalData.userInfo = res.userInfo
-  //     page.setData({
-  //       userInfo: res.userInfo
-  //       // trying to send to db
-  //     });
-  //     // console log below not showing not setting info until click login
-  //     console.log("test name line 82", userInfo.nickName)
-  //       }
-  //     })
-  //     // want to send to db??? -----------------------------------?
-  //     // let updatedUser = {}
-  //     //   updatedUser.wechat_name = userInfo.nickName
-  //     //   updatedUser.avatar = userInfo.avatarUrl
-  //     //   updatedUser.language = userInfo.language
-  //     //   updatedUser.gender = userInfo.gender
-  //     //   updatedUser.province = userInfo.province
-  //     //     wx.request({
-  //     //       url: host + `users/${id}`,
-  //     //       method: 'put',
-  //     //       data: updatedUser,
-  //     //       success: function (res) {
-  //     //         console.log(res)
-  //     //         console.log("name", user.name)
-  //     //       }
-  //         // })
-  // }
-  // }
-  //   })
+  
   },
 
 
@@ -196,15 +162,15 @@ Page({
     })
   },
 
-  goToAboutUs: function () {
-    wx.navigateTo({
-      url: '/pages/about_us/about_us',
-    })
-  },
+  // goToAboutUs: function () {
+  //   wx.navigateTo({
+  //     url: '/pages/about_us/about_us',
+  //   })
+  // },
 
-  goToUserAgreement: function () {
-      wx.navigateTo({
-      url: '/pages/user_agreement/user_agreement',
-    })
-  },
+  // goToUserAgreement: function () {
+  //     wx.navigateTo({
+  //     url: '/pages/user_agreement/user_agreement',
+  //   })
+  // },
 })
