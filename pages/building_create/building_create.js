@@ -123,7 +123,7 @@ Page({
             const longitude = res.longitude
             const district = address.substr(3, 3)
             if (name.length == 0) {
-              Toast.fail('Please choose an address in the list again');
+              Toast.fail('Please reenter address');
             } else {
               page.setData({ address, name, latitude, longitude, district })
               page.nearby_search();
@@ -198,7 +198,7 @@ Page({
     console.log(newBuilding)
 
     if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
-      Toast.fail('Please fill in all * fields');
+      Toast.fail('Please complete all * fields');
 
     } else {
       wx.request({

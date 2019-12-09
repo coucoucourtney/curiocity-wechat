@@ -1,3 +1,53 @@
+.login-page {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* position: sticky; */
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 45rpx; */
+  padding-bottom: 10rpx;
+  box-shadow: 3rpx 3rpx 3rpx .25;
+  /* check shadow syntax */
+  margin-bottom: 20rpx;
+}
+
+.p-login {
+  color: white;
+  text-shadow: 4rpx 0rpx 4rpx rgba(0,0,0,0.25);
+  /* font-weight: medium; */
+  /* font-family: OpenSans; */
+  /* opacity: .7; */
+  text-align: center; 
+  margin-bottom: 40rpx;
+  font-style: oblique;
+  font-size: 30rpx;
+  padding: 0 55rpx;
+}
+
+.btn {
+  padding-top: 20rpx;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  font-size: 28rpx;
+  margin-top: 15rpx;
+  width: 640rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  /* text-align: center; */
+}
+
+.btn-white {
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -22,7 +72,7 @@
   font-size: 20rpx;
   font-weight: bold;
   /* margin-bottom: 50rpx; */
-  opacity: .7;
+  opacity: .5;
 }
 
 .user-level {
@@ -42,7 +92,9 @@ align-items: center;
 
 .star-level {
   width: 100rpx;
-}
+  height: 19rpx;
+  margin: 13rpx 0 40rpx 0;
+  }
 
 .p {
   font-size: 28rpx;
