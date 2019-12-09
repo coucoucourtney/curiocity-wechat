@@ -46,7 +46,7 @@
         </view>
         <view class="block-pair">
           <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
-          <view class="p space-p">{{route.approximate_distance}} meters</view>
+          <view class="p space-p">{{route.approximate_distance}} km</view>
         </view>
       </view>
     </view>

@@ -3,13 +3,6 @@ const app = getApp()
 const host = app.globalData.host;
 
 Page({
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo
-    })
-  },
   /**
    * Page initial data
    */
