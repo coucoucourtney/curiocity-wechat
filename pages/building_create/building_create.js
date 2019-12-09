@@ -152,6 +152,7 @@ Page({
           metro_stop
         })
       },
+    })
   },
 
   getUserInfo: function (e) {
