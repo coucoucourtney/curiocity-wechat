@@ -13,7 +13,8 @@ Page({
     console.log("userId line 12", userId)
 
     page.setData({
-      userInfo: e.detail.userInfo
+      userInfo: e.detail.userInfo,
+      loggedIn: true
     })
     console.log("line 16", page.data.userInfo)
     // success: (res) => {
