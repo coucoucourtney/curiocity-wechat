@@ -1,10 +1,15 @@
 <!--pages/building_show/building_show.wxml-->
- <image class="top-img" mode="aspectContain" src='{{building.main_picture}}'/>
+ <image class="top-img" mode="aspectFill" src='{{building.main_picture}}'/>
  <!-- title bar with name and author info -->
 <view class="title-bar">
   <view class="h1">{{building.name}}</view>
-  <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png'/>
+<!--   
+<image mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{id}}" class="{{favorited ? 'favorite-gold' : 'favorite'}}"/> -->
+
+<image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{building.id}}" src="{{favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{favorited ? 'favorite-gold' : 'favorite'}}"/>
+
 </view>
+
 
 <view class="building-info">
 <!-- ARCHITECTURAL DETAILS -->
@@ -27,26 +32,16 @@
     <view class="info-group">
       <view class="text">Address</view>
       <view class="text-p">{{building.address}}</view>
+      <view class="text-p">{{building.district}}</view>
     </view>
     <view class="info-group">
+      <view class="text">Former Address</view>
+      <view class="text-p">{{building.old_address}}</view>
       <view class="text-p">{{building.neighborhood}}</view>
-      <view class="text-p">{{building.city}}</view>
-    </view>
-    <view class="info-group">
-      <view class="text">Metro</view>
-      <view class="text-p">{{building.metro_stop}}</view>
     </view>
   </view>
   <!-- end of info section. closed below -->
 </view>
-<map
-id="myMap"
-style="width: 100%; height: 300px;"
-longitude="{{building.longitude}}" latitude="{{building.latitude}}"
-scale='16'
-subkey="{{mapKey}}"
-markers="{{markers}}"
-></map>
 
  <view>
       <swiper class="slider-img" indicator-dots="{{indicatorDots}}"
@@ -63,17 +58,58 @@ markers="{{markers}}"
  <view class="text space">More Information</view>
  <view class="text-p justify">{{building.description}}</view>
  </view>
+
+<!-- LOCATION INFO -->
+<view class="building-info">
+<!-- ADDRESS DETAILS -->
+  <view class="archi-details">
+    <view class="info-group">
+      <view class="text">Metro</view>
+      <view class="text-p">{{building.metro_stop}}</view>
+    </view>
+  </view>
+</view>
+<map
+  style="width: 100%; height: 500rpx;"
+  longitude="{{building.longitude}}" latitude="{{building.latitude}}"
+  scale='16'
+  subkey="{{mapKey}}"
+  markers="{{markers}}"
+  ></map>
+
+
 <!-- AUTHOR SECTION -->
  <view class="end-bar add-padding">
  <view>
-  <view class="space">Contributed by</view>
+  <view class="space h2">Contributed by</view>
     <view class="author-info">
-      <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
+      <image mode="aspectFit" class="author-avatar" src="{{building.user.avatar}}"/>
       <view class="author-text">
         <!-- <view class="h2">author.name</view>
         <view class="text-p">author.level</view> -->
-         <view class="h2">Curiocity Team</view>
-        <view class="text-p">admin</view> 
+         <view class="h2">{{building.user.wechat_name}}</view>
+        <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
+      <view class="level-status" wx:if="{{user.level > 10}}">
+        <image class="user-level" src="/icons/ambassador.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 10 || building.user.level == 9 }}" >
+        <image class="star-level" src="/icons/5.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 8 || building.user.level == 7 }}">
+        <image class="star-level" src="/icons/4.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 6 || building.user.level == 5 }}">
+        <image class="star-level" src="/icons/3.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 4 || building.user.level == 3 }}">
+        <image class="star-level" src="/icons/3.png"></image>
+      </view>
+      <view class="level-status" wx:if="{{building.user.level == 2 || building.user.level == 1 }}">
+        <image class="star-status" class="user-level" src="/icons/2.png"></image>
+      </view>  
+      <view class="level-status" wx:if="{{building.user.level == 0 }}">
+        <image class="star-level" src="/icons/1.png"></image>
+      </view> 
       </view>
     </view>
  </view>

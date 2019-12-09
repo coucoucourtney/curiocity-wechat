@@ -23,21 +23,27 @@ App({
             code: res.code
           },
           success: (res) => {
-            console.log("res",res)
             this.globalData.userId = res.data.userId
             console.log(this.globalData.userId)
           }
         })
       }
     })
-  },
+    // LOADING FONTS IN APP ---> CHOOSE NEW ONES
+    wx.loadFontFace({
+      family: "yesteryear",
+      source: 'url("http://lc-lyUmBNQE.cn-n1.lcfile.com/ada4f6f932b39049dc67/Yesteryear-Regular.ttf")',
+      success: function (res) {
+        console.log(res.status) //  loaded
+      },
+      fail: function (res) {
+        console.log(res.status) //  error
+      },
+      complete: function (res) {
+        console.log(res.status);
+      }
+    });
 
-  fetchFontFamily() {
-    // wx.loadFontFace({
-    //   family: "yesteryear"
-    //   source: 'url(""https://fonts.googleapis.com/css?family=Yesteryear&display=swap" rel="stylesheet"")'
-    //   success: console.log
-    // });
     // wx.loadFontFace({
     //   family: ""
     //   source: 'url("")'
@@ -50,6 +56,7 @@ App({
      host: "http://localhost:3000/api/v1/",
     //  hostLogin: "https://curiocity.wogengapp.cn/",
     // host: "https://curiocity.wogengapp.cn/api/v1/",
-    userId: ""
+    userId: "",
+    userInfo: ""
   }
 })

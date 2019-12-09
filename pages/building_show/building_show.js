@@ -5,7 +5,13 @@ const host = app.globalData.host;
 
 
 Page({
-
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo
+    })
+  },
   /**
    * Page initial data
    */
@@ -14,6 +20,28 @@ Page({
     vertical: false,
     autoplay: false,
     mapKey: config.mapKey
+  },
+
+  toggleFavorites: function (e) {
+
+    const page = this
+    page.setData({ favorited: !page.data.favorited })
+
+    let newFavorite = {};
+    newFavorite.favorited = this.data.favorited
+    newFavorite.favoritable_id = e.currentTarget.dataset.id
+    newFavorite.favoritor_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    console.log('url: ', app.globalData.host + `favorite`)
+
+    wx.request({
+      url: app.globalData.host + `favorite`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+      }
+    })
   },
 
   /**
@@ -26,6 +54,7 @@ Page({
     console.log(1, options)
     console.log(options)
     wx.request({
+      // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
         const building = res.data
@@ -34,11 +63,11 @@ Page({
 
         const markers = [
           {
-            iconPath: "/icons/map/user_marker_large.png", // **1
+            iconPath: "/icons/map/flag.png", // **1
             latitude: building.latitude,
             longitude: building.longitude,
             width: 30,
-            height: 45
+            height: 30
       }]
       page.setData({ markers})
       }

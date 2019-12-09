@@ -2,7 +2,6 @@
 const config = require('../../key');
 const app = getApp()
 const host = app.globalData.host;
-
 Page({
 
   /**
@@ -16,8 +15,11 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const page = this
     const userId = app.globalData.userId;
+
+    // const id = 4 AC: testing
+    console.log("user", userId)
+    const page = this
     const id = options.id
     console.log(1, options)
     wx.request({
@@ -44,7 +46,7 @@ Page({
             longitude: checkpoints[i].longitude,
             iconPath: '/icons/map/flag.png', //图标路径
             width: 30,
-            height: 50,
+            height: 30,
             callout: { //可根据需求是否展示经纬度
               content: checkpoints[i].name,
               color: '#000',
@@ -81,7 +83,6 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
 
   },
 

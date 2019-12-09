@@ -1,15 +1,19 @@
 {
   "pages": [
     "pages/building_index/building_index",
-    "pages/building_show/building_show",
-    "pages/building_create/building_create",
+    "pages/building_show/building_show",        "pages/building_create/building_create",
     "pages/route_index/route_index",
     "pages/route_show/route_show",
     "pages/user/user",
     "pages/nearby/nearby",
     "pages/map/map",
-    "pages/direction/direction"
+    "pages/direction/direction",
+    "pages/user_test/user_test",
+    "pages/about_us/about_us",
+    "pages/user_agreement/user_agreement",
+    "pages/user_edit/user_edit"
   ],
+
   "tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#3f104f",

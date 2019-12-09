@@ -33,6 +33,7 @@ Page({
         });
         wx.hideToast();
         var markers = [];
+        var coordinates = [];
           for (var i = 0; i < that.data.buildings.length; i++) {
       markers.push({ // 获取返回结果，放到mks数组中
         id: i,
@@ -40,16 +41,21 @@ Page({
         longitude: that.data.buildings[i].longitude,
         iconPath: '/icons/map/flag.png', //图标路径
         width: 30,
-        height: 50,
+        height: 30,
         callout: { //可根据需求是否展示经纬度
           content: that.data.buildings[i].name,
           color: '#000',
-          display: 'ALWAYS'
+          display: 'TAP'
         }
       })
+      // coordinates.push({
+      //   latitude: that.data.buildings[i].latitude,
+      //   longitude: that.data.buildings[i].longitude
+      //  })
     }
+        // console.log("coordinates", coordinates)
         that.setData({
-          markers: markers
+          markers: markers,
         });
       }
     })
@@ -66,13 +72,14 @@ Page({
             latitude: latitude,
             longitude: longitude,
             iconPath: '/icons/map/user.png',//图标路径
-            width: 30,
-            height: 50,
-            callout: { //可根据需求是否展示经纬度
-              content: latitude + ',' + longitude,
-              color: '#000',
-              display: 'ALWAYS'
-            }})
+            width: 28,
+            height: 28,
+            // callout: { //可根据需求是否展示经纬度
+            //   content: latitude + ',' + longitude,
+            //   color: '#000',
+            //   display: 'ALWAYS'
+            // }
+            })
         that.setData({ latitude, longitude, markers })
       }
     })
@@ -91,10 +98,24 @@ bindMarkertap: function(e) {
   const name = building.name
   const description = building.description
   const style = building.architectural_style
-  page.setData({ name, description, style, show: true });
+  const coordinates = `${building.latitude},${building.longitude}`
+  page.setData({ name, description, style, show: true, coordinates });
 },
   onClose() {
     this.setData({ show: false });
+  },
+
+  goToDirection: function(e) {
+    const coordinates = e.currentTarget.dataset.coordinates;
+    wx.navigateTo({
+      url: `/pages/direction/direction?coordinates=${coordinates}`,
+    })
+  },
+  goToBuilding: function (e) {
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/building_show/building_show?id=${id}`,
+    })
   },
   /**
    * Lifecycle function--Called when page show

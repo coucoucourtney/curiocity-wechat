@@ -3,12 +3,33 @@ const app = getApp()
 const host = app.globalData.host; 
 
 Page({
+
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
     this.setData({
       userInfo: e.detail.userInfo
     })
+    // testing delete below
+    // const userInfo = app.globalData.userInfo; 
+    // let updatedUser = {}
+    //     updatedUser.wechat_name = userInfo.nickName
+    //     updatedUser.avatar = userInfo.avatarUrl
+    //     updatedUser.language = userInfo.language
+    //     updatedUser.gender = userInfo.gender
+    //     updatedUser.language = userInfo.language
+    // wx.request({
+    //   url: host + `users/${userId}`,
+
+    //   method: 'put',
+    //   data: {
+    //     updatedUser
+    //   },
+    //   success: (res) => {
+    //     console.log(25, res)
+    //   }
+    // })
   },
   /**
    * Page initial data
@@ -19,26 +40,29 @@ Page({
 
 
   editUser: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages//?id=${id}`,
+      url: `/pages/user_edit/user_edit?user_id=${userId}`,
+      // do we need this id? just use user id
     })
   },
 
   addBuilding: function (e) {
-    let id = e.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     console.log(e)
     wx.navigateTo({
-      url: `/pages/building_create/building_create?id=${id}`,
+      url: `/pages/building_create/building_create?user_id=${userId}`,
+      // do we need this id? just use user id
     })
   },
 
   tapCard: function (event) {
     console.log(event)
     let id = event.currentTarget.dataset.id
+    const userId = app.globalData.userId;
     wx.navigateTo({
-      url: `/pages/building_show/building_show?id=${id}`
+      url: `/pages/building_show/building_show?id=${id}&user_id=${userId}`
     })
   },
 
@@ -47,30 +71,68 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+  //   wx.getSetting({
+  //     success(res) {
+  //       if (res.authSetting['scope.userInfo']) {
+  //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+  //         wx.getUserInfo({
+  //           success: function (res) {
+  //             console.log("res line75" ,res.userInfo)
+  //   app.globalData.userInfo = res.userInfo
+  //     page.setData({
+  //       userInfo: res.userInfo
+  //       // trying to send to db
+  //     });
+  //     // console log below not showing not setting info until click login
+  //     console.log("test name line 82", userInfo.nickName)
+  //       }
+  //     })
+  //     // want to send to db??? -----------------------------------?
+  //     // let updatedUser = {}
+  //     //   updatedUser.wechat_name = userInfo.nickName
+  //     //   updatedUser.avatar = userInfo.avatarUrl
+  //     //   updatedUser.language = userInfo.language
+  //     //   updatedUser.gender = userInfo.gender
+  //     //   updatedUser.province = userInfo.province
+  //     //     wx.request({
+  //     //       url: host + `users/${id}`,
+  //     //       method: 'put',
+  //     //       data: updatedUser,
+  //     //       success: function (res) {
+  //     //         console.log(res)
+  //     //         console.log("name", user.name)
+  //     //       }
+  //         // })
+  // }
+  // }
+  //   })
   },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
 
-  },
+//   /**
+//    * Lifecycle function--Called when page is initially rendered
+//    */
+//   onReady: function () {
 
-  /**
-   * Lifecycle function--Called when page show
-   */
+//   },
+
+//   /**
+//    * Lifecycle function--Called when page show
+//    */
   onShow: function () {
-    let page = this
-    // let id = this.data.userId || 1;
+    const page = this
+    const userId = app.globalData.userId;
+ 
+
     wx.request({
-      url: host + "buildings",
+      url: host + `users/${userId}`,
       success: function (res) {
+        console.log("true", res)
         // const user = res.data
-        const buildings = res.data.buildings;
-        console.log(buildings);
+        const user = res.data;
+        console.log(user);
         page.setData({
-          buildings: buildings
+          user: user
         });
 
         wx.hideToast();
@@ -112,5 +174,29 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  goToWalks: function () {
+    wx.switchTab({
+      url: '/pages/route_index/route_index',
+    })
+  },
+
+  goToBuildings: function () {
+    wx.switchTab({
+      url: '/pages/building_index/building_index',
+    })
+  },
+
+  goToAboutUs: function () {
+    wx.navigateTo({
+      url: '/pages/about_us/about_us',
+    })
+  },
+
+  goToUserAgreement: function () {
+      wx.navigateTo({
+      url: '/pages/user_agreement/user_agreement',
+    })
+  },
 })

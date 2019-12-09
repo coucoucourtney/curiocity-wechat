@@ -126,37 +126,108 @@ chooseLocation: function () {
       }
     });
   },
-//** geocode form submit */
+// //** geocode form submit */
+//   formSubmit(e) {
+//     var _this = this;
+//     //调用地址解析接口
+//     qqmapsdk.geocoder({
+//       //获取表单传入地址
+//       address: _this.data.name, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
+//       success: function (res) {//成功后的回调
+//         console.log(res);
+//         var res = res.result;
+//         var latitude = res.location.lat;
+//         var longitude = res.location.lng;
+//         //根据地址解析在地图上标记解析地址位置
+//         _this.setData({ // 获取返回结果，放到markers及poi中，并在地图展示
+//           markers: [{
+//             id: 0,
+//             title: res.title,
+//             latitude: latitude,
+//             longitude: longitude,
+//             iconPath: './resources/placeholder.png',//图标路径
+//             width: 20,
+//             height: 20,
+//             callout: { //可根据需求是否展示经纬度
+//               content: latitude + ',' + longitude,
+//               color: '#000',
+//               display: 'ALWAYS'
+//             }
+//           }],
+//           poi: { //根据自己data数据设置相应的地图中心坐标变量名称
+//             latitude: latitude,
+//             longitude: longitude
+//           }
+//         });
+//       },
+//       fail: function (error) {
+//         console.error(error);
+//       },
+//       complete: function (res) {
+//         console.log(res);
+//       }
+//     })
+//   },
+
   formSubmit(e) {
     var _this = this;
-    //调用地址解析接口
-    qqmapsdk.geocoder({
-      //获取表单传入地址
-      address: _this.data.name, //地址参数，例：固定地址，address: '北京市海淀区彩和坊路海淀西大街74号'
+    qqmapsdk.reverseGeocoder({
+      //位置坐标，默认获取当前位置，非必须参数
+      /**
+       * 
+       //Object格式
+        location: {
+          latitude: 39.984060,
+          longitude: 116.307520
+        },
+      */
+      /**
+       *
+       //String格式
+        location: '39.984060,116.307520',
+      */
+      location: e.detail.value.reverseGeo || '', //获取表单传入的位置坐标,不填默认当前位置,示例为string格式
+      //get_poi: 1, //是否返回周边POI列表：1.返回；0不返回(默认),非必须参数
       success: function (res) {//成功后的回调
         console.log(res);
         var res = res.result;
-        var latitude = res.location.lat;
-        var longitude = res.location.lng;
-        //根据地址解析在地图上标记解析地址位置
-        _this.setData({ // 获取返回结果，放到markers及poi中，并在地图展示
-          markers: [{
-            id: 0,
-            title: res.title,
-            latitude: latitude,
-            longitude: longitude,
-            iconPath: './resources/placeholder.png',//图标路径
-            width: 20,
-            height: 20,
-            callout: { //可根据需求是否展示经纬度
-              content: latitude + ',' + longitude,
-              color: '#000',
-              display: 'ALWAYS'
+        var mks = [];
+        /**
+         *  当get_poi为1时，检索当前位置或者location周边poi数据并在地图显示，可根据需求是否使用
+         *
+            for (var i = 0; i < result.pois.length; i++) {
+            mks.push({ // 获取返回结果，放到mks数组中
+                title: result.pois[i].title,
+                id: result.pois[i].id,
+                latitude: result.pois[i].location.lat,
+                longitude: result.pois[i].location.lng,
+                iconPath: './resources/placeholder.png', //图标路径
+                width: 20,
+                height: 20
+            })
             }
-          }],
-          poi: { //根据自己data数据设置相应的地图中心坐标变量名称
-            latitude: latitude,
-            longitude: longitude
+        *
+        **/
+        //当get_poi为0时或者为不填默认值时，检索目标位置，按需使用
+        mks.push({ // 获取返回结果，放到mks数组中
+          title: res.address,
+          id: 0,
+          latitude: res.location.lat,
+          longitude: res.location.lng,
+          iconPath: './resources/placeholder.png',//图标路径
+          width: 20,
+          height: 20,
+          callout: { //在markers上展示地址名称，根据需求是否需要
+            content: res.address,
+            color: '#000',
+            display: 'ALWAYS'
+          }
+        });
+        _this.setData({ //设置markers属性和地图位置poi，将结果在地图展示
+          markers: mks,
+          poi: {
+            latitude: res.location.lat,
+            longitude: res.location.lng
           }
         });
       },
@@ -164,7 +235,7 @@ chooseLocation: function () {
         console.error(error);
       },
       complete: function (res) {
-        console.log(res);
+        console.log("complete", res);
       }
     })
   },

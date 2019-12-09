@@ -119,6 +119,12 @@ Page({
       url: '/pages/nearby/nearby',
     })
   },
+
+  goToCreateBuilding: function () {
+    wx.navigateTo({
+      url: '/pages/building_create/building_create',
+    })
+  },
   // clearInput: function () {
   //   this.setData({
   //     inputVal: ""
@@ -133,6 +139,18 @@ Page({
     let id = event.currentTarget.dataset.id
     wx.navigateTo({
       url: `/pages/building_show/building_show?id=${id}&user_id=${userId}`
+    })
+  },
+
+  tapStar: function () {
+  },
+
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
+    this.setData({
+      userInfo: e.detail.userInfo
     })
   },
 
