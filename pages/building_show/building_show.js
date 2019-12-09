@@ -5,13 +5,6 @@ const host = app.globalData.host;
 
 
 Page({
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo
-    })
-  },
   /**
    * Page initial data
    */
@@ -62,7 +55,6 @@ Page({
     console.log(1, options)
     console.log(options)
     wx.request({
-      // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
         let favorite = res.data.favorited

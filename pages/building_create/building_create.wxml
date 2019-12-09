@@ -24,20 +24,13 @@
   <view class="element-section">Location information</view>
     <view class="element-name">Address*</view>
       <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}"></input>
-    <!-- try making a map pop up and enter address/name of building -->
-    <!-- <view class="element-name">Metro Stop</view>
-      <input name="Metro Stop" placeholder="nearest metro stop" value="{{metro_stop}}"></input>
-    <view class="element-name">District</view>
-      <input name="district" placeholder="ex. Huangpu, Luwan" value="{{district}}"></input> -->
      <view class="element-name">Old Street Names</view>
         <input maxlength="100" name="old_address" placeholder="if known"></input>
       <view class="element-name">Former Neighborhood</view>
         <input maxlength="25" name="neighborhood" placeholder="if known"></input>
     <view class="element-section">Additional Images</view>
-      <!-- <view class="btn btn-light" bindtap="takeSliderPhoto">Upload   </view> -->
       <view class="align-pic">
             <image class="cam-icon" src='/icons/camera.png' bindtap="takeSliderPhoto"></image>   
-        <!-- <image src='{{tempFilePath}}'></image> -->
         <!-- how to get multiple photos to upload into slider with bunch of icons -->
         <view wx:for="{{imgSliderUrl}}" wx:for-item="url">
           <view class="added-pic">
