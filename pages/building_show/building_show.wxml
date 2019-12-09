@@ -3,9 +3,14 @@
  <!-- title bar with name and author info -->
 <view class="title-bar">
   <view class="h1">{{building.name}}</view>
-<!--  
-<view class="building-info">
+<!--   
+<image mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{id}}" class="{{favorited ? 'favorite-gold' : 'favorite'}}"/> -->
+
+<image mode="aspectFit" bindtap="toggleFavorites" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
+</view>
+ 
 <!-- ARCHITECTURAL DETAILS -->
+<view class="building-info">
   <view class="archi-details">
     <view class="info-group">
       <view class="text">Date Built</view>
@@ -17,7 +22,7 @@
     </view>
     <view class="info-group">
       <view class="text">Style</view>
-      <view class="text-p">{{building.architectural_style}}</view>
+      <view class="text-p">{{building.architectural_style}} </view>
     </view>
   </view>
 <!-- LOCATION DETAILS -->

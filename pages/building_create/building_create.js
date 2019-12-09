@@ -155,7 +155,7 @@ Page({
     })
   },
 
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
 
     const page = this
     console.log("E", e)

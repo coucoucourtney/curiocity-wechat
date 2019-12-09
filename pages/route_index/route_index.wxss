@@ -13,6 +13,27 @@
   font-size: 47rpx;
   padding: 30rpx;
 }
+
+/* favorite */
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+}
+
+
 /* CARD AREA  */
 
 .card-product {
@@ -89,6 +110,14 @@
 }
 
 .card-product .favorite {
+  height: 48rpx;
+  width: 48rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+.card-product .favorite-gold {
   height: 48rpx;
   width: 48rpx;
   position: absolute;

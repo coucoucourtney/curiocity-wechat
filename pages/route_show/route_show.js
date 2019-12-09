@@ -11,6 +11,34 @@ Page({
     mapKey: config.mapKey
   },
 
+  toggleFavorites: function (e) {
+
+    const page = this
+
+      let newFavorite = {};
+        newFavorite.favorited = this.data.favorited
+        newFavorite.id = e.currentTarget.dataset.id
+        newFavorite.user_id = parseInt(app.globalData.userId)
+        console.log(newFavorite);
+        console.log('url: ', app.globalData.host + `route_favorite`)
+      let route = page.data.route
+
+        wx.request({
+          url: app.globalData.host + `route_favorite`,
+          method: 'GET',
+          data: newFavorite,
+            success(res) {
+              console.log("result", res)
+                if (route.favorited) {
+                  route.favorited = false
+                  page.setData({ route })
+                } else {
+                  route.favorited = true
+                  page.setData({ route })
+                }
+            }
+        })
+    },
   /**
    * Lifecycle function--Called when page load
    */
@@ -25,9 +53,12 @@ Page({
     wx.request({
       url: host + `routes/${id}?user_id=${userId}`,
       success: function (res) {
+        let favorite = res.data.favorited
+          console.log("favorite", favorite)
+          page.setData({ favorited: !page.data.favorited })
         const route = res.data
-        console.log(2, route)
-        page.setData({ route })
+          console.log(2, route)
+          page.setData({ route })
 
         const checkpoints = route.checkpoints;
         console.log(3, checkpoints)
