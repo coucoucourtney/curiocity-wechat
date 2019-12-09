@@ -19,7 +19,6 @@ bindmarkertap="bindMarkertap"
 <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
 </view>
 
-
   <view class="route-info">
     <!-- <view class="h1">{{route.name}}</view> -->
     <view class="p">{{route.description}}</view>
@@ -52,7 +51,7 @@ bindmarkertap="bindMarkertap"
               <view class="info-section">
                 <view class="h2">{{checkpoint.name}}</view>
               </view>
-                <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+                <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/> -->
             </view>
           </view> 
         </view> 
