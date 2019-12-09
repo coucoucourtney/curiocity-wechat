@@ -69,7 +69,6 @@ Page({
             // console.log("1",markers)
             // set user location and marker
             markers.push({
-              id: markers.length,
               latitude: latitude,
               longitude: longitude,
               iconPath: '/icons/map/user.png',//图标路径
