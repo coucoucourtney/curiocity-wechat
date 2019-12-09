@@ -1,10 +1,14 @@
 <!--地图容器-->
 <map
 id="myMap"
-style="width: 100%; height: 100vh;"
+style="width: 100%; height: 80vh;"
 longitude="{{longitude}}" latitude="{{latitude}}"
-scale='16'
+scale='17'
 polyline="{{polyline}}"
 show-location
 >
 </map>
+<view class="direction-info">
+<view class="p">Distance: {{}}</view>
+<view class="p">Duration: {{}}</view>
+</view>

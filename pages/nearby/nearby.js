@@ -61,7 +61,7 @@ Page({
       }
     })
     wx.getLocation({
-      type: 'wgs84', // **1
+      type: 'gcj02', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
@@ -97,6 +97,7 @@ bindMarkertap: function(e) {
   const building = page.data.buildings[e.markerId]
   console.log(building)
   const name = building.name
+  const address = building.address
   const description = building.description
   const style = building.architectural_style
   const coordinates = `${building.latitude},${building.longitude}`
