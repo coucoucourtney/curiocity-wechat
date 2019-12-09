@@ -22,6 +22,7 @@ Page({
     // get userlocation
     const that = this
     const userId = app.globalData.userId;
+    console.log("user", userId)
     //  get the buildings from server
     wx.request({
       url: host + `buildings?user_id=${userId}`,
@@ -60,7 +61,7 @@ Page({
       }
     })
     wx.getLocation({
-      type: 'wgs84', // **1
+      type: 'gcj02', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
@@ -94,21 +95,18 @@ Page({
 bindMarkertap: function(e) {
   const page = this;
   const building = page.data.buildings[e.markerId]
-  console.log(building)
-  const name = building.name
-  const description = building.description
-  const style = building.architectural_style
-  const coordinates = `${building.latitude},${building.longitude}`
-  page.setData({ name, description, style, show: true, coordinates });
+  page.setData({ building, show: true });
 },
   onClose() {
     this.setData({ show: false });
   },
 
   goToDirection: function(e) {
-    const coordinates = e.currentTarget.dataset.coordinates;
+    const building = e.currentTarget.dataset.building;
+    const coordinates = `${building.latitude},${building.longitude}`
+
     wx.navigateTo({
-      url: `/pages/direction/direction?coordinates=${coordinates}`,
+      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
     })
   },
   goToBuilding: function (e) {

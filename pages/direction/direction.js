@@ -14,6 +14,7 @@ Page({
    * Page initial data
    */
   data: {
+    markers: []
   },
 
   /**
@@ -21,15 +22,17 @@ Page({
    */
   onLoad: function (options) {
     // get user current location
-    const dest = options.coordinates;
-    const that = this
+    const dest = options.coordinates
+    const address = options.address
+    const name = options.name
+    const page = this
     wx.getLocation({
       type: 'wgs84', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
         const start = `${latitude},${longitude}`
-        that.setData( {latitude, longitude, start, dest} )
+        page.setData( {latitude, longitude, start, dest, address, name } )
 
         qqmapsdk.direction({
           mode: 'walking',//可选值：'driving'（驾车）、'walking'（步行）、'bicycling'（骑行），不填默认：'driving',可不填
@@ -50,7 +53,7 @@ Page({
             }
             console.log(pl)
             //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
-            that.setData({
+            page.setData({
               latitude: pl[0].latitude,
               longitude: pl[0].longitude,
               polyline: [{
@@ -65,7 +68,9 @@ Page({
             console.error(error);
           },
           complete: function (res) {
-            console.log(res);
+            console.log("res", res);
+            const walk = res.result.routes[0]
+            page.setData({ walk })
           }
         });
 
@@ -79,13 +84,13 @@ Page({
   //在Page({})中使用下列代码
   //触发表单提交事件，调用接口
   formSubmit(e) {
-    var _this = this;
+    var page = this;
     //调用距离计算接口
     qqmapsdk.direction({
       mode: 'walking',//可选值：'driving'（驾车）、'walking'（步行）、'bicycling'（骑行），不填默认：'driving',可不填
       //from参数不填默认当前地址
-      from: _this.data.start,
-      to: _this.data.dest,
+      from: page.data.start,
+      to: page.data.dest,
       success: function (res) {
         var ret = res;
         var coors = ret.result.routes[0].polyline, pl = [];
@@ -100,7 +105,7 @@ Page({
         }
         console.log(pl)
         //设置polyline属性，将路线显示出来,将解压坐标第一个数据作为起点
-        _this.setData({
+        page.setData({
           latitude: pl[0].latitude,
           longitude: pl[0].longitude,
           polyline: [{
@@ -115,7 +120,7 @@ Page({
         console.error(error);
       },
       complete: function (res) {
-        console.log(res);
+        console.log("res",res);
       }
     });
   },

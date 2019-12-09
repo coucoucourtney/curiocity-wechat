@@ -1,17 +1,19 @@
 /** wxss **/
 /** 修改button默认的点击态样式类**/
-.button-hover {
+/* .button-hover {
   background-color: red;
-}
+} */
 /** 添加自定义button点击态样式类**/
-.other-button-hover {
+/* .other-button-hover {
   background-color: blue;
+} */
+button.btn-black {
+  margin: 10rpx 20rpx;
+  background-color: black;
 }
-button {margin: 10px;}
 .btn-box {
   display: flex;
 }
-
 .h2{
   font-size: 28rpx;
 }

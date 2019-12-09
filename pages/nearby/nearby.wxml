@@ -9,13 +9,13 @@ polyline="{{polyline}}"
 markers="{{markers}}"
 bindmarkertap="bindMarkertap"
 ></map>
-<van-action-sheet class="h2" show="{{ show }}" title="{{name}}" bind:close="onClose" >
-  <view class="p">{{description}}</view>
-  <view class="p">{{address}}</view>
+<van-action-sheet class="h2" show="{{ show }}" title="{{building.name}}" bind:close="onClose" >
+  <view class="p">{{building.description}}</view>
+  <view class="p">{{building.address}}</view>
   <view class="btn-box">
-  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+  <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="goToBuilding" data-id="{{building.id}}"> MORE INFO </button>
-  <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="goToDirection" data-coordinates="{{coordinates}}"> GO! </button>
+  <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="goToDirection" data-building="{{building}}"> GO! </button>
   </view>
 </van-action-sheet>

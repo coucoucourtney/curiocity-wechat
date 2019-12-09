@@ -202,7 +202,7 @@ Page({
 
     } else {
       wx.request({
-        url: host + `buildings?user_id${userId}`,
+        url: host + `buildings?user_id=${userId}`,
         method: 'post',
         data: newBuilding,
         success: function (res) {
