@@ -198,7 +198,7 @@ Page({
     console.log(newBuilding)
 
     if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
-      Toast.fail('Please fill in all the * field');
+      Toast.fail('Please fill in all * fields');
 
     } else {
       wx.request({
