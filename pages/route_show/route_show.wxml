@@ -17,8 +17,6 @@ bindmarkertap="bindMarkertap"
   <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/>
 </view>
 
-
-
   <view class="route-info">
     <!-- <view class="h1">{{route.name}}</view> -->
     <view class="p">{{route.description}}</view>

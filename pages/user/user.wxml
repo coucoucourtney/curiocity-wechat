@@ -67,10 +67,7 @@
             <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
               <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
               <view class="card-product-infos">
-                <view class="info-section">
-                  <view class="h2">{{building.name}}</view>
-                </view>
-                  <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+                <view class="h2">{{building.name}}</view>
               </view>
             </view> 
           </view>
