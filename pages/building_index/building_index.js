@@ -126,7 +126,7 @@ Page({
     this.setData({
       inputVal: ''
     })
-    let url = userId == "" ? `${host}${buildings}` : `${host}buildings?user_id=${userId}`
+    let url = (userId == undefined ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
     wx.request({
       url: url,
       success: function (res) {

@@ -22,6 +22,7 @@ Page({
     address: ""
   },
   onLoad: function () {
+    this.setData({login: getApp().globalData.login})
     console.log(getApp().globalData)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
@@ -186,7 +187,8 @@ Page({
       data: updatedUser,
       success: (res) => {
         console.log("line 33 successfully saved to user", res)
-        page.createBuilding(e)
+        page.setData({login: true})
+        // page.createBuilding(e)
       }
     })
     // }

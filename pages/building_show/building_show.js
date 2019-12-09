@@ -97,14 +97,15 @@ Page({
 
   },
   //Go to direction page 
-  goToDirection: function(e) {
-    const building = e.currentTarget.dataset.building;
-    const coordinates = `${building.latitude},${building.longitude}`
+  // goToDirection: function(e) {
+  //   console.log(e)
+  //   const building = e.currentTarget.dataset.building;
+  //   const coordinates = `${building.latitude},${building.longitude}`
 
-    wx.navigateTo({
-      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
-    })
-  },
+  //   wx.navigateTo({
+  //     url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
+  //   })
+  // },
   /**
    * Lifecycle function--Called when page hide
    */

@@ -57,6 +57,7 @@ App({
      hostLogin: "https://curiocity.wogengapp.cn/",
     host: "https://curiocity.wogengapp.cn/api/v1/",
     // userId: "",
-    userInfo: ""
+    userInfo: "",
+    
   }
 })
