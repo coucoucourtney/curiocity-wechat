@@ -60,32 +60,34 @@ Page({
         that.setData({
           markers: markers,
         });
-      }
-    })
-    wx.getLocation({
-      type: 'gcj02', // **1
-      success: function (res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const markers = that.data.markers
-        // console.log("1",markers)
-        // set user location and marker
-        markers.push({
-            id: markers.length,
-            latitude: latitude,
-            longitude: longitude,
-            iconPath: '/icons/map/user.png',//图标路径
-            width: 28,
-            height: 28,
-            // callout: { //可根据需求是否展示经纬度
-            //   content: latitude + ',' + longitude,
-            //   color: '#000',
-            //   display: 'ALWAYS'
-            // }
+        
+        wx.getLocation({
+          type: 'gcj02', // **1
+          success: function (res) {
+            const latitude = res.latitude
+            const longitude = res.longitude
+            const markers = that.data.markers
+            // console.log("1",markers)
+            // set user location and marker
+            markers.push({
+              id: markers.length,
+              latitude: latitude,
+              longitude: longitude,
+              iconPath: '/icons/map/user.png',//图标路径
+              width: 28,
+              height: 28,
+              // callout: { //可根据需求是否展示经纬度
+              //   content: latitude + ',' + longitude,
+              //   color: '#000',
+              //   display: 'ALWAYS'
+              // }
             })
-        that.setData({ latitude, longitude, markers })
-      }
+            that.setData({ latitude, longitude, markers })
+          }
+        })
+      } // this line
     })
+
   },
 
   /**
