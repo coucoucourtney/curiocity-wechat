@@ -11,3 +11,12 @@ button {margin: 10px;}
 .btn-box {
   display: flex;
 }
+
+.h2{
+  font-size: 28rpx;
+}
+
+.p{
+  font-size: 25rpx;
+  margin: 20rpx 36rpx;
+}

@@ -1,5 +1,5 @@
 <!--pages/building_show/building_show.wxml-->
- <image class="top-img" mode="aspectContain" src='{{building.main_picture}}'/>
+ <image class="top-img" mode="aspectFill" src='{{building.main_picture}}'/>
  <!-- title bar with name and author info -->
 <view class="title-bar">
   <view class="h1">{{building.name}}</view>
