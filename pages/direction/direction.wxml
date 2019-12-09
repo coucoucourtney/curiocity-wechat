@@ -8,7 +8,11 @@ polyline="{{polyline}}"
 show-location
 >
 </map>
-<view class="direction-info">
-<view class="p">Distance: {{}}</view>
-<view class="p">Duration: {{}}</view>
+<view class="direction-box">
+  <view class="h2">{{name}}</view>
+  <view class="h3"> {{address}}</view>
+  <view class="direction-info">
+    <view class="p">Distance: {{walk.distance}}  meters </view>
+    <view class="p">Duration: {{ walk.duration}}  min</view>
+  </view>
 </view>

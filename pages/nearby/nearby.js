@@ -95,22 +95,18 @@ Page({
 bindMarkertap: function(e) {
   const page = this;
   const building = page.data.buildings[e.markerId]
-  console.log(building)
-  const name = building.name
-  const address = building.address
-  const description = building.description
-  const style = building.architectural_style
-  const coordinates = `${building.latitude},${building.longitude}`
-  page.setData({ building, name, description, style, show: true, coordinates });
+  page.setData({ building, show: true });
 },
   onClose() {
     this.setData({ show: false });
   },
 
   goToDirection: function(e) {
-    const coordinates = e.currentTarget.dataset.coordinates;
+    const building = e.currentTarget.dataset.building;
+    const coordinates = `${building.latitude},${building.longitude}`
+
     wx.navigateTo({
-      url: `/pages/direction/direction?coordinates=${coordinates}`,
+      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
     })
   },
   goToBuilding: function (e) {

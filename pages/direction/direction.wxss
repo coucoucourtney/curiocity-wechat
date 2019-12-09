@@ -1,1 +1,16 @@
-/* pages/direction/direction.wxss */
+.direction-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20px;
+}
+.h2 {
+  padding: 20rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.h3 {
+  padding: 0 20rpx;
+}
+.p {
+  font-size: 35rpx;
+}
