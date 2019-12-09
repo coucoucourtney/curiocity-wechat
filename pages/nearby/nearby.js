@@ -46,6 +46,8 @@ Page({
         callout: { //可根据需求是否展示经纬度
           content: that.data.buildings[i].name,
           color: '#000',
+          borderRadius: "10",
+          padding: "5",
           display: 'TAP'
         }
       })
