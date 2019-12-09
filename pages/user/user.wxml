@@ -88,7 +88,7 @@
     <view class="spots-section">
       <view class="user-info">
           <view wx:for="{{user.favorited_routes}}" wx:for-item="route" >
-            <view class="card-product" bindtap="tapCard" data-id="{{route.id}}">
+            <view class="card-product" bindtap="tapRoute" data-id="{{route.id}}">
               <image class="card-img" mode="aspectFill" src='{{route.main_picture}}'/>
               <view class="card-product-infos">
                 <view class="info-section">
