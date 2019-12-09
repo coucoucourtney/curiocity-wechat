@@ -29,8 +29,8 @@ Page({
 
     let newFavorite = {};
     newFavorite.favorited = this.data.favorited
-    newFavorite.favoritable_id = e.currentTarget.dataset.id
-    newFavorite.favoritor_id = parseInt(app.globalData.userId)
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
     console.log(newFavorite);
     console.log('url: ', app.globalData.host + `favorite`)
 
@@ -57,9 +57,14 @@ Page({
       // url: host + `buildings/${36}?user_id=${13}`,
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
+        x
         const building = res.data
         console.log(building)
         page.setData({ building })
+
+        let favorite = res.data.favorited
+        console.log("favorite", favorite)
+        page.setData({ favorited: !page.data.favorited })
 
         const markers = [
           {
@@ -69,7 +74,9 @@ Page({
             width: 30,
             height: 30
       }]
-      page.setData({ markers})
+      page.setData({ 
+        markers
+        })
       }
     })
   },
