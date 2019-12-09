@@ -21,6 +21,12 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
+        "text": "Buildings",
+        "pagePath": "pages/building_index/building_index",
+        "iconPath": "icons/building_black.png",
+        "selectedIconPath": "icons/building_gray.png"
+      },
+      {
         "text": "Discover",
         "pagePath": "pages/nearby/nearby",
         "iconPath": "icons/map_black.png",
@@ -31,12 +37,6 @@
         "pagePath": "pages/route_index/route_index",
         "iconPath": "icons/walk_black.png",
         "selectedIconPath": "icons/walk_gray.png"
-      },
-      {
-        "text": "Buildings",
-        "pagePath": "pages/building_index/building_index",
-        "iconPath": "icons/building_black.png",
-        "selectedIconPath": "icons/building_gray.png"
       },
       {
         "text": "Me",
