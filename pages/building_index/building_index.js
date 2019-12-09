@@ -125,11 +125,11 @@ Page({
       url: '/pages/building_create/building_create',
     })
   },
-  // clearInput: function () {
-  //   this.setData({
-  //     inputVal: ""
-  //   });
-  // },
+  clearInput: function () {
+    this.setData({
+      inputVal: ""
+    });
+  },
   
 
   // BIND TAP TO CLICK CARD THROUGH TO SHOW PAGE
@@ -145,41 +145,45 @@ Page({
   tapStar: function () {
   },
 
-  getUserInfo: function (e) {
-    const page = this
-    console.log("E", e)
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.login = true
-    const userId = app.globalData.userId;
-    console.log("userId line 12", userId)
+  // getUserInfo: function (e) {
 
-    page.setData({
-      userInfo: e.detail.userInfo
-    })
-    console.log("line 16", page.data.userInfo)
-    // success: (res) => {
-    // console.log("getuserinfores", res);
-    const userDetails = page.data.userInfo
-    // saving user info in user instance in backend
-    let updatedUser = {}
-    updatedUser.wechat_name = userDetails.nickName
-    updatedUser.avatar = userDetails.avatarUrl
-    updatedUser.language = userDetails.language
-    updatedUser.gender = userDetails.gender
-    updatedUser.language = userDetails.language
-    console.log("updateduser", updatedUser)
-    page.setData({ updatedUser })
-    wx.request({
-      url: host + `users/${userId}`,
+  //   const page = this
+  //   console.log("E", e)
+  //   app.globalData.userInfo = e.detail.userInfo
+  //   app.globalData.login = true
+  //   const userId = app.globalData.userId;
+  //   console.log("userId line 12", userId)
+  //   // can you do an if statement back here to run login if person doesnt have avatar using url /users 
+  //   page.setData({
+  //     userInfo: e.detail.userInfo
+  //   })
+  //   console.log("line 16", page.data.userInfo)
+  //   // success: (res) => {
+  //   // console.log("getuserinfores", res);
+  //   const userDetails = page.data.userInfo
+  //   // saving user info in user instance in backend
+  //   let updatedUser = {}
+  //   updatedUser.wechat_name = userDetails.nickName
+  //   updatedUser.avatar = userDetails.avatarUrl
+  //   updatedUser.language = userDetails.language
+  //   updatedUser.gender = userDetails.gender
+  //   updatedUser.language = userDetails.language
+  //   console.log("updateduser", updatedUser)
+  //   page.setData({ updatedUser })
+  //   wx.request({
+  //     url: host + `users/${userId}`,
 
-      method: 'put',
-      data: updatedUser,
-      success: (res) => {
-        console.log("line 33 successfully saved to user", res)
-      }
-    })
-    // }
-  },
+  //     method: 'put',
+  //     data: updatedUser,
+  //     success: (res) => {
+  //       console.log("line 33 successfully saved to user", res)
+  //     }
+  //   })
+  //   wx.navigateTo({
+  //     url: '/pages/building_create/building_create',
+  //   })
+  //   // }
+  // },
   
   /**
    * Lifecycle function--Called when page hide

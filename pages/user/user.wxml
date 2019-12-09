@@ -1,5 +1,5 @@
 <!-- USER INFO SECTION -->
-<view class="login-page" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/210266e78c3d6e2903f4/background_img.jpeg);" wx:if="{{user.avatar == nil}}" >
+<view class="login-page" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/c18ca975635a640a4479/yiran-ding-cxf33hXpVec-unsplash.jpg);" wx:if="{{user.avatar == nil}}" >
 <view class="p-login">Login to see your favorites!</view>
   <button class="btn btn-white" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 </view>
@@ -13,26 +13,26 @@
           <image mode="aspectFill" class="star-level" src="/icons/1.png"></image>
         </view> -->
           <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
-        <view class="level-status" wx:if="{{user.level > 10}}">
+        <view class="level-status" wx:if="{{user.buildings.length > 10}}">
           <view class="h3">AMBASSADOR</view>
           <image class="user-level" src="/icons/ambassador.png"></image>
         </view>
-        <view class="level-status" wx:if="{{user.level == 10 || user.level == 9 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 10 || user.buildings.length == 9 }}">
           <image class="star-level" src="/icons/5.png"></image>
         </view>
-        <view class="level-status" wx:if="{{user.level == 8 || user.level == 7 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 8 || user.buildings.length == 7 }}">
           <image class="star-level" src="/icons/4.png"></image>
         </view>
-        <view class="level-status" wx:if="{{user.level == 6 || user.level == 5 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 6 || user.buildings.length == 5 }}">
           <image class="star-level" src="/icons/3.png"></image>
         </view>
-        <view class="level-status" wx:if="{{user.level == 4 || user.level == 3 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 4 || user.buildings.length == 3 }}">
           <image class="star-level" src="/icons/3.png"></image>
         </view>
-        <view class="level-status" wx:if="{{user.level == 2 || user.level == 1 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 2 || user.buildings.length == 1 }}">
           <image class="star-level" class="user-level" src="/icons/2.png"></image>
         </view>  
-        <view class="level-status" wx:if="{{user.level == 0 }}">
+        <view class="level-status" wx:if="{{user.buildings.length == 0 }}">
           <view class="h3">BEGINNER :)</view>
           <image class="star-level" src="/icons/1.png"></image>
         </view>
@@ -76,9 +76,9 @@
           </view>
       </view>
       <!-- not working need to change this to favorite buildings -->
-      <view wx:if="{{user.favorite_buildings.length == 0}}" bindtap="goToBuildings" class="nothing-here">What, no favorite buildings? Go get some! ;)</view>
+      <view wx:if="{{user.favorite_buildings.length == 0}}" bindtap="goToBuildings" class="nothing-here">What! no favorite buildings? <text class="link">Go get some</text>! ;)</view>
     </view>
-
+<text class="link"></text>
       <!-- <view class="h2">YOUR FAVORITE ROUTES</view> -->
 
       <!-- FAVORITED ROUTES --------------------------------------------->
@@ -102,7 +102,7 @@
             </view> 
           </view>
       </view>
-      <view wx:if="{{user.favorited_routes.length == 0}}" bindtap="goToWalks" class="nothing-here" >Nothing here? Time to go for a walk!</view>
+      <view wx:if="{{user.favorited_routes.length == 0}}" bindtap="goToWalks" class="nothing-here" >Nothing here? Time to go for a <text class="link">walk</text>!</view>
     </view>
 
     <!-- YOUR CONTRIBUTIONS ------------------------------------ -->
@@ -128,7 +128,7 @@
               </view> 
             </view>
         </view>
-      <view wx:if="{{user.buildings.length == 0}}" bindtap="addBuilding" class="nothing-here">Sharing is caring. Add a building :)</view>
+      <view wx:if="{{user.buildings.length == 0}}" bindtap="addBuilding" class="nothing-here">Sharing is caring. <text class="link">Add a building</text> :)</view>
     </view>
 </block>
   <view  class="end-pair" bindtap="goToAboutUs">

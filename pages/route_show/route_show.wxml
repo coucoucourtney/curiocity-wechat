@@ -60,13 +60,12 @@ bindmarkertap="bindMarkertap"
 
     <!-- AUTHOR SECTION -->
   <view class="end-bar add-padding">
-    <view>
-      <view class="space">Contributed by</view>
+    <view class="">
+      <view class="space h2-contributed">Contributed by</view>
         <view class="author-info">
           <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
             <view class="author-text">
-              <view class="h2">Curiocity Team</view>
-              <view class="text-p">admin</view> 
+              <view class="h2-contributed">The Curiocity Team</view>
             </view>
         </view>
     </view>
