@@ -22,6 +22,7 @@ Page({
     address: ""
   },
   onLoad: function () {
+    console.log(getApp().globalData)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
     });
@@ -168,10 +169,51 @@ Page({
     // });
   },
 
+  getUserInfo: function (e) {
+
+    const page = this
+    console.log("E", e)
+    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
+    const userId = app.globalData.userId;
+    console.log("userId line 12", userId)
+    // can you do an if statement back here to run login if person doesnt have avatar using url /users 
+    page.setData({
+      userInfo: e.detail.userInfo
+    })
+    console.log("line 16", page.data.userInfo)
+    // success: (res) => {
+    // console.log("getuserinfores", res);
+    const userDetails = page.data.userInfo
+    // saving user info in user instance in backend
+    let updatedUser = {}
+    updatedUser.wechat_name = userDetails.nickName
+    updatedUser.avatar = userDetails.avatarUrl
+    updatedUser.language = userDetails.language
+    updatedUser.gender = userDetails.gender
+    updatedUser.language = userDetails.language
+    console.log("updateduser", updatedUser)
+    page.setData({ updatedUser })
+    wx.request({
+      url: host + `users/${userId}`,
+
+      method: 'put',
+      data: updatedUser,
+      success: (res) => {
+        console.log("line 33 successfully saved to user", res)
+        page.createBuilding(e)
+      }
+    })
+    // }
+  },
+
   createBuilding: function (event) {
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
+
+    // this.getUserInfo(event);
+
     let newBuilding = {};
     // BUILDING VALUES -----------------------------
     newBuilding.name = event.detail.value.name

@@ -63,7 +63,7 @@
       </view> 
     </view>
   </view>
-  <view class="end-pair" bindtap="goToCreateBuilding" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+  <view class="end-pair" bindtap="goToCreateBuilding">
     <view class="end-list">Don't see what you're looking for?  Add it! ;)</view>
     <image class="plus" src="/icons/plus_solid.png" mode="aspectFit"></image>
   </view>
