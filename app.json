@@ -21,10 +21,10 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "text": "Buildings",
-        "pagePath": "pages/building_index/building_index",
-        "iconPath": "icons/building_black.png",
-        "selectedIconPath": "icons/building_gray.png"
+        "text": "Discover",
+        "pagePath": "pages/nearby/nearby",
+        "iconPath": "icons/map_black.png",
+        "selectedIconPath": "icons/map_gray.png"
       },
       {
         "text": "Walks",
@@ -33,10 +33,10 @@
         "selectedIconPath": "icons/walk_gray.png"
       },
       {
-        "text": "Discover",
-        "pagePath": "pages/nearby/nearby",
-        "iconPath": "icons/map_black.png",
-        "selectedIconPath": "icons/map_gray.png"
+        "text": "Buildings",
+        "pagePath": "pages/building_index/building_index",
+        "iconPath": "icons/building_black.png",
+        "selectedIconPath": "icons/building_gray.png"
       },
       {
         "text": "Me",
