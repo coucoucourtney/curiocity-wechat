@@ -5,32 +5,41 @@ const host = app.globalData.host;
 Page({
 
   getUserInfo: function (e) {
-    console.log(e)
+    const page = this
+    console.log("E",e)
     app.globalData.userInfo = e.detail.userInfo
     app.globalData.login = true
-    this.setData({
+    const userId = app.globalData.userId; 
+    console.log("userId line 12", userId)
+
+    page.setData({
       userInfo: e.detail.userInfo
     })
-    // testing delete below
-    // const userInfo = app.globalData.userInfo; 
-    // let updatedUser = {}
-    //     updatedUser.wechat_name = userInfo.nickName
-    //     updatedUser.avatar = userInfo.avatarUrl
-    //     updatedUser.language = userInfo.language
-    //     updatedUser.gender = userInfo.gender
-    //     updatedUser.language = userInfo.language
-    // wx.request({
-    //   url: host + `users/${userId}`,
+    console.log("line 16", page.data.userInfo)
+    // success: (res) => {
+      // console.log("getuserinfores", res);
+      const userDetails = page.data.userInfo
+  // saving user info in user instance in backend
+    let updatedUser = {}
+        updatedUser.wechat_name = userDetails.nickName
+        updatedUser.avatar = userDetails.avatarUrl
+        updatedUser.language = userDetails.language
+        updatedUser.gender = userDetails.gender
+        updatedUser.language = userDetails.language
+        console.log("updateduser", updatedUser)
+        page.setData({ updatedUser})
+    wx.request({
+      url: host + `users/${userId}`,
 
-    //   method: 'put',
-    //   data: {
-    //     updatedUser
-    //   },
-    //   success: (res) => {
-    //     console.log(25, res)
-    //   }
-    // })
+      method: 'put',
+      data: updatedUser,
+      success: (res) => {
+        console.log("line 33 successfully saved to user", res)
+      }
+    })
+  // }
   },
+
   /**
    * Page initial data
    */
@@ -122,7 +131,6 @@ Page({
   onShow: function () {
     const page = this
     const userId = app.globalData.userId;
- 
 
     wx.request({
       url: host + `users/${userId}`,

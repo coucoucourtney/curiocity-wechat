@@ -17,11 +17,12 @@ Page({
   onLoad: function (options) {
     const page = this
     const userId = app.globalData.userId;
-    // const id = options.id
-    // console.log(options.id)
+    const userInfo = app.globalData.userInfo;
+    const id = options.id
+    console.log(options.id)
     console.log(userId)
     wx.request({
-      url: host + `users/${userId}`,
+      url: host + `users/${id}`,
       success: function (res) {
         console.log("yes", res)
         const user = res.data.user.id
@@ -48,7 +49,7 @@ Page({
         console.log(res)
         // const id = res.data.id
         wx.switchTab({
-          url: `/pages/user/user?id=${userId}`,
+          url: `/pages/user/user`,
         })
       }
     })
