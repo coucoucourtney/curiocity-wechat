@@ -138,16 +138,16 @@ Page({
   },
 
   nearby_search: function () {
-    var _this = this;
-    const lat = _this.data.latitude;
-    const lgt = _this.data.longitude;
+    var page = this;
+    const lat = page.data.latitude;
+    const lgt = page.data.longitude;
     // 调用接口
     qqmapsdk.search({
       keyword: '地铁',  //搜索关键词
       location: `${lat},${lgt}`,  //设置周边搜索中心点
       success: function (res) { //搜索成功后的回调
         const metro_stop = res.data[0].title;
-        _this.setData({
+        page.setData({
           metro_stop
         })
       },
