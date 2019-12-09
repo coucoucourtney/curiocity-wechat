@@ -39,7 +39,8 @@
           </view>
         </view>
       </view>
-  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
+      <button wx:if="{{!login}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">You need to login first</button>
+      <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
   </form>
 </view>
 <van-toast id="van-toast" />

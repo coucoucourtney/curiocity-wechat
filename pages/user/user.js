@@ -14,7 +14,7 @@ Page({
 
     page.setData({
       userInfo: e.detail.userInfo,
-      loggedIn: true
+      login: true
     })
     console.log("line 16", page.data.userInfo)
     // success: (res) => {
@@ -45,7 +45,7 @@ Page({
    * Page initial data
    */
   data: {
-
+    login: getApp().globalData.login
   },
 
 

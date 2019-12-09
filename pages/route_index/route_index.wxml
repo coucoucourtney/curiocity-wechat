@@ -37,14 +37,14 @@
       <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
 
     <view class="card-product-infos" bindtap="tapCard" data-id="{{route.id}}">
-      <view class="h2" bindtap="tapCard" data-id="{{route.id}}">{{route.name}}</view>
-      <view class="list" bindtap="tapCard" data-id="{{route.id}}">
-        <view class="block-pair" bindtap="tapCard" data-id="{{route.id}}">
-          <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
+      <view class="h2" data-id="{{route.id}}">{{route.name}}</view>
+      <view class="list" data-id="{{route.id}}">
+        <view class="block-pair" data-id="{{route.id}}">
+          <image class="marker-time" mode="aspectFit" src='/icons/compass.png'/>
           <view class="p">{{route.district}}</view>
         </view>
-        <view class="block-pair" bindtap="tapCard" data-id="{{route.id}}">
-          <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
+        <view class="block-pair" data-id="{{route.id}}">
+          <image class="marker-time" mode="aspectFit" src='/icons/time.png'/>
           <view class="p space-t">{{route.approximate_duration}} mins</view>
         </view>
         <view class="block-pair" bindtap="tapCard" data-id="{{route.id}}">
