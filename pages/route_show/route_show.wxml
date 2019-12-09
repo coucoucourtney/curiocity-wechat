@@ -10,9 +10,19 @@ polyline="{{polyline}}"
 markers="{{markers}}"
 bindmarkertap="bindMarkertap"
 ></map>
+ 
+ <!-- title bar with name and author info -->
+<view class="title-bar">
+  <view class="h1">{{route.name}}</view>
+  <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/>
+</view>
+
+
+
   <view class="route-info">
-    <view class="h1">{{route.name}}</view>
+    <!-- <view class="h1">{{route.name}}</view> -->
     <view class="p">{{route.description}}</view>
+    <!-- <view class="text-p justify">{{"the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog."}}</view> AC: testing-->
     <view class="list">
           <view class="block-pair">
             <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
@@ -47,3 +57,17 @@ bindmarkertap="bindMarkertap"
         </view> 
       </view> 
     </view>
+
+    <!-- AUTHOR SECTION -->
+  <view class="end-bar add-padding">
+    <view>
+      <view class="space">Contributed by</view>
+        <view class="author-info">
+          <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
+            <view class="author-text">
+              <view class="h2">Curiocity Team</view>
+              <view class="text-p">admin</view> 
+            </view>
+        </view>
+    </view>
+  </view>

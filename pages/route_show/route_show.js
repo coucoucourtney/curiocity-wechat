@@ -16,6 +16,8 @@ Page({
    */
   onLoad: function (options) {
     const userId = app.globalData.userId;
+
+    // const id = 4 AC: testing
     console.log("user", userId)
     const page = this
     const id = options.id
