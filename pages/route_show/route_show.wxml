@@ -49,7 +49,7 @@ bindmarkertap="bindMarkertap"
               <view class="info-section">
                 <view class="h2">{{checkpoint.name}}</view>
               </view>
-                <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+                <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/> -->
             </view>
           </view> 
         </view> 

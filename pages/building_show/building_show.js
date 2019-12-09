@@ -69,6 +69,7 @@ Page({
         console.log("favorite", favorite)
         page.setData({ favorited: !page.data.favorited })
 
+
         const building = res.data
         console.log(building)
         page.setData({ building })

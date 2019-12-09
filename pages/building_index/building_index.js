@@ -68,6 +68,37 @@ Page({
     })
   },
 
+  toggleFavorites: function (e) {
+    console.log(e)
+    const page = this
+    const index = e.currentTarget.dataset.index
+    let newFavorite = {};
+    newFavorite.favorited = this.data.favorited
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    console.log('url: ', app.globalData.host + `favorite`)
+    let buildings = page.data.buildings
+
+    wx.request({
+      url: app.globalData.host + `favorite?user_id=${app.globalData.userId}`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+        if (buildings[index].favorited) {
+          buildings[index].favorited = false
+          page.setData({ buildings })
+        } else {
+          buildings[index].favorited = true
+          page.setData({ buildings })
+        }
+      }
+    })
+  },
+
+
+
   // SEARCH BAR COPY END -2
 
   /**
@@ -88,13 +119,16 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    console.log('inside onShow')
     const userId = app.globalData.userId;
+    console.log('userId', userId)
     let page = this
     this.setData({
       inputVal: ''
     })
+    let url = userId == "" ? `${host}${buildings}` : `${host}buildings?user_id=${userId}`
     wx.request({
-      url: host + `buildings`,
+      url: url,
       success: function (res) {
         // const user = res.data
         const buildings = res.data.buildings;

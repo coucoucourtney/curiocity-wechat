@@ -94,7 +94,6 @@
                 <view class="info-section">
                   <view class="h2">{{route.name}}</view>
                 </view>
-                  <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
               </view>
             </view> 
           </view>
