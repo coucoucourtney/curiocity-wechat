@@ -1,2 +1,5 @@
 <!--pages/user_test/user_test.wxml-->
 <text>pages/user_test/user_test.wxml</text>
+<view class="a">Walks  Buildings Add a building*** This is what text looks like</view>
+<view class="b">Walks  Buildings Add a building This is what text looks like</view>
+<view class="c">Walks  Buildings Add a building This is what text looks like</view>

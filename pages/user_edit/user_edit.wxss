@@ -1,4 +1,4 @@
-/* pages/building_create/building_create.wxss */
+/* pages/user_edit/user_edit.wxss */
 .create-form {
   margin: 20rpx 40rpx;
 }
@@ -81,37 +81,57 @@ input {
   background-color: white;
 }
 
-.uploader {
-  display: flex;
-}
 
 .img-upload {
-  height: 175rpx;
-  width: 175rpx;
+  height: 80px;
+  width: 80px;
+  border: 5rpx dashed rgb(150, 150, 150, .7);
   margin: 25rpx;
+  position: relative;
 }
 
 .cam-icon{
-  border: 4rpx dashed rgb(150, 150, 150, .5);
-  padding: 106rpx 11rpx 11rpx 103rpx;
-  height: 60rpx;
-  width: 60rpx;
+  height: 50rpx;
+  width: 50rpx;
   opacity: .5;
-  margin: 25rpx;
-  flex-shrink: 0;
-  /* position: absolute;
+  margin-top: 20rpx;
+  position: absolute;
   left: 165rpx;
-  top: 565rpx; */
+  top: 545rpx;
+}
+
+.img-upload2 {
+  height: 80px;
+  width: 80px;
+  border: 5rpx dashed rgb(150, 150, 150, .7);
+  margin: 25rpx;
+  position: relative;
+  flex-shrink: 0;
+}
+.add-image-2 {
+  position: relative;
+}
+.cam-2 {
+  height: 50rpx;
+  width: 50rpx;
+  opacity: .5;
+  margin-top: 20rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 107rpx;
 }
 
 .align-pic {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20rpx;
   overflow: scroll;
 }
 
 .img-upload-slider {
+width: 80px;
+height: 80px;
+/* overflow: scroll; */
+border: 5rpx dashed rgb(150, 150, 150, .7);
 margin: 25rpx;
 }
 

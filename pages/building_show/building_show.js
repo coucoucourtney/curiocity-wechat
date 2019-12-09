@@ -22,6 +22,28 @@ Page({
     mapKey: config.mapKey
   },
 
+  toggleFavorites: function (e) {
+
+    const page = this
+    page.setData({ favorited: !page.data.favorited })
+
+    let newFavorite = {};
+    newFavorite.favorited = this.data.favorited
+    newFavorite.favoritable_id = e.currentTarget.dataset.id
+    newFavorite.favoritor_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    console.log('url: ', app.globalData.host + `favorite`)
+
+    wx.request({
+      url: app.globalData.host + `favorite`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+      }
+    })
+  },
+
   /**
    * Lifecycle function--Called when page load
    */

@@ -7,9 +7,29 @@ Page({
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
+    app.globalData.login = true
     this.setData({
       userInfo: e.detail.userInfo
     })
+    // testing delete below
+    // const userInfo = app.globalData.userInfo; 
+    // let updatedUser = {}
+    //     updatedUser.wechat_name = userInfo.nickName
+    //     updatedUser.avatar = userInfo.avatarUrl
+    //     updatedUser.language = userInfo.language
+    //     updatedUser.gender = userInfo.gender
+    //     updatedUser.language = userInfo.language
+    // wx.request({
+    //   url: host + `users/${userId}`,
+
+    //   method: 'put',
+    //   data: {
+    //     updatedUser
+    //   },
+    //   success: (res) => {
+    //     console.log(25, res)
+    //   }
+    // })
   },
   /**
    * Page initial data
@@ -39,9 +59,10 @@ Page({
 
   tapCard: function (event) {
     console.log(event)
+    let id = event.currentTarget.dataset.id
     const userId = app.globalData.userId;
     wx.navigateTo({
-      url: `/pages/building_show/building_show?user_id=${userId}`
+      url: `/pages/building_show/building_show?id=${id}&user_id=${userId}`
     })
   },
 
@@ -50,57 +71,41 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log("options line 53", options)
-
-    const page = this
-    const userId = app.globalData.userId;
-    console.log(1,)
-    wx.request({
-      url: host + `users/${userId}`,
-      success: function (res) {
-        const user = res.data.userId
-        page.setData({ 
-          user 
-          });
-        }
-      })
-    console.log("buildings", user.buildings);
-    
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function (res) {
-              console.log("res line75" ,res.userInfo)
-    app.globalData.userInfo = res.userInfo
-      page.setData({
-        userInfo: res.userInfo
-        // trying to send to db
-      });
-      // console log below not showing not setting info until click login
-      console.log("test name line 82", userInfo.nickName)
-        }
-      })
-      // want to send to db??? -----------------------------------?
-      // let updatedUser = {}
-      //   updatedUser.wechat_name = userInfo.nickName
-      //   updatedUser.avatar = userInfo.avatarUrl
-      //   updatedUser.language = userInfo.language
-      //   updatedUser.gender = userInfo.gender
-      //   updatedUser.province = userInfo.province
-      //     wx.request({
-      //       url: host + `users/${id}`,
-      //       method: 'put',
-      //       data: updatedUser,
-      //       success: function (res) {
-      //         console.log(res)
-      //         console.log("name", user.name)
-      //       }
-          // })
-  }
-  }
-    })
+  //   wx.getSetting({
+  //     success(res) {
+  //       if (res.authSetting['scope.userInfo']) {
+  //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+  //         wx.getUserInfo({
+  //           success: function (res) {
+  //             console.log("res line75" ,res.userInfo)
+  //   app.globalData.userInfo = res.userInfo
+  //     page.setData({
+  //       userInfo: res.userInfo
+  //       // trying to send to db
+  //     });
+  //     // console log below not showing not setting info until click login
+  //     console.log("test name line 82", userInfo.nickName)
+  //       }
+  //     })
+  //     // want to send to db??? -----------------------------------?
+  //     // let updatedUser = {}
+  //     //   updatedUser.wechat_name = userInfo.nickName
+  //     //   updatedUser.avatar = userInfo.avatarUrl
+  //     //   updatedUser.language = userInfo.language
+  //     //   updatedUser.gender = userInfo.gender
+  //     //   updatedUser.province = userInfo.province
+  //     //     wx.request({
+  //     //       url: host + `users/${id}`,
+  //     //       method: 'put',
+  //     //       data: updatedUser,
+  //     //       success: function (res) {
+  //     //         console.log(res)
+  //     //         console.log("name", user.name)
+  //     //       }
+  //         // })
+  // }
+  // }
+  //   })
   },
 
 
@@ -115,16 +120,19 @@ Page({
 //    * Lifecycle function--Called when page show
 //    */
   onShow: function () {
-    let page = this
-    // let id = this.data.userId || 1;
+    const page = this
+    const userId = app.globalData.userId;
+ 
+
     wx.request({
-      url: host + "buildings",
+      url: host + `users/${userId}`,
       success: function (res) {
+        console.log("true", res)
         // const user = res.data
-        const buildings = res.data.buildings;
-        console.log(buildings);
+        const user = res.data;
+        console.log(user);
         page.setData({
-          buildings: buildings
+          user: user
         });
 
         wx.hideToast();
@@ -180,13 +188,13 @@ Page({
     })
   },
 
-    goToAboutUs: function () {
+  goToAboutUs: function () {
     wx.navigateTo({
       url: '/pages/about_us/about_us',
     })
   },
 
-    goToUserAgreement: function () {
+  goToUserAgreement: function () {
       wx.navigateTo({
       url: '/pages/user_agreement/user_agreement',
     })
