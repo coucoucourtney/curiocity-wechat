@@ -33,6 +33,7 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 .author-info {
@@ -115,7 +116,6 @@
 .space {
   margin-bottom: 20rpx;
 }
-
 
 .end-bar {
   background-color: rgba(0, 0, 0, .03);

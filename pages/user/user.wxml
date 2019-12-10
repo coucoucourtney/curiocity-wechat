@@ -64,10 +64,11 @@
     <view class="spots-section">
       <view class="user-info">
           <view wx:for="{{user.favorite_buildings}}" wx:for-item="building" >
-            <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
-              <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
+            <view class="card-product">
+              <image class="card-img" mode="aspectFill" src='{{building.main_picture}}' bindtap="tapCard" data-id="{{building.id}}"/>
               <view class="card-product-infos">
-                <view class="h2">{{building.name}}</view>
+                <view class="h2" bindtap="tapCard" data-id="{{building.id}}">{{building.name}}</view>
+                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
               </view>
             </view> 
           </view>
