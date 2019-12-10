@@ -48,37 +48,26 @@ Page({
     login: getApp().globalData.login
   },
   
-
-
   unfavoriteRoute: function (e) {
-    console.log('e', e)
     const page = this
     const index = e.currentTarget.dataset.index
     let newFavorite = {};
-    newFavorite.favorited = this.data.favorited
+    newFavorite.favorited = false
     newFavorite.id = e.currentTarget.dataset.id
     newFavorite.user_id = parseInt(app.globalData.userId)
-    console.log(newFavorite)
-    // console.log('url: ', app.globalData.host + `route_favorite`)
+    console.log(newFavorite);
     let routes = page.data.routes
+    console.log("routes", routes)
 
-    console.log(routes)
-    // wx.request({
-    //   url: app.globalData.host + `route_favorite?user_id=${userId}`,
-    //   method: 'GET',
-    //   data: newFavorite,
-    //   success(res) {
-    //     console.log("result", res)
-    //     if (routes[index].favorited) {
-    //       routes[index].favorited = false
-
-    //       page.setData({ routes })
-    //     } else {
-    //       routes[index].favorited = true
-    //       page.setData({ routes })
-    //     }
-    //   }
-    // })
+    wx.request({
+      url: app.globalData.host + `route_favorite?user_id=${app.globalData.userId}`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+        page.onShow()
+      }
+    })
   },
 
   unfavoriteBuilding: function (e) {
@@ -90,7 +79,6 @@ Page({
     newFavorite.user_id = parseInt(app.globalData.userId)
     console.log(newFavorite);
     let buildings = page.data.buildings
-    let user = page.data.user
     console.log("buildings", buildings)
 
     wx.request({
@@ -185,6 +173,18 @@ Page({
             console.log(buildings);
             page.setData({
               buildings: buildings
+        });
+        wx.hideToast();
+      }
+    })
+    wx.request({
+      url: host + `routes?user_id=${userId}`,
+      success: function (res) {
+        // const user = res.data
+        const routes = res.data.routes;
+        console.log(routes);
+        page.setData({
+          routes: routes
         });
         wx.hideToast();
       }
