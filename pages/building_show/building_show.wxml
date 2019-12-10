@@ -58,7 +58,7 @@
  </view>
 
 <!-- LOCATION INFO -->
-
+<view class="building-location map-margin">
     <view class="info-group"> 
 
       <view class="text">Metro</view>
