@@ -61,7 +61,6 @@ Page({
         console.log("favorite", favorite)
         page.setData({ favorited: !page.data.favorited })
 
-
         const building = res.data
         console.log(building)
         page.setData({ building })
@@ -100,10 +99,9 @@ Page({
   goToDirection: function(e) {
     console.log(e)
     const building = e.currentTarget.dataset.building;
-    const coordinates = `${building.latitude},${building.longitude}`
 
     wx.navigateTo({
-      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
+      url: `/pages/direction/direction?address=${building.address}&name=${building.name}&latitude=${building.latitude}&longitude=${building.longitude}`,
     })
   },
   /**

@@ -48,6 +48,51 @@ Page({
     login: getApp().globalData.login
   },
   
+  unfavoriteRoute: function (e) {
+    const page = this
+    const index = e.currentTarget.dataset.index
+    let newFavorite = {};
+    newFavorite.favorited = false
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    let routes = page.data.routes
+    console.log("routes", routes)
+
+    wx.request({
+      url: app.globalData.host + `route_favorite?user_id=${app.globalData.userId}`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+        page.onShow()
+      }
+    })
+  },
+
+  unfavoriteBuilding: function (e) {
+    const page = this
+    const index = e.currentTarget.dataset.index
+    let newFavorite = {};
+    newFavorite.favorited = false
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    let buildings = page.data.buildings
+    console.log("buildings", buildings)
+
+    wx.request({
+      url: app.globalData.host + `favorite?user_id=${app.globalData.userId}`,
+      method: 'GET',
+      data: newFavorite,
+      success(res) {
+        console.log("result", res)
+        page.onShow()
+      }
+    })
+  },
+
+
   // editUser: function (e) {
   //   const userId = app.globalData.userId;
   //   console.log(e)
@@ -88,7 +133,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-  
+
   },
 
 
@@ -106,6 +151,7 @@ Page({
     const page = this
     const userId = app.globalData.userId;
 
+   
     wx.request({
       url: host + `users/${userId}`,
       success: function (res) {
@@ -116,7 +162,30 @@ Page({
         page.setData({
           user: user
         });
-
+        wx.hideToast();
+      }
+    })
+    wx.request({
+          url: host + `buildings?user_id=${userId}`,
+          success: function (res) {
+            // const user = res.data
+            const buildings = res.data.buildings;
+            console.log(buildings);
+            page.setData({
+              buildings: buildings
+        });
+        wx.hideToast();
+      }
+    })
+    wx.request({
+      url: host + `routes?user_id=${userId}`,
+      success: function (res) {
+        // const user = res.data
+        const routes = res.data.routes;
+        console.log(routes);
+        page.setData({
+          routes: routes
+        });
         wx.hideToast();
       }
     })

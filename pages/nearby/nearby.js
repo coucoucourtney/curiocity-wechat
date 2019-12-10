@@ -50,12 +50,7 @@ Page({
           display: 'TAP'
         }
       })
-      // coordinates.push({
-      //   latitude: that.data.buildings[i].latitude,
-      //   longitude: that.data.buildings[i].longitude
-      //  })
     }
-        // console.log("coordinates", coordinates)
         that.setData({
           markers: markers,
         });
@@ -105,10 +100,9 @@ bindMarkertap: function(e) {
 
   goToDirection: function(e) {
     const building = e.currentTarget.dataset.building;
-    const coordinates = `${building.latitude},${building.longitude}`
 
     wx.navigateTo({
-      url: `/pages/direction/direction?coordinates=${coordinates}&address=${building.address}&name=${building.name}`,
+      url: `/pages/direction/direction?address=${building.address}&name=${building.name}&latitude=${building.latitude}&longitude=${building.longitude}`,
     })
   },
   goToBuilding: function (e) {
