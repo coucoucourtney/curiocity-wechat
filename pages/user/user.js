@@ -31,11 +31,11 @@ Page({
         page.setData({ updatedUser})
     wx.request({
       url: host + `users/${userId}`,
-
       method: 'put',
       data: updatedUser,
       success: (res) => {
         console.log("line 33 successfully saved to user", res)
+        page.setData({user: res.data})
       }
     })
   // }
@@ -46,6 +46,68 @@ Page({
    */
   data: {
     login: getApp().globalData.login
+  },
+  
+
+
+  toggleFavoritesRoute: function (e) {
+    console.log('e', e)
+    const page = this
+    const index = e.currentTarget.dataset.index
+    let newFavorite = {};
+    newFavorite.favorited = this.data.favorited
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
+    console.log(newFavorite)
+    // console.log('url: ', app.globalData.host + `route_favorite`)
+    // let routes = page.data.routes
+
+
+    // wx.request({
+    //   url: app.globalData.host + `route_favorite`,
+    //   method: 'GET',
+    //   data: newFavorite,
+    //   success(res) {
+    //     console.log("result", res)
+    //     if (routes[index].favorited) {
+    //       routes[index].favorited = false
+
+    //       page.setData({ routes })
+    //     } else {
+    //       routes[index].favorited = true
+    //       page.setData({ routes })
+    //     }
+    //   }
+    // })
+  },
+
+  toggleFavoritesBuilding: function (e) {
+    console.log(e)
+    const page = this
+    const index = e.currentTarget.dataset.index
+    let newFavorite = {};
+    newFavorite.favorited = this.data.favorited
+    newFavorite.id = e.currentTarget.dataset.id
+    newFavorite.user_id = parseInt(app.globalData.userId)
+    console.log(newFavorite);
+    let buildings = page.data.buildings
+    console.log(buildings)
+
+    // wx.request({
+    //   url: app.globalData.host + `favorite?user_id=${app.globalData.userId}`,
+    //   method: 'GET',
+    //   data: newFavorite,
+    //   success(res) {
+    //     console.log("result", res)
+    //     if (buildings[index].favorited) {
+    //       buildings[index].favorited = false
+    //       page.setData({ buildings })
+    //     } else {
+    //       buildings[index].favorited = true
+    //       page.setData({ buildings })
+    //     }
+    //   }
+    // })
   },
 
 

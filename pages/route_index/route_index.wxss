@@ -17,8 +17,8 @@
 /* favorite */
 
 .favorite{
-  height: 51rpx;
-  width: 51rpx;
+  height: 38rpx;
+  width: 38rpx;
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
@@ -26,11 +26,12 @@
 }
 
 .favorite-gold{
-  height: 51rpx;
-  width: 51rpx;
+  height: 38rpx;
+  width: 38rpx;
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 

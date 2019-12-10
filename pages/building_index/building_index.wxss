@@ -111,7 +111,7 @@
   /* margin: 6rpx; */
   /* margin-bottom: 10rpx; */
   margin: 0 8rpx 10rpx 8rpx;
-  padding: 7rpx;
+  padding: 9rpx;
 }
 
 .card-product .card-img{
@@ -157,8 +157,8 @@
 }
 
 .favorite{
-  height: 48rpx;
-  width: 48rpx;
+  height: 38rpx;
+  width: 38rpx;
   margin-bottom: 7rpx;
   margin-right: 7rpx;
   margin-top: 1rpx;
@@ -167,11 +167,12 @@
 }
 
 .favorite-gold{
-  height: 51rpx;
-  width: 51rpx;
+  height: 38rpx;
+  width: 38rpx;
   margin-bottom: 7rpx;
-  margin-right: 15rpx;
+  margin-right: 7rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 .end-pair {

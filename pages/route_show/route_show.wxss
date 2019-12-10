@@ -20,27 +20,34 @@
   margin-bottom: 20rpx;
 }
 
+.space-n {
+  margin-top: 8rpx;
+}
+
 .space-p {
   margin-top: 8rpx;
 }
 
-.space-t {
-  margin-top: 6rpx;
-}
 
 
 .block-pair{
   display: flex;
   justify-content: flex-start;
-  /* margin: 10rpx 0 0 0; */
-  /* vertical-align: -webkit-baseline-middle; */
+  align-items: flex-end;
 }
 
 .marker-time{
   height: 35rpx;
   width: 35rpx;
-  margin-right: 20rpx;
-  margin-top: 8rpx;
+  margin-right: 17rpx;
+  margin-bottom: 7rpx;
+}
+
+.marker-location{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 10rpx;
+  margin-bottom: 6rpx;
 }
 
 .marker-distance{
@@ -50,6 +57,14 @@
 }
 
 /* CARD SPACING */
+
+.spots-section {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 5rpx;
+  min-height: 100rpx;
+  margin-top: 15rpx;
+}
 
 .cards {
   display:flex;
@@ -78,22 +93,15 @@
   border-radius: 10rpx;
   box-shadow: 0rpx 4rpx 6rpx rgba(0,0,0,0.20);
   border: 3.5rpx solid white;
-  margin-bottom: 12rpx;
 }
 
 .card-product-infos{
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  padding-left: 10rpx;
+  /* align-items: flex-end; */
+  /* position: relative; */
+  /* padding-left: 10rpx; */
   align-items: center;
-}
-
-.info-section{
-  display: flex;
-  /* flex-direction: column; */
-  /* position:relative; */
 }
 
 .h1 {
@@ -115,18 +123,13 @@
 
 .h2-contributed {
   font-size: 25rpx;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .p{
   font-size: 25rpx;
-  width: 160rpx;
-  font-weight: 200;
+  width: auto;
+  /* font-weight: 200; */
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .favorite{
@@ -139,10 +142,6 @@
   opacity: .7;
 }
 
-.list {
-  display: flex;
-  padding: 30rpx;
-}
 
 .end-pair {
   display: flex;
@@ -164,6 +163,8 @@
 }
 
 /* TOP SECTION WITH ROUTE INFO */
+
+
 .title-bar {
   display: flex;
   align-items: center;
@@ -172,7 +173,6 @@
   margin-left: 27rpx;
   padding-top: 20rpx;
   padding-bottom: 20rpx;
-  width: 97%;
 }
 
 .text-p {
@@ -201,33 +201,38 @@
 }
 
 .end-bar {
-  background-color: rgba(0, 0, 0, .03);
-  padding: 30rpx 0 0 0;
+  background-color: #EDEDED;
+  padding-top: 30rpx;
   display: flex;
   justify-content: center;
-  margin-top: 20rpx;
   text-align: center;
 }
 
 .add-padding {
-  padding: 40rpx 25rpx 44rpx 30rpx;
+  padding: 35rpx 25rpx 44rpx 30rpx;
 }
 
 .route-info {
-  background-color: rgba(0, 0, 0, .11);
-  /* display: flex;
-  justify-content: space-between; */
+  background-color: #EDEDED;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* margin: 0 27rpx 0rpx 27rpx; */
-  padding: 30rpx 30rpx 0rpx 30rpx;
+  padding: 35rpx 70rpx 30rpx 65rpx;
   /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
 
 .text-p {
   font-size: 27rpx;
   font-weight:300;
-  padding-left: 15rpx;
-  padding-right: 15rpx;
+  padding-right: 20rpx;
 }
+
+.text {
+  font-size: 31rpx;
+  font-weight: bold;
+}
+
 
 .justify {
   text-align: justify;
@@ -248,4 +253,23 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
+}
+
+.favorite-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
 }

@@ -242,13 +242,22 @@ align-items: center;
 }
 
 .favorite{
-  height: 51rpx;
-  width: 51rpx;
+  height: 38rpx;
+  width: 38rpx;
   margin-bottom: 7rpx;
   margin-right: 7rpx;
   margin-top: 1rpx;
   /* padding-left: 30 rpx; */
-  opacity: .7;
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
 }
 
 .sub-section {

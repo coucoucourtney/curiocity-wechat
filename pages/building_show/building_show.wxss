@@ -33,12 +33,16 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 .author-info {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #EDEDED;
+  margin-top: 20rpx;
+  padding: 30rpx 0 10rpx 0;
 }
 
 .author-avatar {
@@ -65,25 +69,25 @@
 
 .h2-contributed {
   font-size: 25rpx;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* SECTION WITH BUILDING INFO */
 
 .building-info {
-  background-color: rgba(0, 0, 0, .11);
+  background-color: #EDEDED;
   display: flex;
   justify-content: space-between;
-  /* margin: 0 27rpx 0rpx 27rpx; */
-  padding: 47rpx 30rpx 47rpx 30rpx;
-  margin: 20rpx 0;
+  /* margin-bottom: 27rpx; */
+  padding: 47rpx 30rpx 37rpx 30rpx;
   /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
 
+.map-margin {
+  margin-bottom: 20rpx;
+}
+
 .info-group {
-  margin-bottom: 11rpx;
+  margin-bottom: 17rpx;
   width: 45vw;
 }
 
@@ -101,11 +105,11 @@
 .slider-img {
   width: 100%;
   height:550rpx;
-  margin: 10rpx 0 20px 0;
+  margin: 11rpx 0 20rpx 0;
 }
 
 .add-padding {
-  padding: 0 25rpx 20rpx 30rpx;
+  padding: 25rpx 25rpx 25rpx 30rpx;
 }
 
 .justify {
@@ -114,16 +118,6 @@
 
 .space {
   margin-bottom: 20rpx;
-}
-
-
-.end-bar {
-  background-color: rgba(0, 0, 0, .03);
-  padding: 30rpx 0 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20rpx;
 }
 
 .user-level {
