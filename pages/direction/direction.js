@@ -21,6 +21,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log('options', options)
     // get user current location
     const dest = options.coordinates
     const address = options.address
@@ -65,11 +66,12 @@ Page({
             })
           },
           fail: function (error) {
-            // console.error(error);
+              console.error("error",error);
           },
           complete: function (res) {
             // console.log("res", res);
             const walk = res.result.routes[0]
+            console.log('walk', walk)
             page.setData({ walk })
           }
         });
