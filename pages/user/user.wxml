@@ -68,7 +68,7 @@
               <image class="card-img" mode="aspectFill" src='{{building.main_picture}}' bindtap="tapCard" data-id="{{building.id}}"/>
               <view class="card-product-infos">
                 <view class="h2" bindtap="tapCard" data-id="{{building.id}}">{{building.name}}</view>
-                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
+                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavoritesBuilding" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
               </view>
             </view> 
           </view>
@@ -89,11 +89,11 @@
     <view class="spots-section">
       <view class="user-info">
           <view wx:for="{{user.favorited_routes}}" wx:for-item="route" >
-            <view class="card-product" bindtap="tapRoute" data-id="{{route.id}}">
-              <image class="card-img" mode="aspectFill" src='{{route.main_picture}}'/>
+            <view class="card-product">
+              <image class="card-img" mode="aspectFill" src='{{route.main_picture}}' bindtap="tapRoute" data-id="{{route.id}}"/>
               <view class="card-product-infos">
-                  <view class="h2">{{route.name}}</view>
-                  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+                  <view class="h2" bindtap="tapRoute" data-id="{{route.id}}">{{route.name}}</view>
+                  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavoritesRoute" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
               </view>
             </view> 
           </view>
