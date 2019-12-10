@@ -76,8 +76,8 @@ Page({
     const index = e.currentTarget.dataset.index
 
     let newFavorite = {};
-    newFavorite.favorited = this.data.favorited
-    console.log('this.data.favorited', this.data.favorited)
+    // newFavorite.favorited = this.data.routes[index].favorited
+    // console.log('this.data.favorited', this.data.favorited)
     newFavorite.id = e.currentTarget.dataset.id
     console.log(2, newFavorite.id)
     newFavorite.user_id = parseInt(app.globalData.userId)
@@ -125,11 +125,11 @@ Page({
     const id = options.id
     console.log(1, options)
     wx.request({
-      url: host + `routes/${id}?user_id=${userId}`,
+      url: host + `routes?user_id=${userId}`,
       success: function (res) {
         let favorite = res.data.favorited
         console.log("favorite", favorite)
-        page.setData({ favorited: !page.data.favorited })
+        // AC: page.setData({ favorited: !page.data.favorited })
       }     
     })
   },

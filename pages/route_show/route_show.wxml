@@ -18,7 +18,7 @@
   <view class="h1">{{route.name}}</view>
   <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
   
-<image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+<image mode="aspectFit" bindtap="toggleFavorites" data-type="route" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
 </view>
 
 
@@ -56,7 +56,7 @@
             <view class="card-product-infos">
 
                 <view class="h2" bindtap="tapCard" data-id="{{checkpoint.id}}">{{checkpoint.name}}</view>
-                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold-small' : 'favorite-small'}}"/>
+                <image mode="aspectFit" bindtap="toggleFavorites" data-type="building" data-index="{{index}}" data-id="{{checkpoint.id}}" src="{{checkpoint.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{checkpoint.favorited ? 'favorite-gold-small' : 'favorite-small'}}"/>
 
             </view>
           </view> 

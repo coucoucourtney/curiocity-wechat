@@ -12,16 +12,18 @@ Page({
   },
 
   toggleFavorites: function (e) {
-
+    let faveType = e.currentTarget.dataset.type
+    
     const page = this
-
+    let route = page.data.route
+    if (faveType == "route") {
       let newFavorite = {};
-        newFavorite.favorited = this.data.favorited
+        // newFavorite.favorited = this.data.favorited
         newFavorite.id = e.currentTarget.dataset.id
         newFavorite.user_id = parseInt(app.globalData.userId)
         console.log(newFavorite);
         console.log('url: ', app.globalData.host + `route_favorite`)
-      let route = page.data.route
+      
 
         wx.request({
           url: app.globalData.host + `route_favorite`,
@@ -38,7 +40,43 @@ Page({
                 }
             }
         })
-    },
+    }    
+    else {
+        console.log(111111, faveType)
+            const index = e.currentTarget.dataset.index
+            console.log('index', index)
+            let newFavorite = {};
+            // newFavorite.favorited = this.data.favorited
+            newFavorite.id = e.currentTarget.dataset.id
+            newFavorite.user_id = parseInt(app.globalData.userId)
+            console.log(newFavorite);
+            console.log('url: ', app.globalData.host + `favorite`)
+            // let buildings = page.data.route.checkpoints
+
+            wx.request({
+                url: app.globalData.host + `favorite?user_id=${app.globalData.userId}`,
+                method: 'GET',
+                data: newFavorite,
+                success(res) {
+                    console.log("result", res)
+                    if (route.checkpoints[index].favorited) {
+                        route.checkpoints[index].favorited = false
+                        page.setData({ route })
+                    } else {
+                        route.checkpoints[index].favorited = true
+                        page.setData({ route })
+                    }
+                }
+            })
+
+    } 
+  },
+
+
+
+
+
+
   /**
    * Lifecycle function--Called when page load
    */
@@ -55,7 +93,7 @@ Page({
       success: function (res) {
         let favorite = res.data.favorited
           console.log("favorite", favorite)
-          page.setData({ favorited: !page.data.favorited })
+        //   page.setData({ favorited: !page.data.favorited })
         const route = res.data
           console.log(2, route)
           page.setData({ route })
