@@ -217,7 +217,6 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    newBuilding.photo_slider = userId
     console.log(newBuilding.picture);
     console.log(newBuilding)
 
