@@ -1,5 +1,6 @@
 <view class="page">
   <!--pages/route_show/route_show.wxml-->
+
   <map
   id="myMap"
   style="width: 100%; height: 50vh;"
@@ -11,14 +12,15 @@
   bindmarkertap="bindMarkertap"
   ></map>
  </view>
+ 
+ <!-- title bar with name and author info -->
+<view class="title-bar">
+  <view class="h1">{{route.name}}</view>
+  <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
+  
+<image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+</view>
 
-  <!-- title bar with name and author info -->
-  <view class="title-bar">
-    <view class="h1">{{route.name}}</view>
-    <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
-    
-  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
-  </view>
 
   <view class="route-info">
           <view class="block-pair">
@@ -52,9 +54,11 @@
           <view class="card-product" bindtap="tapCard" data-id="{{checkpoint.id}}">
             <image class="card-img" mode="aspectFill" src='{{checkpoint.main_picture}}'/>
             <view class="card-product-infos">
-              <view class="info-section">
+              <!-- <view class="info-section"> -->
                 <view class="h2">{{checkpoint.name}}</view>
-              </view>
+                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold-small' : 'favorite-small'}}"/>
+
+              <!-- </view> -->
                 <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/> -->
             </view>
           </view> 

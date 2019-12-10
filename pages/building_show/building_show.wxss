@@ -33,6 +33,7 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 .author-info {
@@ -119,7 +120,6 @@
   margin-bottom: 20rpx;
 }
 
-
 .user-level {
   height: 51rpx;
   width: 51rpx;
@@ -142,3 +142,15 @@ align-items: center;
 }
 
 /* LOCATION INFO */
+.building-location {
+  background-color: rgba(0, 0, 0, .11);
+  display: flex;
+  justify-content: space-between;
+  padding: 47rpx 60rpx 47rpx 30rpx;
+  margin: 20rpx 0;
+}
+
+.map-icon {
+width: 90rpx;
+height: 90rpx;
+}
