@@ -59,9 +59,8 @@
 
 <!-- LOCATION INFO -->
 
-<view class="building-info map-margin">
 <!-- ADDRESS DETAILS -->
-  <view class="building-location">
+  <view class="building-location map-margin">
     <view class="info-group">
       <view class="text">Metro</view>
       <view class="text-p">{{building.metro_stop}}</view>
