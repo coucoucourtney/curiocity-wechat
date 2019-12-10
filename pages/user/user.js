@@ -47,8 +47,7 @@ Page({
   data: {
     login: getApp().globalData.login
   },
-
-
+  
   // editUser: function (e) {
   //   const userId = app.globalData.userId;
   //   console.log(e)

@@ -129,16 +129,6 @@
   text-overflow: ellipsis;
 }
 
-.favorite{
-  height: 51rpx;
-  width: 51rpx;
-  margin-bottom: 7rpx;
-  margin-right: 7rpx;
-  margin-top: 1rpx;
-  /* padding-left: 30 rpx; */
-  opacity: .7;
-}
-
 .list {
   display: flex;
   padding: 30rpx;
@@ -248,4 +238,23 @@
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
+}
+
+.favorite-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
 }
