@@ -80,7 +80,7 @@ Page({
               longitude: pl[0].longitude,
               polyline: [{
                 points: pl,
-                color: '#FF0000DD',
+                color: '#C90E9D',
                 width: 5,
                 dottedLine: true
               }]

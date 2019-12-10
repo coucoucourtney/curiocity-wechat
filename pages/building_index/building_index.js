@@ -138,6 +138,7 @@ Page({
           buildings: buildings,
         });
 
+
         wx.hideToast();
       }
     })
