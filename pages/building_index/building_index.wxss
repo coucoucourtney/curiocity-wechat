@@ -1,6 +1,8 @@
 /* pages/building_index/building_index.wxss */
+/* BANNER SECTION */
 .banner {
-  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100%;
@@ -12,43 +14,257 @@
   flex-direction: column;
   /* margin-bottom: 45rpx; */
   padding-bottom: 10rpx;
+  box-shadow: 3rpx 3rpx 3rpx .25;
+  /* check shadow syntax */
+  margin-bottom: 20rpx;
 }
 
 .img-logo{
-  height: 363rpx;
-  /* wtf!!!  just shrinking box around it but not shrinking img! */
-  padding-bottom: 60rpx;
-  padding-top:40rpx;
+  box-shadow: 3rpx 3rpx 3rpx .25;
+  margin-bottom: 190rpx;
+  height: 300rpx;
+  width: 750rpx;
 }
 
 .btn-ghost {
-  color: white;
-  border: 4rpx solid white;
+  color:#3f104f;
+  border: .5rpx solid rgba(255, 255, 255, .4);
   padding: 17rpx 70rpx;
   /* padding-top: 5rpx; */
-  border-radius: 10rpx;
+  border-radius: 50rpx;
   font-weight: bold;
+  text-shadow: 3rpx 3rpx 3rpx .5;
   opacity: 1;
   transition: opacity 0.3s ease;
-  width: 540rpx;
+  width: 450rpx;
   text-align: center; 
   margin: 15rpx 0 0rpx 0;
-  font-size: 22rpx;
-  height: 60rpx;
+  font-size: 25rpx;
+  height: 50rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: white; */
+  /* background: rgba(0, 0, 0, .6); */
+  background: rgba(255, 255, 255, .73);
 }
 
 .banner-p {
   color: white;
   text-shadow: 4rpx 0rpx 4rpx rgba(0,0,0,0.25);
-  font-size: 30rpx;
   /* font-weight: medium; */
   /* font-family: OpenSans; */
-  opacity: .7;
+  /* opacity: .7; */
   text-align: center; 
-  margin-bottom: 20rpx;
+  margin-bottom: 40rpx;
   font-style: oblique;
+  font-size: 30rpx;
+  padding: 0 55rpx;
 }
+
+
+/* .category-bar{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height: 90rpx;
+  color: white;
+  justify-content: space-between;
+  padding-top: 40rpx;
+  /* padding-bottom: 1rpx; */
+/* } */ 
+
+/* .title{
+  font-size: 40rpx;
+  margin-left: 60rpx;
+} */
+
+/* .add-icon{
+  height: 65%;
+  width: 60rpx;
+  margin-right: 100rpx;
+} */
+
+/* BUILDING CARD SECTION */
+.bottom-view{
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 100vw;
+  align-content: flex-start;
+}
+
+.card-product{
+  /* border: 1rpx solid grey; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  /* height: 35vw; */
+  /* margin: 6rpx; */
+  /* margin-bottom: 10rpx; */
+  margin: 0 8rpx 10rpx 8rpx;
+  padding: 9rpx;
+}
+
+.card-product .card-img{
+  width: 100% !important;
+  height: 200rpx !important;
+  display: block !important;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 6rpx rgba(0,0,0,0.20);
+  border: 3.5rpx solid white;
+  margin-bottom: 12rpx;
+}
+
+.card-product-infos{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding-left: 10rpx;
+  align-items: center;
+}
+
+.info-section{
+  display: flex;
+  /* flex-direction: column; */
+  /* position:relative; */
+}
+
+.h2{
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  /* position: absolute; */
+  /* bottom: 27rpx; */
+}
+
+.p{
+  font-size: 27rpx;
+  width: 160rpx;
+  font-weight: 200;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  /* padding-left: 30 rpx; */
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
+}
+
+.end-pair {
+  display: flex;
+  width: 100%;
+  height: 70rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #C8039D;
+  /* background-color: #C8039D; */
+  margin-top: 20rpx;
+}
+
+.end-list{
+  font-size: 25rpx;
+  /* color: rgba(0,0,0,0.8); */
+  color: white;
+  font-weight: bold;
+  /* margin-left: 15px; */
+ 
+}
+
+.plus {
+  margin-left: 20rpx;
+  margin-top: 5rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+/* SEARCH BAR COPY ALL BELOW */
+
+.top {
+  position: sticky;
+  top: 0;
+}
+
+.title {
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result .weui-cell__bd{
+  padding: 2px 0 2px 20px;
+  color: #666;
+}
+.searchbar-result:before{
+    display: none;
+}
+/* WECHAT PAGE STYLE JUNK - RESTYLE AND DELETE */
+.page{
+    background-color: #EDEDED;
+    font-size: 25rpx;
+    font-style: italics;
+    margin-bottom: 20rpx;
+    /* font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif; */
+}
+
+/* WIDGET FORMATTING FOR SEARCH BAR ...MAY WANT TO SEPARATE INTO FILE AND IMPORT? */
+
+.weui-search-bar{
+position:relative;padding:8px;display:-webkit-box;display:-webkit-flex;display:flex;box-sizing:border-box;background-color:#ededed;-webkit-text-size-adjust:100%;-webkit-box-align:center;-webkit-align-items:center;align-items:center
+}
+
+.weui-icon-search{
+margin-right:8px;font-size:14px;vertical-align:top;margin-top:.64em;height:1em;line-height:1em
+  }
+
+
+.weui-icon-search_in-box{
+  position:absolute;left:12px;top:50%;margin-top:-8px}
+  
+.weui-search-bar__text{display:inline-block;font-size:27rpx;vertical-align:top}
+  
+.weui-search-bar__form{position:relative;-webkit-box-flex:1;-webkit-flex:auto;flex:auto;border-radius:4px;background:#fff}
+
+.weui-search-bar__box{position:relative;padding-left:32px;padding-right:32px;width:100%;box-sizing:border-box;z-index:1}
+
+.weui-search-bar__input{height:32px;line-height:32px;font-size:27rpx;caret-color:#07c160; font-style: italic;}
+
+.weui-icon-clear{
+position:absolute;top:0;right:0;bottom:0;padding:0 12px;font-size:0}
+
+.weui-icon-clear:after{
+content:"";
+height:100%;
+vertical-align:middle;
+display:inline-block;
+width:0;
+overflow:hidden}
+
+.weui-search-bar__label{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border-radius:4px;text-align:center;color:rgba(0,0,0,.5);background:#fff;line-height:32px}.weui-search-bar__cancel-btn{margin-left:8px;line-height:32px;color:#C8039D;white-space:nowrap}

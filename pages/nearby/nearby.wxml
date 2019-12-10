@@ -1,2 +1,21 @@
-<!--pages/nearby/nearby.wxml-->
-<text>pages/nearby/nearby.wxml</text>
+<!--longitude及latitude为设置为调转到指定地址位置，默认不显示-->
+<map
+id="myMap"
+style="width: 100%; height: 100vh;"
+longitude="{{longitude}}" latitude="{{latitude}}"
+scale='14'
+subkey="{{mapKey}}"
+polyline="{{polyline}}"
+markers="{{markers}}"
+bindmarkertap="bindMarkertap"
+></map>
+<van-action-sheet class="h2" show="{{ show }}" title="{{building.name}}" bind:close="onClose" >
+  <view class="p">{{building.description}}</view>
+  <view class="p">{{building.address}}</view>
+  <view class="btn-box">
+  <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="goToBuilding" data-id="{{building.id}}"> MORE INFO </button>
+  <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="goToDirection" data-building="{{building}}"> GO! </button>
+  </view>
+</van-action-sheet>

@@ -1,2 +1,47 @@
 <!--pages/building_create/building_create.wxml-->
-<text>pages/building_create/building_create.wxml</text>
+<view class='create-form'>
+  <view class="h1">Add a building</view>
+
+  <form class="new-form" bindsubmit="createBuilding">
+  <view class="element-section">Building information</view>
+    <view class="element-name">Name*</view>
+      <input maxlength="25" name="name" placeholder="building name"></input>
+   <view class="element-name">Main image of building*</view>
+   <view class="uploader">
+      <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image>
+      <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
+   </view>
+    <view class="element-name">Photo credit*</view>
+      <input maxlength="30"name="main_photo_credit" placeholder="who took this photo?"></input>
+    <view class="element-name">Year</view>
+      <input maxlength="9" name="year" placeholder="year built"></input>
+    <view class="element-name">Architect(s)</view>
+      <input maxlength="40" name="architects" placeholder="architect(s)..."></input>
+    <view class="element-name">Style</view>
+      <input name="architectural_style" placeholder="ex. modern, art deco, victorian..."></input>
+      <view class="element-name">Building Description</view>
+        <textarea maxlength="1500" class="wide" name="description" placeholder="ex. special elements, who lived here, stories about the building..."></textarea>
+  <view class="element-section">Location information</view>
+    <view class="element-name">Address*</view>
+      <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}"></input>
+     <view class="element-name">Old Street Names</view>
+        <input maxlength="100" name="old_address" placeholder="if known"></input>
+      <view class="element-name">Former Neighborhood</view>
+        <input maxlength="25" name="neighborhood" placeholder="if known"></input>
+    <view class="element-section">Additional Images</view>
+      <view class="align-pic">
+            <image class="cam-icon" src='/icons/camera.png' bindtap="takeSliderPhoto"></image>   
+        <!-- how to get multiple photos to upload into slider with bunch of icons -->
+        <view wx:for="{{imgSliderUrl}}" wx:for-item="url">
+          <view class="added-pic">
+            <image mode="aspectFit" class="img-upload img-upload-slider" src='{{url}}'></image>
+            <image bindtap="removePic" data-index="{{index}}" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
+          </view>
+        </view>
+      </view>
+      <button wx:if="{{!login}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">You need to login first</button>
+      <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
+  </form>
+</view>
+<van-toast id="van-toast" />
+

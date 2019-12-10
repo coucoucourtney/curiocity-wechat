@@ -1,1 +1,156 @@
 /* pages/building_show/building_show.wxss */
+/* pages/building_show/building_show.wxss */
+.top-img {
+  width: 100%;
+  height:50vh;
+/* golden ratio (38.2vh of 100% vh  */
+}
+
+/* TOP SECTION WITH USER INFO */
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 27rpx;
+  margin-left: 27rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .8;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EDEDED;
+  margin-top: 20rpx;
+  padding: 30rpx 0 10rpx 0;
+}
+
+.author-avatar {
+  border-radius: 50%;
+  height: 50rpx;
+  width: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h1 {
+  font-size: 47rpx;
+  /* font-weight: bold; */
+  text-justify: center;
+  overflow-wrap: break-word;
+  /* check this */
+}
+
+.h2-contributed {
+  font-size: 25rpx;
+}
+
+/* SECTION WITH BUILDING INFO */
+
+.building-info {
+  background-color: #EDEDED;
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 27rpx; */
+  padding: 47rpx 30rpx 37rpx 30rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
+}
+
+.map-margin {
+  margin-bottom: 20rpx;
+}
+
+.info-group {
+  margin-bottom: 17rpx;
+  width: 45vw;
+}
+
+.text {
+  font-size: 31rpx;
+  font-weight: bold;
+}
+
+.text-p {
+  font-size: 27rpx;
+  font-weight:300;
+  padding-right: 20rpx;
+}
+
+.slider-img {
+  width: 100%;
+  height:550rpx;
+  margin: 11rpx 0 20rpx 0;
+}
+
+.add-padding {
+  padding: 25rpx 25rpx 25rpx 30rpx;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.space {
+  margin-bottom: 20rpx;
+}
+
+.user-level {
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 30rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: 1;
+}
+
+.level-status {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.star-level {
+  width: 100rpx;
+  height: 102rpx;
+  margin: -27rpx 0 30rpx 0;
+}
+
+/* LOCATION INFO */
+.building-location {
+  background-color: rgba(0, 0, 0, .11);
+  display: flex;
+  justify-content: space-between;
+  padding: 47rpx 60rpx 47rpx 30rpx;
+  margin: 20rpx 0;
+}
+
+.map-icon {
+width: 90rpx;
+height: 90rpx;
+}

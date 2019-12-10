@@ -4,13 +4,21 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"coverView": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
@@ -44,12 +52,82 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/building_index/building_index",
 					"pathName": "pages/building_index/building_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/map/map",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/user",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "nearby",
+					"pathName": "pages/nearby/nearby",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "walks",
+					"pathName": "pages/route_index/route_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "route show",
+					"pathName": "pages/route_show/route_show",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/building_show/building_show",
+					"pathName": "pages/building_show/building_show",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "direction",
+					"pathName": "pages/direction/direction",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user_test/user_test",
+					"pathName": "pages/user_test/user_test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/route_show/route_show",
+					"pathName": "pages/route_show/route_show",
 					"scene": null
 				}
 			]

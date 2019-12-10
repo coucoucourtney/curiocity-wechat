@@ -1,0 +1,275 @@
+/* pages/route_show/route_show.wxss */
+
+/* MAP STYLING */
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map {
+  border: 1rpx solid black;
+  height: 50vh;
+  width: 100vw;
+}
+
+/* ROUTE INFO */
+
+.space {
+  margin-bottom: 20rpx;
+}
+
+.space-n {
+  margin-top: 8rpx;
+}
+
+.space-p {
+  margin-top: 8rpx;
+}
+
+
+
+.block-pair{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.marker-time{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 17rpx;
+  margin-bottom: 7rpx;
+}
+
+.marker-location{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 10rpx;
+  margin-bottom: 6rpx;
+}
+
+.marker-distance{
+  height: 45rpx;
+  width: 45rpx;
+  margin-right: 10rpx;
+}
+
+/* CARD SPACING */
+
+.spots-section {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 5rpx;
+  min-height: 100rpx;
+  margin-top: 15rpx;
+}
+
+.cards {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+/* CARD */
+
+.card-product{
+  /* border: 1rpx solid grey; */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  /* height: 35vw; */
+  margin: 6rpx;
+  margin-bottom: 10rpx;
+}
+
+.card-product .card-img{
+  width: 100% !important;
+  height: 200rpx !important;
+  display: block !important;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 4rpx 6rpx rgba(0,0,0,0.20);
+  border: 3.5rpx solid white;
+}
+
+.card-product-infos{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: flex-end; */
+  /* position: relative; */
+  /* padding-left: 10rpx; */
+  align-items: center;
+}
+
+.h1 {
+  font-size: 47rpx;
+  /* font-weight: bold; */
+  text-justify: center;
+  overflow-wrap: break-word;
+  /* check this */
+}
+
+.h2{
+  font-size: 25rpx;
+  color: rgba(0,0,0,0.8);
+  font-weight: bold;
+  /* position: absolute; */
+  /* bottom: 27rpx; */
+  padding: 20rpx;
+}
+
+.h2-contributed {
+  font-size: 25rpx;
+}
+
+.p{
+  font-size: 25rpx;
+  width: auto;
+  /* font-weight: 200; */
+  white-space: nowrap;
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  /* padding-left: 30 rpx; */
+  opacity: .7;
+}
+
+
+.end-pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-justify: center;
+  width: 100%;
+  height: 70rpx;
+  background-color: #EDEDED;
+  margin-bottom: 18rpx;
+}
+
+.end-list{
+  font-size: 25rpx;
+  margin-left: 30rpx;
+  /* color: rgba(0,0,0,0.8); */
+  /* color: white; */
+  /* font-weight: bold;  */
+}
+
+/* TOP SECTION WITH ROUTE INFO */
+
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 27rpx;
+  margin-left: 27rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.text-p {
+  font-size: 27rpx;
+  font-weight:300;
+  padding-right: 20rpx;
+}
+
+.author-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.author-avatar {
+  border-radius: 50%;
+  height: 50rpx;
+  width: 50rpx;
+  margin-bottom: 15rpx;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.end-bar {
+  background-color: #EDEDED;
+  padding-top: 30rpx;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.add-padding {
+  padding: 35rpx 25rpx 44rpx 30rpx;
+}
+
+.route-info {
+  background-color: #EDEDED;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin: 0 27rpx 0rpx 27rpx; */
+  padding: 35rpx 70rpx 30rpx 65rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
+}
+
+.text-p {
+  font-size: 27rpx;
+  font-weight:300;
+  padding-right: 20rpx;
+}
+
+.text {
+  font-size: 31rpx;
+  font-weight: bold;
+}
+
+
+.justify {
+  text-align: justify;
+}
+
+.favorite{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold{
+  height: 51rpx;
+  width: 51rpx;
+  margin-bottom: 7rpx;
+  margin-right: 15rpx;
+  margin-top: 1rpx;
+  opacity: .8;
+}
+
+.favorite-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
+}

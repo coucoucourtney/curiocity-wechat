@@ -1,0 +1,59 @@
+<view class="top">
+<view class="h1 title">Walks</view>
+
+<!-- SEARCH BAR COPY BEGIN -->
+<!-- put search bar here -->
+<view class="page">
+    <view >
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="district, walk name, duration, distance..." value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />   
+                  <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                  <icon type="clear" size="14"></icon>
+                  </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">Search walks...</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">Cancel</view>
+        </view>
+        
+    </view>
+</view>
+<!-- SEARCH BAR COPY END -->
+</view>
+
+<!-- CARD AREA -->
+<view wx:for="{{routes}}" wx:for-item="route" wx:index="index">
+  <view class="card-product">
+    <image class="main-image" src="{{route.main_picture}}" bindtap="tapCard" data-id="{{route.id}}" />
+     <!-- <image class="main-image" src="https://images.unsplash.com/photo-1506020757198-1a3adb04b6b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" /> -->
+      <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
+
+      <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+
+    <view class="card-product-infos" bindtap="tapCard" data-id="{{route.id}}">
+      <view class="h2" data-id="{{route.id}}">{{route.name}}</view>
+      <view class="list" data-id="{{route.id}}">
+        <view class="block-pair" data-id="{{route.id}}">
+          <image class="marker-time" mode="aspectFit" src='/icons/compass.png'/>
+          <view class="p">{{route.district}}</view>
+        </view>
+        <view class="block-pair" data-id="{{route.id}}">
+          <image class="marker-time" mode="aspectFit" src='/icons/time.png'/>
+          <view class="p space-t">{{route.approximate_duration}} mins</view>
+        </view>
+        <view class="block-pair" bindtap="tapCard" data-id="{{route.id}}">
+          <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
+          <view class="p space-p">{{route.approximate_distance}} km</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

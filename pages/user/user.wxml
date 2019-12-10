@@ -1,2 +1,139 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<!-- USER INFO SECTION -->
+<view class="login-page" style="background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/c18ca975635a640a4479/yiran-ding-cxf33hXpVec-unsplash.jpg);" wx:if="{{!login}}" >
+<view class="p-login">Login to see your favorites!</view>
+  <button class="btn btn-white" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
+</view>
+<block wx:else >
+    <view class="container">
+    <image mode="aspectFill" src='{{user.avatar}}' class="avatar"/>
+        <view class="h1-name">{{user.wechat_name}}</view>
+        <!-- USER LEVEL HARD CODE -->
+        <!-- <view class="level-status">
+          <view class="h3">BEGINNER :)</view>
+          <image mode="aspectFill" class="star-level" src="/icons/1.png"></image>
+        </view> -->
+          <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
+        <view class="level-status" wx:if="{{user.buildings.length > 10}}">
+          <view class="h3">AMBASSADOR</view>
+          <image class="user-level" src="/icons/ambassador.png"></image>
+        </view>
+        <view class="level-status" wx:if="{{user.buildings.length == 10 || user.buildings.length == 9 }}">
+          <image class="star-level" src="/icons/5.png"></image>
+        </view>
+        <view class="level-status" wx:if="{{user.buildings.length == 8 || user.buildings.length == 7 }}">
+          <image class="star-level" src="/icons/4.png"></image>
+        </view>
+        <view class="level-status" wx:if="{{user.buildings.length == 6 || user.buildings.length == 5 }}">
+          <image class="star-level" src="/icons/3.png"></image>
+        </view>
+        <view class="level-status" wx:if="{{user.buildings.length == 4 || user.buildings.length == 3 }}">
+          <image class="star-level" src="/icons/3.png"></image>
+        </view>
+        <view class="level-status" wx:if="{{user.buildings.length == 2 || user.buildings.length == 1 }}">
+          <image class="star-level" class="user-level" src="/icons/2.png"></image>
+        </view>  
+        <view class="level-status" wx:if="{{user.buildings.length == 0 }}">
+          <view class="h3">BEGINNER :)</view>
+          <image class="star-level" src="/icons/1.png"></image>
+        </view>
+      
+        <!-- <view class="description"> -->
+        <view>
+          <!-- <view class="p" wx:if="{{user.description == null}}" bindtap="editUser"> -->
+          <!-- <view>Hey there!</view> -->
+          <!-- <view>Tell us something about yourself!<image bindtap="editUser" class="edit" mode="aspectFit" bindTap="" src='/icons/edit.png'/></view>  -->
+          <!-- </view> -->
+          <!-- <view wx:else bindtap="editUser"> -->
+            <!-- <view class="p">{{user.description}}</view> -->
+            <!-- <image bindtap="editUser" class="edit" mode="aspectFit" src='/icons/edit.png'/> -->
+          <!-- </view> -->
+          </view>
+        <!-- </view> -->
+    </view>
+
+    <!-- <image src="/icons/deco-bar.jpg" class="deco-bar"></image> -->
+    <!-- END----------------------------------------------------------- -->
+
+    <!-- FAVORITED BUILDINGS --------------------------------------------->
+    <view class="end-pair" bindtap="goToCreateBuilding">
+      <!-- <view class="end-list">
+      </view> -->
+      <view class="end-list">YOUR FAVORITE BUILDINGS</view>
+    </view>
+
+    <view class="spots-section">
+      <view class="user-info">
+          <view wx:for="{{user.favorite_buildings}}" wx:for-item="building" >
+            <view class="card-product">
+              <image class="card-img" mode="aspectFill" src='{{building.main_picture}}' bindtap="tapCard" data-id="{{building.id}}"/>
+              <view class="card-product-infos">
+                <view class="h2" bindtap="tapCard" data-id="{{building.id}}">{{building.name}}</view>
+                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavoritesBuilding" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
+              </view>
+            </view> 
+          </view>
+      </view>
+      <!-- not working need to change this to favorite buildings -->
+      <view wx:if="{{user.favorite_buildings.length == 0}}" bindtap="goToBuildings" class="nothing-here">What! no favorite buildings? <text class="link">Go get some</text>! ;)</view>
+    </view>
+<text class="link"></text>
+      <!-- <view class="h2">YOUR FAVORITE ROUTES</view> -->
+
+      <!-- FAVORITED ROUTES --------------------------------------------->
+    <view class="end-pair" bindtap="goToCreateBuilding">
+      <!-- <view class="end-list">
+      </view> -->
+      <view class="end-list">YOUR FAVORITE WALKS</view>
+    </view>
+
+    <view class="spots-section">
+      <view class="user-info">
+          <view wx:for="{{user.favorited_routes}}" wx:for-item="route" >
+            <view class="card-product">
+              <image class="card-img" mode="aspectFill" src='{{route.main_picture}}' bindtap="tapRoute" data-id="{{route.id}}"/>
+              <view class="card-product-infos">
+                  <view class="h2" bindtap="tapRoute" data-id="{{route.id}}">{{route.name}}</view>
+                  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavoritesRoute" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+              </view>
+            </view> 
+          </view>
+      </view>
+      <view wx:if="{{user.favorited_routes.length == 0}}" bindtap="goToWalks" class="nothing-here" >Nothing here? Time to go for a <text class="link">walk</text>!</view>
+    </view>
+
+    <!-- YOUR CONTRIBUTIONS ------------------------------------ -->
+        <view class="end-pair" bindtap="goToCreateBuilding">
+          <view class="end-list">YOUR CONTRIBUTIONS</view>
+            <view>
+              <image class="plus" src="/icons/plus.png" bindtap="addBuilding" mode="aspectFit"></image>
+            </view>
+        </view>
+      <view class="spots-section">
+          <view class="sub-section">
+          </view>
+          <view class="user-info">
+            <view wx:for="{{user.buildings}}" wx:for-item="building" >
+              <view class="card-product" bindtap="tapCard" data-id="{{building.id}}">
+                <image class="card-img" mode="aspectFill" src='{{building.main_picture}}'/>
+                <view class="card-product-infos">
+                  <view class="info-section">
+                    <view class="h2">{{building.name}}</view>
+                  </view>
+                    <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/>
+                </view>
+              </view> 
+            </view>
+        </view>
+      <view wx:if="{{user.buildings.length == 0}}" bindtap="addBuilding" class="nothing-here">Sharing is caring. <text class="link">Add a building</text> :)</view>
+    </view>
+</block>
+  <!-- <view  class="end-pair" bindtap="goToAboutUs">
+    <!-- <view class="end-list">
+    </view> -->
+    <!-- <view class="end-list">ABOUT US</view>
+  </view>
+  <view  class="end-pair" bindtap="goToUserAgreement"> -->
+  <!-- <view class="end-list">
+  </view> -->
+  <!-- <view class="end-list">USER AGREEMENT</view> --> 
+  <!-- </view> -->
