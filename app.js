@@ -52,7 +52,7 @@ App({
   },
 
   globalData: {
-    userId: "",
+    userId: false,
     userInfo: "",
 // -----------------------------------------------------
     hostLogin: "http://localhost:3000/",

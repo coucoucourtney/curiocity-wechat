@@ -119,15 +119,19 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    // wx.pageScrollTo({
+    //   scrollTop: 0,
+    // })
     console.log('inside onShow')
-    const userId = app.globalData.userId;
     console.log('userId', userId)
     
     let page = this
     this.setData({
       inputVal: ''
     })
-    let url = (userId == undefined ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
+    const userId = app.globalData.userId;
+    let url = ((app.globalData.userId) ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
+    console.log('line 131 bld index',url)
     wx.request({
       url: url,
       success: function (res) {
@@ -180,7 +184,7 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
-      scrollTop: 545,
+      scrollTop: 630,
     })
   },
   
