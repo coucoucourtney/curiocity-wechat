@@ -233,6 +233,10 @@
   font-weight: bold;
 }
 
+.title{
+  color: #C8039D;
+}
+
 
 .justify {
   text-align: justify;

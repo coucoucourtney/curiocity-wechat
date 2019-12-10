@@ -1,3 +1,4 @@
+// pages/building_edit/building_edit.js
 // pages/building_create/building_create.js
 // 引入SDK核心类
 import Toast from '../../dist/toast/toast';
@@ -22,7 +23,22 @@ Page({
     address: ""
   },
   onLoad: function () {
-    this.setData({login: getApp().globalData.login})
+// LOADING INFO ABOUT THE BUILDING ON LOAD
+    const page = this
+    const id = options.id
+    console.log(1, options)
+    console.log(options)
+    wx.request({
+      url: host + `buildings/${id}`,
+      success: function (res) {
+        const building = res.data
+        console.log(building)
+        page.setData({ building })
+      }
+    })
+
+// LOADING PICTURE TAKER ON LOAD
+    this.setData({ login: getApp().globalData.login })
     console.log(getApp().globalData)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
@@ -78,7 +94,7 @@ Page({
         page.setData({
           tempFilePath
         })
-          console.log(tempFilePath)
+        console.log(tempFilePath)
         new AV.File('file-name', {
           blob: {
             uri: tempFilePath,
@@ -97,7 +113,7 @@ Page({
     });
   },
 
-  removePic: function(e) {
+  removePic: function (e) {
     let page = this
     let imgSliderUrl = page.data.imgSliderUrl
     console.log(1, e)
@@ -118,7 +134,7 @@ Page({
       success(res) {
         wx.chooseLocation({
           success: function (res) {
-            console.log("res",res)
+            console.log("res", res)
             const address = res.address
             const name = res.name
             const latitude = res.latitude
@@ -156,7 +172,7 @@ Page({
     })
   },
 
-  getUserInfo: function(e) {
+  getUserInfo: function (e) {
 
     const page = this
     console.log("E", e)
@@ -187,7 +203,7 @@ Page({
       data: updatedUser,
       success: (res) => {
         console.log("line 33 successfully saved to user", res)
-        page.setData({login: true})
+        page.setData({ login: true })
         // page.createBuilding(e)
       }
     })
@@ -198,45 +214,46 @@ Page({
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
-
-    let newBuilding = {};
+    let id = e.currentTarget.dataset.id
+    let editBuilding = {};
     // BUILDING VALUES -----------------------------
-    newBuilding.name = event.detail.value.name
-    newBuilding.main_picture = page.data.imgUrl
-    newBuilding.main_photo_credit = event.detail.main_photo_credit
-    newBuilding.address = event.detail.value.address
-    newBuilding.old_address = event.detail.value.old_address
-    newBuilding.neighborhood = event.detail.value.neighborhood
-    newBuilding.district = page.data.district
-    newBuilding.year = event.detail.value.year
-    newBuilding.architects = event.detail.value.architects
-    newBuilding.architectural_style = event.detail.value.architectural_style
-    newBuilding.description = event.detail.value.description
-    newBuilding.metro_stop = page.data.metro_stop
-    newBuilding.address = page.data.address
-    newBuilding.latitude = page.data.latitude
-    newBuilding.longitude = page.data.longitude
-    newBuilding.photo_slider = page.data.imgSliderUrl
-    console.log(newBuilding.picture);
-    console.log(newBuilding)
+    editBuilding.name = event.detail.value.name
+    editBuilding.main_picture = page.data.imgUrl
+    editBuilding.main_photo_credit = event.detail.main_photo_credit
+    editBuilding.address = event.detail.value.address
+    editBuilding.old_address = event.detail.value.old_address
+    editBuilding.neighborhood = event.detail.value.neighborhood
+    editBuilding.district = page.data.district
+    editBuilding.year = event.detail.value.year
+    editBuilding.architects = event.detail.value.architects
+    editBuilding.architectural_style = event.detail.value.architectural_style
+    editBuilding.description = event.detail.value.description
+    editBuilding.metro_stop = page.data.metro_stop
+    editBuilding.address = page.data.address
+    editBuilding.latitude = page.data.latitude
+    editBuilding.longitude = page.data.longitude
+    editBuilding.user_id = page.data.
+    console.log(editBuilding.picture);
+    console.log(editBuilding)
 
-    if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
+    if (editBuilding.name == "" || editBuilding.main_picture == "" || editBuilding.main_photo_credit == "" || editBuilding.address == "") {
       Toast.fail('Please complete all * fields');
 
     } else {
       wx.request({
-        url: host + "buildings",
-        method: 'post',
-        data: newBuilding,
+        url: host + 'buildings/${id}',
+        method: 'patch',
+        data: editBuilding,
         success: function (res) {
           console.log(res)
-          const id = res.data.user_id
+          const id = res.data.id
           wx.showToast({
-            title: 'Yay!',
+            title: 'Done!',
+            // change to building show page
           })
-          wx.switchTab({
-            url: `/pages/user/user`,
-          })
+            wx.navigateTo({
+              url: `/pages/building_show/building_show?id=${id}`,
+            })
         }
       })
     }

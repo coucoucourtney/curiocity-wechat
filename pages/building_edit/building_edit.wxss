@@ -1,4 +1,4 @@
-/* pages/building_create/building_create.wxss */
+/* pages/building_edit/building_edit.wxss */
 .create-form {
   margin: 20rpx 40rpx;
 }

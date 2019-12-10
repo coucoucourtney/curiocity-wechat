@@ -9,13 +9,26 @@ polyline="{{polyline}}"
 markers="{{markers}}"
 bindmarkertap="bindMarkertap"
 ></map>
-<van-action-sheet class="h2" show="{{ show }}" title="{{building.name}}" bind:close="onClose" >
-  <view class="p">{{building.description}}</view>
-  <view class="p">{{building.address}}</view>
-  <view class="btn-box">
+<van-action-sheet class="h2 title" show="{{ show }}" title="{{building.name}}" bind:close="onClose" >
+  <view class="info-margin">
+    <view class="flexy space">
+      <view>
+        <view class="h2">Address</view>
+        <view class="p">{{building.address}}</view>
+      </view>
+      <image class="icon" mode="aspectFit" src="/icons/go.png" bindtap="goToDirection" data-building="{{building}}"></image>
+    </view>
+    <view class="space">
+      <view class="h2">Description</view>
+      <view class="p">{{building.description}}</view>
+      <image class="icon alignment" mode="aspectFit" src="/icons/more.png" bindtap="goToBuilding" data-id="{{building.id}}"></image>
+    </view>
+    </view>
+  </van-action-sheet>
+    <!-- <view class="btn-box">
   <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="goToBuilding" data-id="{{building.id}}"> MORE INFO </button>
   <button class="btn-black" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="goToDirection" data-building="{{building}}"> GO! </button>
   </view>
-</van-action-sheet>
+ -->

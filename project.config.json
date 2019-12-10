@@ -128,6 +128,13 @@
 					"id": -1,
 					"name": "pages/route_show/route_show",
 					"pathName": "pages/route_show/route_show",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/building_edit/building_edit",
+					"pathName": "pages/building_edit/building_edit",
 					"scene": null
 				}
 			]

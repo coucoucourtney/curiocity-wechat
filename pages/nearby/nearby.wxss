@@ -6,19 +6,54 @@
 /** 添加自定义button点击态样式类**/
 /* .other-button-hover {
   background-color: blue;
-} */
-button.btn-black {
+ } */
+/* button.btn-black {
   margin: 10rpx 20rpx;
   background-color: black;
 }
 .btn-box {
   display: flex;
+}  */
+
+.info-margin{
+  margin: 10rpx 30rpx 30rpx 30rpx;
 }
+
 .h2{
   font-size: 28rpx;
+  /* font-weight: bold; */
 }
 
 .p{
   font-size: 25rpx;
-  margin: 20rpx 36rpx;
+  margin: 12rpx 0rpx 20rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text {
+  font-size: 31rpx;
+  /* font-weight: bold; */
+}
+
+.icon {
+  height:50rpx;
+  width: 50rpx; 
+}
+
+.flexy {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.alignment {
+  float: right;
+  padding-bottom: 20rpx;
+}
+
+
+.space {
+  margin-bottom: 20rpx;
 }
