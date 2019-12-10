@@ -6,7 +6,7 @@ longitude="{{longitude}}" latitude="{{latitude}}"
 scale='17'
 polyline="{{polyline}}"
 markers="{{markers}}"
-include-points="{{temp}}"
+show-location
 >
 </map>
 <view class="direction-box">

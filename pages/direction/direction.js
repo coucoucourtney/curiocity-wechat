@@ -81,7 +81,7 @@ Page({
               polyline: [{
                 points: pl,
                 color: '#FF0000DD',
-                width: 4,
+                width: 5,
                 dottedLine: true
               }]
             })
