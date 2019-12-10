@@ -92,9 +92,8 @@
             <view class="card-product" bindtap="tapRoute" data-id="{{route.id}}">
               <image class="card-img" mode="aspectFill" src='{{route.main_picture}}'/>
               <view class="card-product-infos">
-                <view class="info-section">
                   <view class="h2">{{route.name}}</view>
-                </view>
+                  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
               </view>
             </view> 
           </view>

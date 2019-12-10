@@ -240,3 +240,21 @@
   margin-top: 1rpx;
   opacity: .8;
 }
+
+.favorite-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .3;
+}
+
+.favorite-gold-small{
+  height: 38rpx;
+  width: 38rpx;
+  margin-bottom: 7rpx;
+  margin-right: 7rpx;
+  margin-top: 1rpx;
+  opacity: .8;
+}

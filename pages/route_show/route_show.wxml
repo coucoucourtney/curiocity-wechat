@@ -50,6 +50,9 @@ bindmarkertap="bindMarkertap"
             <view class="card-product-infos">
               <view class="info-section">
                 <view class="h2">{{checkpoint.name}}</view>
+                
+                <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold-small' : 'favorite-small'}}"/>
+
               </view>
                 <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/> -->
             </view>
