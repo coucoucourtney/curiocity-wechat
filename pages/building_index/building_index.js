@@ -6,7 +6,7 @@ const host = app.globalData.host;
 Page({
 
   /**
-   * Page initial data
+   * Page initial datar
    */
   data: {
     // SEARCH BAR COPY BEGIN -1

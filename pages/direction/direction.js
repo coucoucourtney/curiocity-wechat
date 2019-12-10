@@ -92,7 +92,6 @@ Page({
           complete: function (res) {
             // console.log("res", res);
             const walk = res.result.routes[0]
-            console.log('walk', walk)
             page.setData({ walk })
           }
         });
