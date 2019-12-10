@@ -31,11 +31,11 @@ Page({
         page.setData({ updatedUser})
     wx.request({
       url: host + `users/${userId}`,
-
       method: 'put',
       data: updatedUser,
       success: (res) => {
         console.log("line 33 successfully saved to user", res)
+        page.setData({user: res.data})
       }
     })
   // }

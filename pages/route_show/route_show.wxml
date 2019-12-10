@@ -1,47 +1,51 @@
 <view class="page">
   <!--pages/route_show/route_show.wxml-->
-<map
-id="myMap"
-style="width: 100%; height: 50vh;"
-longitude="{{longitude}}" latitude="{{latitude}}"
-scale='13'
-subkey="{{mapKey}}"
-polyline="{{polyline}}"
-markers="{{markers}}"
-bindmarkertap="bindMarkertap"
-></map>
- 
- <!-- title bar with name and author info -->
-<view class="title-bar">
-  <view class="h1">{{route.name}}</view>
-  <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
-  
-<image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
-</view>
+  <map
+  id="myMap"
+  style="width: 100%; height: 50vh;"
+  longitude="{{longitude}}" latitude="{{latitude}}"
+  scale='13'
+  subkey="{{mapKey}}"
+  polyline="{{polyline}}"
+  markers="{{markers}}"
+  bindmarkertap="bindMarkertap"
+  ></map>
+ </view>
+
+  <!-- title bar with name and author info -->
+  <view class="title-bar">
+    <view class="h1">{{route.name}}</view>
+    <!-- <image class="favorite" mode="aspectFit"  src='/icons/star_empty.png' open-type="getUserInfo" bindgetuserinfo="getUserInfo"/> -->
+    
+  <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
+  </view>
 
   <view class="route-info">
-    <!-- <view class="h1">{{route.name}}</view> -->
-    <view class="p">{{route.description}}</view>
-    <!-- <view class="text-p justify">{{"the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog. the quick brown fox jumped over the lzay dog."}}</view> AC: testing-->
-    <view class="list">
           <view class="block-pair">
-            <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/compass.png'/>
-            <view class="p">{{route.district}}</view>
+            <image class="marker-location" mode="aspectFit"  src='/icons/compass.png'/>
+            <view class="p space-n">{{route.district}}</view>
           </view>
           <view class="block-pair">
-            <image class="marker-time" mode="aspectFit" bindTap="" src='/icons/time.png'/>
+            <image class="marker-time" mode="aspectFit"  src='/icons/time.png'/>
             <view class="p space-t">{{route.approximate_duration}} mins</view>
           </view>
           <view class="block-pair">
-            <image class="marker-distance" mode="aspectFit" bindTap="" src='/icons/road.png'/>
-            <view class="p space-p">{{route.approximate_distance}} meters
+            <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
+            <view class="p space-p">{{route.approximate_distance}} km
     </view>
-          </view>
          </view> 
       </view>
+
+  <!-- DESCRIPTION OF BUILDING -->
+
+  <view class="add-padding">
+    <view class="text space">Description</view>
+      <view class="text-p justify">{{route.description}}</view>
   </view>
 
-  <view class="h2">Stops on Walk</view>
+  <view class="end-pair">
+    <view class="end-list">STOPS ON WALK</view>
+  </view>
   <view class="user-info">
       <view class="cards">
         <view wx:for="{{route.checkpoints}}" wx:for-item="checkpoint" >
