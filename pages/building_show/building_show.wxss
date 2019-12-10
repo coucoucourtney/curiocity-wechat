@@ -138,7 +138,7 @@ align-items: center;
 .star-level {
   width: 100rpx;
   height: 102rpx;
-  margin: -27rpx 0 30rpx 0;
+  margin: -27rpx 0 10rpx 0;
 }
 
 /* LOCATION INFO */

@@ -61,11 +61,12 @@
 
 <view class="building-info map-margin">
 <!-- ADDRESS DETAILS -->
-  <view class="building-location">
-    <view class="info-group">
+    <view class="info-group"> 
       <view class="text">Metro</view>
       <view class="text-p">{{building.metro_stop}}</view>
     </view>
+    <!-- testing different markers -->
+      <!-- <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/> -->
       <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/>
   </view>
 <map
