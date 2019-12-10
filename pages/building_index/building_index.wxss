@@ -167,11 +167,12 @@
 }
 
 .favorite-gold{
-  height: 51rpx;
+  height: 48rpx;
   width: 51rpx;
   margin-bottom: 7rpx;
   margin-right: 15rpx;
   margin-top: 1rpx;
+  opacity: .8;
 }
 
 .end-pair {
