@@ -14,25 +14,47 @@ Page({
    * Page initial data
    */
   data: {
-    markers: []
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const page = this
     // get user current location
-    const dest = options.coordinates
+    const dest = `${options.latitude},${options.longitude}`
+    const latitude = options.latitude
+    const longitude = options.longitude
     const address = options.address
     const name = options.name
-    const page = this
+    var temp = []
+    temp.push({ 
+      latitude: latitude,
+      longitude: longitude
+     })
+    const markers = [{ // 获取返回结果，放到mks数组中
+      id: 1,
+      latitude: latitude,
+      longitude: longitude,
+      iconPath: '/icons/map/flag.png', //图标路径
+      width: 30,
+      height: 30,
+      callout: { //可根据需求是否展示经纬度
+        content: name,
+        color: '#000',
+        borderRadius: "10",
+        padding: "5",
+        display: 'ALWAYS'
+      }
+    }]
+
     wx.getLocation({
       type: 'gcj02', // **1
       success: function (res) {
         const latitude = res.latitude
         const longitude = res.longitude
         const start = `${latitude},${longitude}`
-        page.setData( {latitude, longitude, start, dest, address, name } )
+        page.setData( {latitude, longitude, start, dest, address, name, markers, temp } )
 
         qqmapsdk.direction({
           mode: 'walking',//可选值：'driving'（驾车）、'walking'（步行）、'bicycling'（骑行），不填默认：'driving',可不填
@@ -59,13 +81,13 @@ Page({
               polyline: [{
                 points: pl,
                 color: '#FF0000DD',
-                width: 4,
+                width: 5,
                 dottedLine: true
               }]
             })
           },
           fail: function (error) {
-            // console.error(error);
+              console.error("error",error);
           },
           complete: function (res) {
             // console.log("res", res);

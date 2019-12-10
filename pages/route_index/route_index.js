@@ -119,6 +119,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log("options",options)
     const userId = app.globalData.userId;
     console.log("user", userId)
     const page = this

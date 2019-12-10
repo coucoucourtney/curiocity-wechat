@@ -9,7 +9,9 @@
   subkey="{{mapKey}}"
   polyline="{{polyline}}"
   markers="{{markers}}"
+  include-points="{{temp}}"
   bindmarkertap="bindMarkertap"
+  show-location
   ></map>
  </view>
  
