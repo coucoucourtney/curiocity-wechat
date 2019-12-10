@@ -148,3 +148,15 @@ align-items: center;
 }
 
 /* LOCATION INFO */
+.building-location {
+  background-color: rgba(0, 0, 0, .11);
+  display: flex;
+  justify-content: space-between;
+  padding: 47rpx 60rpx 47rpx 30rpx;
+  margin: 20rpx 0;
+}
+
+.map-icon {
+width: 90rpx;
+height: 90rpx;
+}

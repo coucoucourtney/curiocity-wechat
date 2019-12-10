@@ -81,6 +81,8 @@ Page({
             callout: { //可根据需求是否展示经纬度
               content: checkpoints[i].name,
               color: '#000',
+              borderRadius: "10",
+              padding: "5",
               display: 'ALWAYS'
             }
           })
@@ -95,7 +97,8 @@ Page({
           longitude: longitude,
           latitude: latitude,
           polyline: polyline,
-          markers: markers
+          markers: markers,
+          temp: temp
         })
       console.log(4, polyline)
       }
