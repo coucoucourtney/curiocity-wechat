@@ -78,6 +78,7 @@ Page({
     console.log(newFavorite);
     console.log('url: ', app.globalData.host + `favorite`)
     let buildings = page.data.buildings
+    console.log("buildings", buildings)
 
     wx.request({
       url: app.globalData.host + `favorite?user_id=${app.globalData.userId}`,
