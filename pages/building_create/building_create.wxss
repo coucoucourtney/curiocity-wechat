@@ -17,7 +17,7 @@
   padding-top: 40rpx;
   margin-left: 10rpx;
   text-align: center;
-  color: #C8039D;
+  /* color: #C8039D; */
 }
 
 .element-name {
@@ -68,6 +68,7 @@ input {
   width: 640rpx;
   height: 50rpx;
   border-radius: 50rpx;
+  margin-bottom: 60rpx;
   /* text-align: center; */
 }
 

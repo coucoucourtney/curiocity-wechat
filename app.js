@@ -54,6 +54,7 @@ App({
   globalData: {
     userId: "",
     userInfo: "",
+    // ---- CHOOSE YOUR HOST ---------------------
 // -----------------------------------------------------
     // hostLogin: "http://localhost:3000/",
     //  host: "http://localhost:3000/api/v1/",

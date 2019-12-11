@@ -17,7 +17,7 @@
   padding-top: 40rpx;
   margin-left: 10rpx;
   text-align: center;
-  color: #C8039D;
+  /* color: #C8039D; */
 }
 
 .element-name {
@@ -68,6 +68,7 @@ input {
   width: 640rpx;
   height: 50rpx;
   border-radius: 50rpx;
+  margin-bottom: 60rpx;
   /* text-align: center; */
 }
 
@@ -138,4 +139,31 @@ margin: 25rpx;
   margin-bottom: 25rpx;
   opacity: .8;
   color: #C8039D;
+}
+
+/* delete */
+.edit-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 41rpx;
+  padding-right: 27rpx;
+  padding-left: 27rpx;
+  padding-bottom: 35rpx;
+  margin-top: 20vh;
+  border-top: 1rpx solid rgba(0, 0, 0, .2);
+  margin-bottom: 40rpx;
+}
+
+.icon {
+  height: 48rpx;
+  width: 48rpx;
+}
+
+.trash  {
+  opacity: .4;
+}
+
+.text-edit {
+  font-size: 27rpx;
 }
