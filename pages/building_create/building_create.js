@@ -23,7 +23,8 @@ Page({
   },
   onLoad: function () {
     this.setData({login: getApp().globalData.login})
-    console.log(getApp().globalData)
+    console.log("globalData", getApp().globalData)
+    console.log("login", this.data)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
     });
@@ -217,8 +218,8 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    console.log(newBuilding.picture);
-    console.log(newBuilding)
+    console.log("1", newBuilding.picture);
+    console.log("2", newBuilding)
 
     if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
       Toast.fail('Please complete all * fields');
@@ -229,7 +230,7 @@ Page({
         method: 'post',
         data: newBuilding,
         success: function (res) {
-          console.log(res)
+          console.log("3", res)
           const id = res.data.user_id
           wx.showToast({
             title: 'Yay!',
@@ -237,7 +238,20 @@ Page({
           wx.switchTab({
             url: `/pages/user/user`,
           })
+        },
+        fail: function (error) {
+        console.log("error", error) //  error
+      },
+      complete: function (res) {
+        console.log("complete", res)
+        const error = res.data.errors[0] 
+        console.log("error1", error == "Name has already been taken") 
+        if (error == "Name has already been taken") {
+          wx.showToast({
+            title: "Name has already been taken",
+          })
         }
+      }
       })
     }
   },
