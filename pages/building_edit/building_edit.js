@@ -267,21 +267,23 @@ Page({
   },
 
   destroyBuilding: function (e) {
+      
     const id = this.data.building.id
     wx.showModal({
       title: 'Are you sure you want to delete this building?',
       content: 'This action is permanent!',
       cancelText: "Cancel",
       confirmText: "OK",
-      success(res) {
+      success: function (res) {
         if (res.confirm) {
+
           wx.request({
             url: host + `buildings/${id}`,
             method: 'delete',
-            success: (res) => {
-              console.log(res)
+            success: function (res) {
+              console.log (res)
               wx.switchTab({
-                url: '/pages/buildings_index/buildings_index',
+                  url: '/pages/building_index/building_index',
               })
             }
           })
