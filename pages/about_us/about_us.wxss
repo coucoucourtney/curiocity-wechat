@@ -5,43 +5,77 @@
 
 }
 
-.h1 {
+/* .h1-team {
   background-color: lightgrey;
-  margin-bottom: 10rpx;
+  margin-bottom: 70rpx;
   padding-left: 30rpx;
-  font-weight: bold;
   margin-top: 30rpx;
+} */
+
+.h1-team {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70rpx;
+  background-color: #EDEDED;
+  font-size: 25rpx;
+  padding-left: 30rpx;
+  /* color: rgba(0,0,0,0.8); */
+  /* color: white; */
+  font-weight: bold; 
+  margin-bottom: 50rpx;
 }
 
+.h1-about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70rpx;
+  background-color: #EDEDED;
+  margin-bottom: 18rpx;
+  font-size: 25rpx;
+  padding-left: 30rpx;
+  /* color: rgba(0,0,0,0.8); */
+  /* color: white; */
+  font-weight: bold;
+
+}
+
+/* .h1-about {
+  background-color: lightgrey;
+  margin-bottom: 30rpx;
+  
+  padding-left: 30rpx;
+} */
+
 .admin-avatar {
-  height: 150rpx;
-  width: 150rpx;
+  height: 130rpx;
+  width: 130rpx;
   border-radius: 50%;
 }
 
 .infos {
   display: flex;
   align-items: center;
-  margin: 70rpx;
+  margin-left: 100rpx;
 }
 
-.admin-infos {
-  padding-left: 50rpx;
-
-}
-
-.admin-infos .h2 {
+.infos .h2 {
   font-weight: bold;
+  margin-left: 20rpx;
 }
 
-.admin-infos .p {
-  font-size: 30rpx;
+.p {
+  text-align: center;
+  padding: 30rpx;
+  margin-bottom: 50rpx;
 }
 
 .about-p {
-  padding: 30rpx;
   text-align: center;
-  font-size: 30rpx;
+  padding: 30rpx;
 }
 
 .banner {
@@ -58,3 +92,4 @@
   box-shadow: 3rpx 3rpx 3rpx .25;
   margin-bottom: 20rpx;
 }
+

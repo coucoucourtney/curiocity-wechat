@@ -1,61 +1,43 @@
 
-
-<!-- <view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
-  <view class="container">
-    <image class="logo" src="/logo/curiocity_high_drop.png"></image>
-    <view class="h1">Le Wagon brings tech skills to creative people</view>
-    <view class="p">Change your life and learn to code at one of our campuses around the world.</view>
-  </view>
-</view> -->
-
-
 <view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/210266e78c3d6e2903f4/background_img.jpeg);">
     <image class="img-logo"  mode="aspectFit" src='/logo/curiocity_high_drop.png'/>
 </view>
 
-<view class="h1">About Us</view>
+<view class="h1-about">ABOUT US</view>
 
-<view class="about-p">Discover Shanghai through its special architecture ...</view>
+<view class="about-p">We developed this app to help people leran more about the city their in through the architecture.</view>
 
-<view class="h1">The team</view>
+<view class="h1-team">THE TEAM</view>
 
 <view class="us">
   <view class="infos">
-    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UNZ8HTAMQ-32b830c8a5a5-512"></image>
-    <view class="admin-infos">
-      <view class="h2">Ed</view>
-      <view class="p">...</view>
-    </view>
+    <image class="admin-avatar" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/7ebd87b3676e4ea453ee/Capture%20d%E2%80%99e%CC%81cran%202019-12-11%20a%CC%80%2020.32.50.png"></image>
+     <view class="h2">Ed</view>
   </view>
+  <view class="p">Spending last 11 years in banking IT and wealth management operations, will like to pursue freelancing or project managers in tech companies. Love travelling and outdoor activities.</view>
 </view>
 
 <view class="us">
   <view class="infos">
-    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UP5GP8A2V-49b78f0b6bc9-512"></image>
-    <view class="admin-infos">
-      <view class="h2">Courtney</view>
-      <view class="p">...</view>
-    </view>
+    <image class="admin-avatar" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/bb623f7c391087858b1d/Capture%20d%E2%80%99e%CC%81cran%202019-12-11%20a%CC%80%2020.33.03.png"></image>
+     <view class="h2">Courtney</view>
   </view>
+  <view class="p">Traveler, art lover, and developer. I've been running an adventure travel company for the past few years and enjoying life in Shanghai.</view>
 </view>
 
 <view class="us">
   <view class="infos">
-    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UNZ6HFJ8J-549fbb598032-512"></image>
-    <view class="admin-infos">
-      <view class="h2">Alex</view>
-      <view class="p">...</view>
-    </view>
+    <image class="admin-avatar" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/0edea3ed016c43b29627/Capture%20d%E2%80%99e%CC%81cran%202019-12-11%20a%CC%80%2020.33.17.png"></image>
+     <view class="h2">Alex</view>
   </view>
+  <view class="p">Finance and operations experience in global retail and manufacturing industries working towards fin-tech. Looking forward to new adventures with everyone.</view>
 </view>
-
 
 <view class="us">
   <view class="infos">
-    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UPE5AQ5FY-2a2dc50e934a-512"></image>
-    <view class="admin-infos">
-      <view class="h2">Max</view>
-      <view class="p">...</view>
-    </view>
+    <image class="admin-avatar" src="http://lc-lyUmBNQE.cn-n1.lcfile.com/b5c440ae34a9f544fe47/Capture%20d%E2%80%99e%CC%81cran%202019-12-11%20a%CC%80%2020.32.35.png"></image>
+     <view class="h2">Max</view>
   </view>
+  <view class="p">After a Master degree in Marketing, I have been running a distribution and commercial agency in the fashion industry in France. Looking for new challenges I moved to China in order to set up a business in the tech field.</view>
 </view>
+
