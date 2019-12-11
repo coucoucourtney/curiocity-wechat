@@ -39,7 +39,7 @@ Page({
     })
 
 // LOADING PICTURE TAKER ON LOAD
-    this.setData({ login: getApp().globalData.login })
+    this.setData({ login: getApp().globalData.login, userId: getApp().globalData.userId})
     console.log(getApp().globalData)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
@@ -221,7 +221,7 @@ Page({
     // }
   },
 
-  createBuilding: function (event) {
+  editBuilding: function (event) {
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
@@ -245,11 +245,6 @@ Page({
     console.log(editBuilding.picture);
     console.log(editBuilding)
 
-    if (editBuilding.name == "" || editBuilding.main_picture == "" || editBuilding.main_photo_credit == "" || editBuilding.address == "") {
-      console.log('entered incomplete fields')
-      Toast.fail('Please complete all * fields');
-
-    } else {
       console.log('entered wx request')
       wx.request({
         url: host + `buildings/${id}`,
@@ -263,12 +258,11 @@ Page({
             // change to building show page
           })
           // FIX THIS
-            wx.navigateTo({
+            wx.navigateBack({
               url: `/pages/building_show/building_show?id=${id}`,
             })
         }
       })
-    }
   },
 
   destroyBuilding: function (e) {
@@ -277,13 +271,14 @@ Page({
       title: 'Are you sure you want to delete this building?',
       content: 'This action is permanent!',
       cancelText: "Cancel",
-      confirmText: "OK!",
+      confirmText: "OK",
       success(res) {
         if (res.confirm) {
           wx.request({
             url: host + `buildings/${id}`,
             method: 'delete',
             success: (res) => {
+              console.log (res)
               wx.switchTab({
                 url: '/pages/buildings_index/buildings_index',
               })
