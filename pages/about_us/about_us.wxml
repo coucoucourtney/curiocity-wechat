@@ -1,0 +1,61 @@
+
+
+<!-- <view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
+  <view class="container">
+    <image class="logo" src="/logo/curiocity_high_drop.png"></image>
+    <view class="h1">Le Wagon brings tech skills to creative people</view>
+    <view class="p">Change your life and learn to code at one of our campuses around the world.</view>
+  </view>
+</view> -->
+
+
+<view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/210266e78c3d6e2903f4/background_img.jpeg);">
+    <image class="img-logo"  mode="aspectFit" src='/logo/curiocity_high_drop.png'/>
+</view>
+
+<view class="h1">About Us</view>
+
+<view class="about-p">Discover Shanghai through its special architecture ...</view>
+
+<view class="h1">The team</view>
+
+<view class="us">
+  <view class="infos">
+    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UNZ8HTAMQ-32b830c8a5a5-512"></image>
+    <view class="admin-infos">
+      <view class="h2">Ed</view>
+      <view class="p">...</view>
+    </view>
+  </view>
+</view>
+
+<view class="us">
+  <view class="infos">
+    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UP5GP8A2V-49b78f0b6bc9-512"></image>
+    <view class="admin-infos">
+      <view class="h2">Courtney</view>
+      <view class="p">...</view>
+    </view>
+  </view>
+</view>
+
+<view class="us">
+  <view class="infos">
+    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UNZ6HFJ8J-549fbb598032-512"></image>
+    <view class="admin-infos">
+      <view class="h2">Alex</view>
+      <view class="p">...</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="us">
+  <view class="infos">
+    <image class="admin-avatar" src="https://ca.slack-edge.com/T02NE0241-UPE5AQ5FY-2a2dc50e934a-512"></image>
+    <view class="admin-infos">
+      <view class="h2">Max</view>
+      <view class="p">...</view>
+    </view>
+  </view>
+</view>
