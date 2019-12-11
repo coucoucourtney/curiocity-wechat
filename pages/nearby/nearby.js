@@ -90,9 +90,14 @@ Page({
 
   },
 bindMarkertap: function(e) {
+  console.log("1", e)
   const page = this;
   const building = page.data.buildings[e.markerId]
+  console.log("2", building)
+
   page.setData({ building, show: true });
+  console.log("3", e)
+
 },
   onClose() {
     this.setData({ show: false });
