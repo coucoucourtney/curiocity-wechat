@@ -2,15 +2,13 @@
 <view class='create-form'>
   <view class="h1">Edit {{building.name}}</view>
 
-  <form class="new-form" bindsubmit="editBuilding">
+  <form class="new-form" bindsubmit="createBuilding">
   <view class="element-section">Building information</view>
     <view class="element-name">Name*</view>
       <input maxlength="25" name="name" placeholder="building name" value="{{building.name}}"></input>
    <view class="element-name">Main image of building*</view>
    <view class="uploader">
-   <!-- keep this to make original image load next to upload image icon -->
-      <!-- <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image> -->
-      <image bindtap="takeMainPhoto" class="{{building.main_picture ? 'building_image_present' : 'cam-icon'}}" src="{{building.main_picture? building.main_picture : '/icons/camera.png'}}"></image>
+      <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image>
       <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
    </view>
     <view class="element-name">Photo credit*</view>
@@ -48,9 +46,5 @@
       <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
   </form>
 </view>
-  <view class="edit-bar" bindtap="destroyBuilding" data-id="{{building.id}}" wx:if="{{userId == building.user_id}}">
-    <view class="text-edit trash">Destroy building...forever :(</view>
-    <image class="icon space trash" src='/icons/delete.png' ></image>
-  </view>
 <van-toast id="van-toast"/>
 

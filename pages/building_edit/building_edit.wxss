@@ -3,12 +3,6 @@
   margin: 20rpx 40rpx;
 }
 
-.building_image_present {
-  height: 200rpx;
-  width: 200rpx;
-  border: 4rpx dashed rgb(150, 150, 150, .5);
-  flex-shrink: 0;
-}
 
 .h1 {
   display: flex;
@@ -59,7 +53,7 @@ input {
   border-radius: 2rpx;
   width: 600rpx;
   text-align: left;
-  font-size: 24rpx;
+  font-size: 12px;
   margin-bottom: 35rpx;
   word-wrap: break-word;
   font-style: italic;
@@ -144,30 +138,4 @@ margin: 25rpx;
   margin-bottom: 25rpx;
   opacity: .8;
   color: #C8039D;
-}
-
-/* delete */
-.edit-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 41rpx;
-  padding-right: 27rpx;
-  padding-left: 27rpx;
-  padding-bottom: 35rpx;
-  margin-top: 20vh;
-  border-top: 1rpx solid rgba(0, 0, 0, .2);
-}
-
-.icon {
-  height: 48rpx;
-  width: 48rpx;
-}
-
-.trash  {
-  opacity: .4;
-}
-
-.text-edit {
-  font-size: 27rpx;
 }
