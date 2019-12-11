@@ -119,8 +119,10 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    // wx.pageScrollTo({
+    //   scrollTop: 0,
+    // })
     console.log('inside onShow')
-    const userId = app.globalData.userId;
     console.log('userId', userId)
     
     let page = this
@@ -129,6 +131,7 @@ Page({
     })
 
     let url = (userId == undefined || userId == "" ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
+
     wx.request({
       url: url,
       success: function (res) {
@@ -181,7 +184,7 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
-      scrollTop: 545,
+      scrollTop: 630,
     })
   },
   
