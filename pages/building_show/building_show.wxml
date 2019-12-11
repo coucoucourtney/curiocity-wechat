@@ -110,8 +110,8 @@
     </view>
  </view>
 <!-- EDIT/DELETE PANEL (ONLY ALLOWED TO DELETE OWN, NOT ALLOWED TO DELETE CURIOCITY TEAMS ENTRIES -->
-  <!-- <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}" wx:if="{{building.user.user_type == 'user'}}"> -->
-  <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}">
+  <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}" wx:if="{{building.user.user_type == 'user'}}">
+  <!-- <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}"> -->
     <view class="text-edit">ADD SOME INFO :)</view>
     <image class="icon" src='/icons/edit.png'></image>
   </view>

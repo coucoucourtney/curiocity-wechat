@@ -42,7 +42,8 @@
   flex-direction: column;
   background-color: #EDEDED;
   margin-top: 20rpx;
-  padding: 30rpx 0 10rpx 0;
+  padding: 30rpx 0 40rpx 0;
+  
 }
 
 .author-avatar {
@@ -172,7 +173,7 @@ height: 90rpx;
   padding-left: 27rpx;
   padding-bottom: 35rpx;
   margin-top: 20rpx;
-
+  margin-bottom: 40rpx;
 }
 
 .icon {

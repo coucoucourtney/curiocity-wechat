@@ -152,7 +152,7 @@ align-items: center;
   margin-left: 30rpx;
   /* color: rgba(0,0,0,0.8); */
   /* color: white; */
-  /* font-weight: bold;  */
+  font-weight: bold; 
 }
 
 .plus {
