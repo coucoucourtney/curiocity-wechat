@@ -21,6 +21,7 @@ Page({
     district: "",
     address: ""
   },
+
   onLoad: function () {
     this.setData({login: getApp().globalData.login})
     console.log(getApp().globalData)
@@ -28,6 +29,7 @@ Page({
       key: this.data.mapKey
     });
   },
+
   takeMainPhoto: function () {
     let page = this;
     wx.chooseImage({
@@ -54,6 +56,15 @@ Page({
         ).catch(console.error);
       }
     });
+  },
+
+  removeMainPic: function () {
+    let page = this
+    let imgUrl = page.data.imgUrl
+    page.setData({
+      imgUrl: ""
+    })
+    console.log(page.data.imgUrl);
   },
 
   previewMyImage: function (files) {
@@ -217,6 +228,7 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
+    newBuilding.user_id = userId
     console.log(newBuilding.picture);
     console.log(newBuilding)
 

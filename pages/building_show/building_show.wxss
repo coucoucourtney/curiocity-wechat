@@ -147,13 +147,13 @@ align-items: center;
   background-color: rgba(0, 0, 0, .11);
   display: flex;
   justify-content: space-between;
-  padding: 47rpx 60rpx 47rpx 30rpx;
+  padding: 47rpx 60rpx 45rpx 30rpx;
   margin: 20rpx 0;
 }
 
 .map-icon {
-width: 80rpx;
-height: 80rpx;
+width: 72rpx;
+height: 72rpx;
 }
 
 /* EDITING PANEL */

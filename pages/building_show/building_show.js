@@ -52,49 +52,81 @@ Page({
     const userId = app.globalData.userId;
     const page = this
     const id = options.id
-    console.log(1, options)
-    console.log(options)
-    wx.request({
-      url: host + `buildings/${id}?user_id=${userId}`,
-      success: function (res) {
-        let favorite = res.data.favorited
-        console.log("favorite", favorite)
-        page.setData({ favorited: !page.data.favorited })
+    page.setData({ id: options.id })
+  //   wx.request({
+  //     url: host + `buildings/${id}?user_id=${userId}`,
+  //     success: function (res) {
+  //       let favorite = res.data.favorited
+  //       console.log("favorite", favorite)
+  //       page.setData({ favorited: !page.data.favorited })
 
-        const building = res.data
-        console.log(building)
-        page.setData({ building })
+  //       const building = res.data
+  //       console.log(building)
+  //       page.setData({ building })
 
         
-
-        const markers = [
-          {
-            iconPath: "/icons/map/flag.png", // **1
-            latitude: building.latitude,
-            longitude: building.longitude,
-            width: 30,
-            height: 30
-      }]
-      page.setData({ 
-        markers
-        })
-      }
-    })
+  //       const markers = [
+  //         {
+  //           iconPath: "/icons/map/flag.png", // **1
+  //           latitude: building.latitude,
+  //           longitude: building.longitude,
+  //           width: 30,
+  //           height: 30
+  //     }]
+  //     page.setData({ 
+  //       markers
+  //       })
+  //     }
+  //   })
+  // },
   },
+  editBuilding: function (e) {
+      let id = e.currentTarget.dataset.id
+      console.log(e)
+      wx.navigateTo({
+        url: `/pages/building_edit/building_edit?id=${id}`,
+      })
+    },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
-  onReady: function () {
+  // onReady: function () {
 
-  },
+  // },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
 
+    const userId = app.globalData.userId;
+    const page = this
+    const id = page.data.id
+    // console.log(1, options)
+    // console.log(options)
+    wx.request({
+      url: host + `buildings/${id}?user_id=${userId}`,
+      success: function (res) {
+  // ({
+        console.log("resbuilding",res)
+        const building = res.data
+        page.setData({ building: building })
+
+   const markers = [
+            {
+  // ({
+          longitude: building.longitude,
+          width: 30,
+          height: 30
+              }]
+        page.setData({
+            markers
+          })
+        }
+    })
   },
+
   // Go to direction page 
   goToDirection: function(e) {
     console.log(e)
@@ -107,9 +139,7 @@ Page({
   /**
    * Lifecycle function--Called when page hide
    */
-  onHide: function () {
 
-  },
 
   /**
    * Lifecycle function--Called when page unload
