@@ -140,7 +140,7 @@ align-items: center;
 
 .nothing-here {
   font-size: 28rpx;
-  color: #C8039D;
+  color: #88006B;
   opacity: .7;
   font-style: italic;
   text-align: center;

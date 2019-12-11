@@ -152,8 +152,8 @@ align-items: center;
 }
 
 .map-icon {
-width: 90rpx;
-height: 90rpx;
+width: 80rpx;
+height: 80rpx;
 }
 
 /* EDITING PANEL */
