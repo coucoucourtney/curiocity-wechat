@@ -129,9 +129,9 @@ Page({
     this.setData({
       inputVal: ''
     })
-    const userId = app.globalData.userId;
-    let url = ((app.globalData.userId) ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
-    console.log('line 131 bld index',url)
+
+    let url = (userId == undefined || userId == "" ? `${host}buildings` : `${host}buildings?user_id=${userId}`)
+
     wx.request({
       url: url,
       success: function (res) {
