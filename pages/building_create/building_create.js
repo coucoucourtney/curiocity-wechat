@@ -22,8 +22,12 @@ Page({
     address: ""
   },
   onLoad: function () {
-    this.setData({login: getApp().globalData.login})
-    console.log(getApp().globalData)
+    const loginStatus = wx.getStorageSync("login")
+    const userId = wx.getStorageSync('userId'); //将userIdEnc存入本地缓存
+    console.log("user111", userId)
+    this.setData({login: loginStatus})
+    console.log("login", loginStatus)
+    // console.log("login", this.data)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
     });
@@ -197,7 +201,7 @@ Page({
   createBuilding: function (event) {
     console.log(event)
     const page = this;
-    const userId = app.globalData.userId;
+    const userId = wx.getStorageSync('userId');
 
     let newBuilding = {};
     // BUILDING VALUES -----------------------------
@@ -217,8 +221,9 @@ Page({
     newBuilding.latitude = page.data.latitude
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
-    console.log(newBuilding.picture);
-    console.log(newBuilding)
+    newBuilding.user_id = userId
+    console.log("1", newBuilding.picture);
+    console.log("2", newBuilding)
 
     if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
       Toast.fail('Please complete all * fields');
@@ -229,7 +234,7 @@ Page({
         method: 'post',
         data: newBuilding,
         success: function (res) {
-          console.log(res)
+          console.log("3", res)
           const id = res.data.user_id
           wx.showToast({
             title: 'Yay!',
@@ -237,7 +242,20 @@ Page({
           wx.switchTab({
             url: `/pages/user/user`,
           })
-        }
+        },
+        fail: function (error) {
+        console.log("error", error) //  error
+      },
+      complete: function (res) {
+        console.log("complete", res)
+        // const error = res.data.errors[0] 
+        // console.log("error1", error == "Name has already been taken") 
+        // if (error == "Name has already been taken") {
+        //   wx.showToast({
+        //     title: "Name has already been taken",
+        //   })
+        // }
+      }
       })
     }
   },
@@ -253,9 +271,9 @@ Page({
   // /**
   //  * Lifecycle function--Called when page show
   //  */
-  // onShow: function () {
-
-  // },
+  onShow: function () {
+    const login = wx.getStorageSync("login")
+  },
 
   // /**
   //  * Lifecycle function--Called when page hide

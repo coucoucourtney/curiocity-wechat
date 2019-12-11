@@ -25,6 +25,9 @@ App({
             console.log("res", res)
             this.globalData.userId = res.data.userId
             console.log(this.globalData.userId)
+
+            wx.setStorageSync('userId', res.data.userId); //将userIdEnc存入本地缓存
+
           }
         })
       }
