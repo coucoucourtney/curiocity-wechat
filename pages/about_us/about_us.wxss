@@ -1,0 +1,60 @@
+.logo {
+  /* text-align: center; */
+  width: 100%;
+  margin-bottom: 40rpx;
+
+}
+
+.h1 {
+  background-color: lightgrey;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+}
+
+.admin-avatar {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 50%;
+}
+
+.infos {
+  display: flex;
+  margin: 70rpx;
+  align-items: center;
+}
+
+.admin-infos {
+  padding-left: 50rpx;
+
+}
+
+.admin-infos .h2 {
+  font-weight: bold;
+}
+
+.admin-infos .p {
+  font-size: 30rpx;
+}
+
+.about-p {
+  padding: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10rpx;
+  box-shadow: 3rpx 3rpx 3rpx .25;
+  margin-bottom: 20rpx;
+}
