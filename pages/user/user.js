@@ -139,8 +139,8 @@ Page({
   onLoad: function (options) {
     const userId = wx.getStorageSync("userId");
     const loginStatus = wx.getStorageSync('login'); //将userIdEnc存入本地缓存
-    this.setData({ login: loginStatus })
 
+    this.setData({ login: loginStatus })
   },
 
 

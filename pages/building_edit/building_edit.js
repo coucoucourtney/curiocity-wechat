@@ -26,8 +26,6 @@ Page({
 // LOADING INFO ABOUT THE BUILDING ON LOAD
     const page = this
     const id = options.id
-    console.log(1, options)
-    console.log(options)
     wx.request({
       url: host + `buildings/${id}`,
       success: function (res) {
@@ -39,8 +37,11 @@ Page({
     })
 
 // LOADING PICTURE TAKER ON LOAD
-    this.setData({ login: getApp().globalData.login, userId: getApp().globalData.userId})
-    console.log(getApp().globalData)
+    const loginStatus = wx.getStorageSync("login")
+    const userId = wx.getStorageSync("userId")
+
+    this.setData({ login: loginStatus, userId: userId})
+    console.log("data", this.data)
     qqmapsdk = new QQMapWX({
       key: this.data.mapKey
     });
@@ -187,10 +188,10 @@ Page({
 
     const page = this
     console.log("E", e)
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.login = true
+    wx.setStorageSync("userInfo", e.detail.userInfo)
+    wx.setStorageSync("login", true)
     const userId = app.globalData.userId;
-    console.log("userId line 12", userId)
+    // console.log("userId line 12", userId)
     // can you do an if statement back here to run login if person doesnt have avatar using url /users 
     page.setData({
       userInfo: e.detail.userInfo
@@ -224,7 +225,7 @@ Page({
   editBuilding: function (event) {
     console.log(event)
     const page = this;
-    const userId = app.globalData.userId;
+    const userId = wx.getStorageSync("userId");
     let id = page.data.building.id
     let editBuilding = {};
     // BUILDING VALUES -----------------------------
@@ -245,24 +246,24 @@ Page({
     console.log(editBuilding.picture);
     console.log(editBuilding)
 
-      console.log('entered wx request')
-      wx.request({
-        url: host + `buildings/${id}`,
-        method: 'put',
-        data: editBuilding,
-        success: function (res) {
-          console.log(res)
-          const id = res.data.id
-          wx.showToast({
-            title: 'Done!',
-            // change to building show page
-          })
-          // FIX THIS
-            wx.navigateBack({
-              url: `/pages/building_show/building_show?id=${id}`,
-            })
-        }
-      })
+    console.log('entered wx request')
+    wx.request({
+      url: host + `buildings/${id}`,
+      method: 'put',
+      data: editBuilding,
+      success: function (res) {
+        console.log(res)
+        const id = res.data.id
+        wx.showToast({
+          title: 'Done!',
+          // change to building show page
+        })
+        // FIX THIS
+        wx.navigateBack({
+          url: `/pages/building_show/building_show?id=${id}`,
+        })
+      }
+    })
   },
 
   destroyBuilding: function (e) {
@@ -278,7 +279,7 @@ Page({
             url: host + `buildings/${id}`,
             method: 'delete',
             success: (res) => {
-              console.log (res)
+              console.log(res)
               wx.switchTab({
                 url: '/pages/buildings_index/buildings_index',
               })
@@ -290,6 +291,7 @@ Page({
       }
     })
   }, 
+  
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -300,9 +302,9 @@ Page({
   // /**
   //  * Lifecycle function--Called when page show
   //  */
-  // onShow: function () {
-
-  // },
+  onShow: function () {
+    const login = wx.getStorageSync("login")
+  },
 
   // /**
   //  * Lifecycle function--Called when page hide
