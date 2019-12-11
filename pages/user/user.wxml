@@ -4,7 +4,7 @@
   <button class="btn btn-white" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Login</button>
 </view>
 <block wx:else >
-    <view class="container">
+  <view class="container">
     <image mode="aspectFill" src='{{user.avatar}}' class="avatar"/>
         <view class="h1-name">{{user.wechat_name}}</view>
         <!-- USER LEVEL HARD CODE -->
@@ -17,28 +17,33 @@
           <view class="h3">AMBASSADOR</view>
           <image class="user-level" src="/icons/ambassador.png"></image>
         </view>
+
         <view class="level-status" wx:if="{{user.buildings.length == 10 || user.buildings.length == 9 }}">
           <image class="star-level" src="/icons/5.png"></image>
         </view>
+
         <view class="level-status" wx:if="{{user.buildings.length == 8 || user.buildings.length == 7 }}">
           <image class="star-level" src="/icons/4.png"></image>
         </view>
+
         <view class="level-status" wx:if="{{user.buildings.length == 6 || user.buildings.length == 5 }}">
           <image class="star-level" src="/icons/3.png"></image>
         </view>
+
         <view class="level-status" wx:if="{{user.buildings.length == 4 || user.buildings.length == 3 }}">
           <image class="star-level" src="/icons/3.png"></image>
         </view>
+
         <view class="level-status" wx:if="{{user.buildings.length == 2 || user.buildings.length == 1 }}">
           <image class="star-level" class="user-level" src="/icons/2.png"></image>
         </view>  
+
         <view class="level-status" wx:if="{{user.buildings.length == 0 }}">
-          <view class="h3">BEGINNER :)</view>
           <image class="star-level" src="/icons/1.png"></image>
         </view>
       
         <!-- <view class="description"> -->
-        <view>
+        <!-- <view> -->
           <!-- <view class="p" wx:if="{{user.description == null}}" bindtap="editUser"> -->
           <!-- <view>Hey there!</view> -->
           <!-- <view>Tell us something about yourself!<image bindtap="editUser" class="edit" mode="aspectFit" bindTap="" src='/icons/edit.png'/></view>  -->
@@ -47,9 +52,9 @@
             <!-- <view class="p">{{user.description}}</view> -->
             <!-- <image bindtap="editUser" class="edit" mode="aspectFit" src='/icons/edit.png'/> -->
           <!-- </view> -->
-          </view>
+          <!-- </view> -->
         <!-- </view> -->
-    </view>
+  </view>
 
     <!-- <image src="/icons/deco-bar.jpg" class="deco-bar"></image> -->
     <!-- END----------------------------------------------------------- -->
@@ -131,7 +136,7 @@
 <view  class="end-pair" bindtap="goToAboutUs">
   <view class="end-list">ABOUT US</view>
 </view>
-  
+<!--   
 <view  class="end-pair" bindtap="goToUserAgreement">
   <view class="end-list">USER AGREEMENT</view> 
-</view>
+</view> -->

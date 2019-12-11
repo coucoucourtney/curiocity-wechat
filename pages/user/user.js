@@ -253,9 +253,9 @@ Page({
     })
   },
 
-  goToUserAgreement: function () {
-      wx.navigateTo({
-      url: '/pages/user_agreement/user_agreement',
-    })
-  },
+  // goToUserAgreement: function () {
+  //     wx.navigateTo({
+  //     url: '/pages/user_agreement/user_agreement',
+  //   })
+  // },
 })

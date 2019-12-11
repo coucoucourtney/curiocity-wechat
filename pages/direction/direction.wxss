@@ -37,8 +37,8 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 30rpx 0rpx 40rpx 0;
-  padding: 35rpx 70rpx 30rpx 65rpx;
+  margin: 30rpx 0rpx 90rpx 0;
+  padding: 35rpx 70rpx 40rpx 65rpx;
   /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
 

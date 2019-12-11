@@ -47,8 +47,8 @@
         </view>
       </view>
       <block wx:if="{{!login}}">
-        <view class="login-caption">You need to login to edit a building</view>
         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">LOGIN</button>
+        <view class="login-caption">You need to login to edit a building</view>
       </block>
       <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
   </form>
