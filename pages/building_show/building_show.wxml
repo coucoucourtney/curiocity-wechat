@@ -58,7 +58,7 @@
  </view>
 
 <!-- LOCATION INFO -->
-
+<view class="building-location map-margin">
     <view class="info-group"> 
 
       <view class="text">Metro</view>
@@ -67,7 +67,7 @@
     <!-- testing different markers -->
       <!-- <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/> -->
       <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/>
-  <!-- </view> -->
+  </view>
 <map
   style="width: 100%; height: 500rpx;"
   longitude="{{building.longitude}}" latitude="{{building.latitude}}"
@@ -75,7 +75,6 @@
   subkey="{{mapKey}}"
   markers="{{markers}}"
   ></map>
-
 
 <!-- AUTHOR SECTION IF PRESENT-->
     <view class="author-info">
@@ -115,3 +114,4 @@
     <view class="text-edit">ADD SOME INFO :)</view>
     <image class="icon" src='/icons/edit.png'></image>
   </view>
+

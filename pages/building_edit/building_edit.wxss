@@ -3,12 +3,6 @@
   margin: 20rpx 40rpx;
 }
 
-.building_image_present {
-  height: 200rpx;
-  width: 200rpx;
-  border: 4rpx dashed rgb(150, 150, 150, .5);
-  flex-shrink: 0;
-}
 
 .h1 {
   display: flex;
@@ -59,7 +53,7 @@ input {
   border-radius: 2rpx;
   width: 600rpx;
   text-align: left;
-  font-size: 24rpx;
+  font-size: 12px;
   margin-bottom: 35rpx;
   word-wrap: break-word;
   font-style: italic;

@@ -52,7 +52,7 @@ App({
   },
 
   globalData: {
-    userId: false,
+    userId: "",
     userInfo: "",
     // ---- CHOOSE YOUR HOST ---------------------
 // -----------------------------------------------------

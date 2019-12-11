@@ -22,7 +22,7 @@ Page({
     district: "",
     address: ""
   },
-  onLoad: function (options) {
+  onLoad: function () {
 // LOADING INFO ABOUT THE BUILDING ON LOAD
     const page = this
     const id = options.id
@@ -33,7 +33,7 @@ Page({
       success: function (res) {
         const building = res.data
         console.log(building)
-        page.setData({ building, imgSliderUrl: building.photo_slider })
+        page.setData({ building })
       }
     })
 
@@ -210,39 +210,39 @@ Page({
     // }
   },
 
-  editBuilding: function (event) {
+  createBuilding: function (event) {
     console.log(event)
     const page = this;
     const userId = app.globalData.userId;
-    let id = page.data.building.id
+    let id = e.currentTarget.dataset.id
     let editBuilding = {};
     // BUILDING VALUES -----------------------------
     editBuilding.name = event.detail.value.name
     editBuilding.main_picture = page.data.imgUrl
-    editBuilding.main_photo_credit = event.detail.value.main_photo_credit
+    editBuilding.main_photo_credit = event.detail.main_photo_credit
     editBuilding.address = event.detail.value.address
     editBuilding.old_address = event.detail.value.old_address
     editBuilding.neighborhood = event.detail.value.neighborhood
-    editBuilding.district = page.data.building.district
+    editBuilding.district = page.data.district
     editBuilding.year = event.detail.value.year
     editBuilding.architects = event.detail.value.architects
     editBuilding.architectural_style = event.detail.value.architectural_style
     editBuilding.description = event.detail.value.description
-    editBuilding.metro_stop = page.data.building.metro_stop
-    editBuilding.latitude = page.data.building.latitude
-    editBuilding.longitude = page.data.building.longitude
+    editBuilding.metro_stop = page.data.metro_stop
+    editBuilding.address = page.data.address
+    editBuilding.latitude = page.data.latitude
+    editBuilding.longitude = page.data.longitude
+    editBuilding.user_id = page.data.
     console.log(editBuilding.picture);
     console.log(editBuilding)
 
     if (editBuilding.name == "" || editBuilding.main_picture == "" || editBuilding.main_photo_credit == "" || editBuilding.address == "") {
-      console.log('entered incomplete fields')
       Toast.fail('Please complete all * fields');
 
     } else {
-      console.log('entered wx request')
       wx.request({
-        url: host + `buildings/${id}`,
-        method: 'put',
+        url: host + 'buildings/${id}',
+        method: 'patch',
         data: editBuilding,
         success: function (res) {
           console.log(res)
@@ -251,41 +251,15 @@ Page({
             title: 'Done!',
             // change to building show page
           })
-            wx.navigateBack({
-              
+            wx.navigateTo({
+              url: `/pages/building_show/building_show?id=${id}`,
             })
-            // ({
-            //   url: `/pages/building_show/building_show?id=${id}`,
-            // })
         }
       })
     }
   },
 
-  destroyBuilding: function (e) {
-    const id = this.data.building.id
-    wx.showModal({
-      title: 'Are you sure you want to delete this building?',
-      content: 'This action is permanent!',
-      cancelText: "Cancel",
-      confirmText: "OK!",
-      success(res) {
-        if (res.confirm) {
-          wx.request({
-            url: host + `buildings/${id}`,
-            method: 'delete',
-            success: (res) => {
-              wx.switchTab({
-                url: '/pages/buildings_index/buildings_index',
-              })
-            }
-          })
-        } else if (res.cancel) {
 
-        }
-      }
-    })
-  }, 
   /**
    * Lifecycle function--Called when page is initially rendered
    */

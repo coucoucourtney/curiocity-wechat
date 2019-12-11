@@ -53,7 +53,7 @@ input {
   border-radius: 2rpx;
   width: 600rpx;
   text-align: left;
-  font-size: 24rpx;
+  font-size: 12px;
   margin-bottom: 35rpx;
   word-wrap: break-word;
   font-style: italic;
