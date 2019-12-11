@@ -149,6 +149,7 @@
 					"id": -1,
 					"name": "pages/about_us/about_us",
 					"pathName": "pages/about_us/about_us",
+					"query": "",
 					"scene": null
 				}
 			]

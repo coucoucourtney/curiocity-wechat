@@ -139,8 +139,8 @@ Page({
   onLoad: function (options) {
     const userId = wx.getStorageSync("userId");
     const loginStatus = wx.getStorageSync('login'); //将userIdEnc存入本地缓存
-    this.setData({ login: loginStatus })
 
+    this.setData({ login: loginStatus })
   },
 
 
@@ -157,6 +157,8 @@ Page({
   onShow: function () {
     const page = this
     const userId = wx.getStorageSync("userId");
+    const loginStatus = wx.getStorageSync("login")
+    this.setData({ login: loginStatus, userId: userId })
    
     wx.request({
       url: host + `users/${userId}`,
@@ -251,9 +253,9 @@ Page({
     })
   },
 
-  goToUserAgreement: function () {
-      wx.navigateTo({
-      url: '/pages/user_agreement/user_agreement',
-    })
-  },
+  // goToUserAgreement: function () {
+  //     wx.navigateTo({
+  //     url: '/pages/user_agreement/user_agreement',
+  //   })
+  // },
 })
