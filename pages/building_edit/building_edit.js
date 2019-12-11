@@ -32,7 +32,7 @@ Page({
         const building = res.data
         console.log(building)
         page.setData({ building })
-        page.setData({ building, imgSliderUrl: building.photo_slider })
+        page.setData({ building, imgSliderUrl: building.photo_slider, imgUrl: building.main_picture })
       }
     })
 
