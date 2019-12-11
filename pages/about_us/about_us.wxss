@@ -21,8 +21,8 @@
 
 .infos {
   display: flex;
-  margin: 70rpx;
   align-items: center;
+  margin: 70rpx;
 }
 
 .admin-infos {
