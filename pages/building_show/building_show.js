@@ -113,10 +113,10 @@ Page({
         const building = res.data
         page.setData({ building: building })
 
-   const markers = [
-            {
-  // ({
+   const markers = [{
+          iconPath: "/icons/map/flag.png", // **1
           longitude: building.longitude,
+          latitude: building.latitude,
           width: 30,
           height: 30
               }]
