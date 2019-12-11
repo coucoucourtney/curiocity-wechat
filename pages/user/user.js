@@ -7,9 +7,13 @@ Page({
   getUserInfo: function (e) {
     const page = this
     console.log("E",e)
-    app.globalData.userInfo = e.detail.userInfo
-    app.globalData.login = true
-    const userId = app.globalData.userId; 
+    wx.setStorageSync('userInfo', e.detail.userInfo); //将userIdEnc存入本地缓存
+    wx.setStorageSync('login', true); //将userIdEnc存入本地缓存
+    const userId = wx.getStorageSync('userId'); //将userIdEnc存入本地缓存
+    console.log("user111", userId)
+    // app.globalData.userInfo = e.detail.userInfo
+    // app.globalData.login = true
+    // const userId = app.globalData.userId; 
     console.log("userId line 12", userId)
 
     page.setData({
@@ -45,7 +49,7 @@ Page({
    * Page initial data
    */
   data: {
-    login: getApp().globalData.login
+    login: wx.getStorageSync("login")
   },
   
   unfavoriteRoute: function (e) {
@@ -133,6 +137,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    const userId = wx.getStorageSync("userId");
+    const loginStatus = wx.getStorageSync('login'); //将userIdEnc存入本地缓存
+    this.setData({ login: loginStatus })
 
   },
 
@@ -149,8 +156,7 @@ Page({
 //    */
   onShow: function () {
     const page = this
-    const userId = app.globalData.userId;
-
+    const userId = wx.getStorageSync("userId");
    
     wx.request({
       url: host + `users/${userId}`,
@@ -239,15 +245,15 @@ Page({
     })
   },
 
-  // goToAboutUs: function () {
-  //   wx.navigateTo({
-  //     url: '/pages/about_us/about_us',
-  //   })
-  // },
+  goToAboutUs: function () {
+    wx.navigateTo({
+      url: '/pages/about_us/about_us',
+    })
+  },
 
-  // goToUserAgreement: function () {
-  //     wx.navigateTo({
-  //     url: '/pages/user_agreement/user_agreement',
-  //   })
-  // },
+  goToUserAgreement: function () {
+      wx.navigateTo({
+      url: '/pages/user_agreement/user_agreement',
+    })
+  },
 })

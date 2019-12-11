@@ -8,17 +8,18 @@
     "pages/nearby/nearby",
     "pages/map/map",
     "pages/direction/direction",
-    "pages/building_edit/building_edit"
+    "pages/building_edit/building_edit",
+    "pages/about_us/about_us"
   ],
 
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3f104f",
-    "borderStyle": "black",
+    "color": "#88006B",
+    "selectedColor": "#BDA0B7",
+    "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "text": "Buildings",
+        "text": "Home",
         "pagePath": "pages/building_index/building_index",
         "iconPath": "icons/building_black.png",
         "selectedIconPath": "icons/building_gray.png"
