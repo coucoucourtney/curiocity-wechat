@@ -52,56 +52,8 @@ Page({
     const userId = app.globalData.userId;
     const page = this
     const id = options.id
-    page.setData({id: options.id})
-    // console.log(1, options)
-    // console.log(options)
-    // wx.request({
-    //   url: host + `buildings/${id}?user_id=${userId}`,
-    //   success: function (res) {
-    //     let favorite = res.data.favorited
-    //     console.log("favorite", favorite)
-    //     page.setData({ favorited: !page.data.favorited })
-
-    //     const building = res.data
-    //     console.log(building)
-    //     page.setData({ building })
-
-        
-
-    //     const markers = [
-    //       {
-    //         iconPath: "/icons/map/flag.png", // **1
-    //         latitude: building.latitude,
-    //         longitude: building.longitude,
-    //         width: 30,
-    //         height: 30
-    //   }]
-    //   page.setData({ 
-    //     markers
-    //     })
-    //   }
-    // })
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  // onReady: function () {
-
-  // },
-
-  // /**
-  //  * Lifecycle function--Called when page show
-  //  */
-  onShow: function () {
-    
-
-    
-    const userId = app.globalData.userId;
-    const page = this
-    const id = page.data.id
-    // console.log(1, options)
-    // console.log(options)
+    console.log(1, options)
+    console.log(options)
     wx.request({
       url: host + `buildings/${id}?user_id=${userId}`,
       success: function (res) {
@@ -113,7 +65,7 @@ Page({
         console.log(building)
         page.setData({ building })
 
-
+        
 
         const markers = [
           {
@@ -122,13 +74,26 @@ Page({
             longitude: building.longitude,
             width: 30,
             height: 30
-          }]
-        page.setData({
-          markers
+      }]
+      page.setData({ 
+        markers
         })
       }
     })
-    
+  },
+
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * Lifecycle function--Called when page show
+   */
+  onShow: function () {
+
   },
   // Go to direction page 
   goToDirection: function(e) {
@@ -139,49 +104,38 @@ Page({
       url: `/pages/direction/direction?address=${building.address}&name=${building.name}&latitude=${building.latitude}&longitude=${building.longitude}`,
     })
   },
+  /**
+   * Lifecycle function--Called when page hide
+   */
+  onHide: function () {
 
-  editBuilding: function(e) {
-    let id = e.currentTarget.dataset.id
-    console.log(e)
-    wx.navigateTo({
-      url: `/pages/building_edit/building_edit?id=${id}`,
-    })
   },
-  
 
-  
-  // /**
-  //  * Lifecycle function--Called when page hide
-  //  */
-  // onHide: function () {
+  /**
+   * Lifecycle function--Called when page unload
+   */
+  onUnload: function () {
 
-  // },
+  },
 
-  // /**
-  //  * Lifecycle function--Called when page unload
-  //  */
-  // onUnload: function () {
+  /**
+   * Page event handler function--Called when user drop down
+   */
+  onPullDownRefresh: function () {
 
-  // },
+  },
 
-  // /**
-  //  * Page event handler function--Called when user drop down
-  //  */
-  // onPullDownRefresh: function () {
+  /**
+   * Called when page reach bottom
+   */
+  onReachBottom: function () {
 
-  // },
+  },
 
-  // /**
-  //  * Called when page reach bottom
-  //  */
-  // onReachBottom: function () {
+  /**
+   * Called when user click on the top right corner to share
+   */
+  onShareAppMessage: function () {
 
-  // },
-
-  // /**
-  //  * Called when user click on the top right corner to share
-  //  */
-  // onShareAppMessage: function () {
-
-  // }
+  }
 })
