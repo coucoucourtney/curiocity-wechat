@@ -181,7 +181,9 @@ Page({
 
   scrollToDiv: function () {
     wx.pageScrollTo({
+
       selector: ".weui-search-bar"
+
     })
   },
   

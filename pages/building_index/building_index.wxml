@@ -58,7 +58,7 @@
             <!-- <view class="p">{{building.district}}</view> -->
           </view>
           <!-- can we do this for getting user info-->
-            <image mode="aspectFit" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
+            <image mode="aspectFit" bindtap="toggleFavorites" data-index="{{index}}" data-id="{{building.id}}" src="{{building.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{building.favorited ? 'favorite-gold' : 'favorite'}}"/>
         </view>
       </view> 
     </view>

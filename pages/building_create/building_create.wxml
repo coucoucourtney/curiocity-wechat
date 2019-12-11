@@ -9,7 +9,10 @@
    <view class="element-name">Main image of building*</view>
    <view class="uploader">
       <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image>
-      <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
+      <view class="added-pic">
+        <image wx:if="{{imgUrl}}" bindtap="removeMainPic" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
+        <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
+      </view>
    </view>
     <view class="element-name">Photo credit*</view>
       <input maxlength="30"name="main_photo_credit" placeholder="who took this photo?"></input>
@@ -41,7 +44,7 @@
       </view>
       <block wx:if="{{!login}}">
         <view class="login-caption">You need to login to create a building</view>
-        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">LOGIN</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">Login</button>
       </block>
       <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
   </form>

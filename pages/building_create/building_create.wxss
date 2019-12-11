@@ -53,7 +53,7 @@ input {
   border-radius: 2rpx;
   width: 600rpx;
   text-align: left;
-  font-size: 12px;
+  font-size: 24px;
   margin-bottom: 35rpx;
   word-wrap: break-word;
   font-style: italic;
@@ -121,7 +121,6 @@ margin: 25rpx;
 .remove{
   width: 30rpx;
   height: 30rpx;
-  box-shadow: 2rpx 2rpx 3rpx rgba(0, 0, 0, .1);
   position: absolute;
   top: 14rpx;
   right: 13rpx;

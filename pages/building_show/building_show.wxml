@@ -115,3 +115,18 @@
     <image class="icon" src='/icons/edit.png'></image>
   </view>
 
+
+    <!-- testing different markers -->
+      <!-- <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/> -->
+      <!-- <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/>
+  </view>
+  <!-- </view> -->
+<!-- <map
+  style="width: 100%; height: 500rpx;"
+  longitude="{{building.longitude}}" latitude="{{building.latitude}}" -->
+
+  <!-- markers="{{markers}}"
+  ></map> --> 
+
+
+

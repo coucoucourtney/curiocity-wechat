@@ -21,6 +21,7 @@ Page({
     district: "",
     address: ""
   },
+
   onLoad: function () {
     const loginStatus = wx.getStorageSync("login")
     const userId = wx.getStorageSync('userId'); //将userIdEnc存入本地缓存
@@ -32,6 +33,7 @@ Page({
       key: this.data.mapKey
     });
   },
+
   takeMainPhoto: function () {
     let page = this;
     wx.chooseImage({
@@ -58,6 +60,15 @@ Page({
         ).catch(console.error);
       }
     });
+  },
+
+  removeMainPic: function () {
+    let page = this
+    let imgUrl = page.data.imgUrl
+    page.setData({
+      imgUrl: ""
+    })
+    console.log(page.data.imgUrl);
   },
 
   previewMyImage: function (files) {
@@ -222,8 +233,10 @@ Page({
     newBuilding.longitude = page.data.longitude
     newBuilding.photo_slider = page.data.imgSliderUrl
     newBuilding.user_id = userId
+
     console.log("1", newBuilding.picture);
     console.log("2", newBuilding)
+
 
     if (newBuilding.name == "" || newBuilding.main_picture == "" || newBuilding.main_photo_credit == "" || newBuilding.address == "" ) {
       Toast.fail('Please complete all * fields');
