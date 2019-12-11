@@ -303,7 +303,9 @@ Page({
   //  * Lifecycle function--Called when page show
   //  */
   onShow: function () {
-    const login = wx.getStorageSync("login")
+    const loginStatus = wx.getStorageSync("login")
+    this.setData({ login: loginStatus })
+
   },
 
   // /**

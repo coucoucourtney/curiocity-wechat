@@ -157,6 +157,8 @@ Page({
   onShow: function () {
     const page = this
     const userId = wx.getStorageSync("userId");
+    const loginStatus = wx.getStorageSync("login")
+    this.setData({ login: loginStatus, userId: userId })
    
     wx.request({
       url: host + `users/${userId}`,
