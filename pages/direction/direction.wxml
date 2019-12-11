@@ -9,11 +9,30 @@ markers="{{markers}}"
 show-location
 >
 </map>
-<view class="direction-box">
+<!-- CURRENT -->
+<!-- <view class="direction-box">
   <view class="h2">{{name}}</view>
   <view class="h3"> {{address}}</view>
   <view class="direction-info">
     <view class="p">Distance: {{walk.distance}}  meters </view>
     <view class="p">Duration: {{ walk.duration}}  min</view>
   </view>
-</view>
+</view> -->
+<!-- COURTNEYS EDITS -->
+<view class="direction-box">
+  <view class="h1">{{name}}</view>
+    <view class="address">
+      <view class="h2">{{address}}</view>
+      <!-- <view class="p">{{address}}</view> -->
+    </view>
+  </view>
+  <view class="route-info">
+    <view class="block-pair">
+      <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
+      <view class="p space-p">{{walk.distance}} km</view>
+    </view>
+    <view class="block-pair">
+     <image class="marker-time" mode="aspectFit"  src='/icons/time.png'/>
+      <view class="p">{{walk.duration}} mins</view>
+    </view>
+  </view>

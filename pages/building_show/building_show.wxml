@@ -66,7 +66,7 @@
     </view>
     <!-- testing different markers -->
       <!-- <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/> -->
-      <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/map/map-dot.png"/>
+      <image mode="aspectFit" class="map-icon" bindtap="goToDirection" data-building="{{building}}" src="/icons/go.png"/>
   </view>
 <map
   style="width: 100%; height: 500rpx;"
@@ -108,3 +108,10 @@
       </view> 
     </view>
  </view>
+<!-- EDIT/DELETE PANEL (ONLY ALLOWED TO DELETE OWN, NOT ALLOWED TO DELETE CURIOCITY TEAMS ENTRIES -->
+  <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}" wx:if="{{building.user.user_type == 'user'}}">
+  <!-- <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}"> -->
+    <view class="text-edit">ADD SOME INFO :)</view>
+    <image class="icon" src='/icons/edit.png'></image>
+  </view>
+

@@ -42,7 +42,8 @@
   flex-direction: column;
   background-color: #EDEDED;
   margin-top: 20rpx;
-  padding: 30rpx 0 10rpx 0;
+  padding: 30rpx 0 40rpx 0;
+  
 }
 
 .author-avatar {
@@ -151,6 +152,45 @@ align-items: center;
 }
 
 .map-icon {
-width: 90rpx;
-height: 90rpx;
+width: 80rpx;
+height: 80rpx;
+}
+
+/* EDITING PANEL */
+
+/* .edit-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} */
+
+.edit-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 41rpx;
+  padding-right: 27rpx;
+  padding-left: 27rpx;
+  padding-bottom: 35rpx;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.icon {
+  height: 48rpx;
+  width: 48rpx;
+}
+
+.trash  {
+  opacity: .4;
+}
+
+.text-edit {
+  font-size: 27rpx;
+}
+
+.color {
+  background-color: #C8039D;
+  color: white;
+  font-weight: bold;
 }

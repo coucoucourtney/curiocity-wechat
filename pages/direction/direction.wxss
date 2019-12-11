@@ -1,20 +1,63 @@
 .direction-box {
-  background-color: rgba(0, 0, 0, .11);
-  height: 20vh;
+  /* background-color: rgba(0, 0, 0, .11); */
+  padding: 30rpx 30rpx 0rpx 30rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
 }
-.direction-info {
+
+
+.h1{
+  font-size: 45rpx;
+  /* font-weight: bold; */
+  margin-bottom: 30rpx;
+  /* text-align: center; */
+
+}
+
+.h2{
+  font-size: 32rpx;
+  font-weight: 300;
+  
+}
+
+.p{
+  font-size: 28rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.address{
+  margin: 0 30rpx;
+}
+
+.route-info {
+  background-color: #EDEDED;
   display: flex;
-  justify-content: space-between;
-  padding: 30rpx 20px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30rpx 0rpx 40rpx 0;
+  padding: 35rpx 70rpx 30rpx 65rpx;
+  /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
-.h2 {
-  padding: 20rpx;
-  font-size: 50rpx;
-  font-weight: bold;
+
+.block-pair{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-right: 10rpx;
 }
-.h3 {
-  padding: 0 20rpx;
+
+.marker-time{
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 17rpx;
+  margin-bottom: 7rpx;
 }
-.p {
-  font-size: 35rpx;
+
+.marker-distance{
+  height: 45rpx;
+  width: 45rpx;
+  margin-right: 10rpx;
 }

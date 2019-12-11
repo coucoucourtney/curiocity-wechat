@@ -135,6 +135,13 @@
 					"id": -1,
 					"name": "pages/building_edit/building_edit",
 					"pathName": "pages/building_edit/building_edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/building_create/building_create",
+					"pathName": "pages/building_create/building_create",
 					"scene": null
 				}
 			]
