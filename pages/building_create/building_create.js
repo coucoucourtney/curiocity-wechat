@@ -176,7 +176,7 @@ Page({
     const page = this
     console.log("E", e)
     app.globalData.userInfo = e.detail.userInfo
-    app.globalData.login = true
+    wx.setStorageSync("login", true)
     const userId = app.globalData.userId;
     console.log("userId line 12", userId)
     // can you do an if statement back here to run login if person doesnt have avatar using url /users 
