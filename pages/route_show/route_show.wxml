@@ -3,7 +3,7 @@
 
   <map
   id="myMap"
-  style="width: 100%; height: 50vh;"
+  style="width: 100%; height: 40vh;"
   longitude="{{longitude}}" latitude="{{latitude}}"
   scale='13'
   subkey="{{mapKey}}"
@@ -23,22 +23,32 @@
 <image mode="aspectFit" bindtap="toggleFavorites" data-type="route" data-id="{{route.id}}" src="{{route.favorited ? '/icons/star_gold.png' : '/icons/star_empty.png'}}" class="{{route.favorited ? 'favorite-gold' : 'favorite'}}"/>
 </view>
 
+  <!-- <view class="route-info-metro">
 
-  <view class="route-info">
-          <view class="block-pair">
-            <image class="marker-location" mode="aspectFit"  src='/icons/compass.png'/>
-            <view class="p space-n">{{route.district}}</view>
-          </view>
-          <view class="block-pair">
-            <image class="marker-time" mode="aspectFit"  src='/icons/time.png'/>
-            <view class="p space-t">{{route.approximate_duration}} mins</view>
-          </view>
-          <view class="block-pair">
-            <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
-            <view class="p space-p">{{route.approximate_distance}} km
+    <view class="block-pair">
+      <image class="marker-metro" mode="aspectFit"  src='/icons/metro.png'/>
+      <view class="p space-m">{{route.metro_station_start}}</view>
     </view>
-         </view> 
-      </view>
+</view> -->
+ 
+ <view class="route-info">
+
+  <view class="block-pair">
+      <image class="marker-location" mode="aspectFit"  src='/icons/compass.png'/>
+      <view class="p space-n">{{route.district}}</view>
+    </view>
+
+    <view class="block-pair">
+      <image class="marker-time" mode="aspectFit"  src='/icons/time.png'/>
+      <view class="p space-t">{{route.approximate_duration}} mins</view>
+    </view>
+
+    <view class="block-pair">
+      <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
+      <view class="p space-p">{{route.approximate_distance}} km
+    </view>
+  </view> 
+</view>
 
   <!-- DESCRIPTION OF BUILDING -->
 
@@ -67,14 +77,14 @@
     </view>
 
     <!-- AUTHOR SECTION -->
-  <view class="end-bar add-padding">
-    <view class="">
-      <view class="space h2-contributed">Contributed by</view>
-        <view class="author-info">
-          <image mode="aspectFit" class="author-avatar" src="/logo/pink_logo.png"/>
-            <view class="author-text">
-              <view class="h2-contributed">The Curiocity Team</view>
-            </view>
-        </view>
-    </view>
-  </view>
+  <!-- <view class="end-bar"> -->
+    <!-- <view class=""> -->
+      <!-- <view class="space h2-contributed">Contributed by</view> -->
+        <!-- <view class="author-info">
+            <view class="author-text"> -->
+              <!-- <view class="h2-contributed">By the Curiocity Team</view> -->
+              <!-- <image mode="aspectFit" class="author-avatar" src="/logo/curiocity_high_drop.png"/> -->
+            <!-- </view>
+        </view> -->
+    <!-- </view> -->
+  <!-- </view> -->

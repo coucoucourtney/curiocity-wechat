@@ -8,11 +8,11 @@
   align-items: center;
 }
 
-.map {
+/* map {
   border: 1rpx solid black;
-  height: 50vh;
+  height: 30vh;
   width: 100vw;
-}
+} */
 
 /* ROUTE INFO */
 
@@ -27,8 +27,10 @@
 .space-p {
   margin-top: 8rpx;
 }
-
-
+.space-m {
+  margin-top: 8rpx;
+  margin-left: 10rpx;
+}
 
 .block-pair{
   display: flex;
@@ -53,6 +55,12 @@
 .marker-distance{
   height: 45rpx;
   width: 45rpx;
+  margin-right: 10rpx;
+}
+
+.marker-metro {
+  height: 35rpx;
+  width: 35rpx;
   margin-right: 10rpx;
 }
 
@@ -183,15 +191,8 @@
 
 .author-text {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.author-avatar {
-  border-radius: 50%;
-  height: 50rpx;
-  width: 50rpx;
-  margin-bottom: 15rpx;
+  justify-content: space-around;
 }
 
 .author-info {
@@ -202,11 +203,17 @@
 
 .end-bar {
   background-color: #EDEDED;
-  padding-top: 30rpx;
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   text-align: center;
+  margin-top: 30rpx;
+  padding: 50rpx;
 }
+/* 
+.author-avatar {
+  width: 100%;
+  height: 100%;
+} */
 
 .add-padding {
   padding: 35rpx 25rpx 44rpx 30rpx;
@@ -218,9 +225,17 @@
   justify-content: space-between;
   align-items: center;
   /* margin: 0 27rpx 0rpx 27rpx; */
-  padding: 35rpx 70rpx 30rpx 65rpx;
+  padding: 35rpx 80rpx 30rpx 80rpx;
   /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
+/* 
+.route-info-metro {
+  background-color: #EDEDED;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35rpx 0 30rpx 0rpx;
+} */
 
 .text-p {
   font-size: 27rpx;

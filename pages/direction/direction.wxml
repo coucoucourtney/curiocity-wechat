@@ -29,7 +29,7 @@ show-location
 
 
 <view class="walk-infos">
-  <view class="p-infos">Walking informations</view>
+  <view class="p-infos">Walking information</view>
 
   <view class="route-info">
 
