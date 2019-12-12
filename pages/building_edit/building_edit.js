@@ -152,10 +152,11 @@ Page({
             const latitude = res.latitude
             const longitude = res.longitude
             const district = address.substr(3, 3)
+            const city = address.sub(0,3)
             if (name.length == 0) {
               Toast.fail('Please reenter address');
             } else {
-              page.setData({ address, name, latitude, longitude, district })
+              page.setData({ address, name, latitude, longitude, district, city })
               page.nearby_search();
             }
           }
@@ -236,6 +237,7 @@ Page({
     editBuilding.old_address = event.detail.value.old_address
     editBuilding.neighborhood = event.detail.value.neighborhood
     editBuilding.district = page.data.building.district
+    editBuilding.city = page.data.building.city
     editBuilding.year = event.detail.value.year
     editBuilding.architects = event.detail.value.architects
     editBuilding.architectural_style = event.detail.value.architectural_style
