@@ -107,7 +107,7 @@
     </view>
 
     <!-- YOUR CONTRIBUTIONS ------------------------------------ -->
-        <view class="end-pair" bindtap="goToCreateBuilding">
+        <view class="end-pair">
           <view class="end-list">YOUR CONTRIBUTIONS</view>
             <view>
               <image class="plus" src="/icons/plus.png" bindtap="addBuilding" mode="aspectFit"></image>
