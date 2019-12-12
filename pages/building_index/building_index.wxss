@@ -268,4 +268,4 @@ display:inline-block;
 width:0;
 overflow:hidden}
 
-.weui-search-bar__label{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border-radius:4px;text-align:center;color:rgba(0,0,0,.5);background:#fff;line-height:32px}.weui-search-bar__cancel-btn{margin-left:8px;line-height:32px;color:#C8039D;white-space:nowrap}
+.weui-search-bar__label{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border-radius:4px;text-align:center;color:rgba(0,0,0,.5);background:#fff;line-height:32px}.weui-search-bar__cancel-btn{margin-left:8px;line-height:32px;color:#88006B;white-space:nowrap}

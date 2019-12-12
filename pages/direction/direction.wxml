@@ -26,7 +26,13 @@ show-location
       <!-- <view class="p">{{address}}</view> -->
     </view>
   </view>
+
+
+<view class="walk-infos">
+  <view class="p-infos">Walking informations</view>
+
   <view class="route-info">
+
     <view class="block-pair">
       <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
       <view class="p space-p">{{walk.distance}} km</view>
@@ -36,3 +42,4 @@ show-location
       <view class="p">{{walk.duration}} mins</view>
     </view>
   </view>
+</view>

@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 30rpx 0rpx 90rpx 0;
+  margin: 10rpx 0rpx 90rpx 0;
   padding: 35rpx 70rpx 40rpx 65rpx;
   /* border-bottom: 2rpx solid rgba(0, 0, 0, .12) */
 }
@@ -60,4 +60,9 @@
   height: 45rpx;
   width: 45rpx;
   margin-right: 10rpx;
+}
+
+.p-infos {
+  text-align: center;
+  margin-top: 60rpx;
 }

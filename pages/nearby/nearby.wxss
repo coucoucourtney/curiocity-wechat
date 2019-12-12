@@ -24,6 +24,10 @@
   /* font-weight: bold; */
 }
 
+.space .h2 {
+  font-weight: bold;
+}
+
 .p{
   font-size: 25rpx;
   margin: 12rpx 0rpx 20rpx;
