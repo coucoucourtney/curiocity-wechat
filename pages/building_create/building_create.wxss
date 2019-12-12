@@ -139,3 +139,9 @@ margin: 25rpx;
   opacity: .8;
   color: #C8039D;
 }
+
+.container {
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  padding: 0;
+}

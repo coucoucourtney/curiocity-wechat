@@ -1,61 +1,61 @@
-<!--pages/building_edit/building_edit.wxml-->
-<view class='create-form'>
-  <view class="h1">Edit {{building.name}}</view>
+<view class="container">
+  <view class='create-form'>
+    <view class="h1">Edit {{building.name}}</view>
 
-  <form class="new-form" bindsubmit="editBuilding">
-  <view class="element-section">Building information</view>
-    <view class="element-name">Name*</view>
-      <input maxlength="25" name="name" placeholder="building name" value="{{building.name}}"></input>
-   <view class="element-name">Main image of building*</view>
-   <view class="uploader">
-      <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image>
-      <view class="added-pic">
-        <image wx:if="{{imgUrl}}" bindtap="removeMainPic" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
-        <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
-      </view>
-         <!-- TERNARY EXAMPLE :keep this to make original image load next to upload image icon -->
-      <!-- <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image> -->
-      <!-- <image bindtap="takeMainPhoto" class="{{building.main_picture ? 'building_image_present' : 'cam-icon'}}" src="{{building.main_picture? building.main_picture : '/icons/camera.png'}}"></image> -->
+    <form class="new-form" bindsubmit="editBuilding">
+    <view class="element-section">Building information</view>
+      <view class="element-name">Name*</view>
+        <input maxlength="25" name="name" placeholder="building name" value="{{building.name}}"></input>
+    <view class="element-name">Main image of building*</view>
+    <view class="uploader">
+        <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image>
+        <view class="added-pic">
+          <image wx:if="{{imgUrl}}" bindtap="removeMainPic" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
+          <image mode="aspectFit" class="img-upload" src='{{imgUrl}}'></image>
+        </view>
+          <!-- TERNARY EXAMPLE :keep this to make original image load next to upload image icon -->
+        <!-- <image bindtap="takeMainPhoto" class="cam-icon" src='/icons/camera.png'></image> -->
+        <!-- <image bindtap="takeMainPhoto" class="{{building.main_picture ? 'building_image_present' : 'cam-icon'}}" src="{{building.main_picture? building.main_picture : '/icons/camera.png'}}"></image> -->
 
-   </view>
-    <view class="element-name">Photo credit*</view>
-      <input maxlength="30"name="main_photo_credit" placeholder="who took this photo?" value="{{building.main_photo_credit}}" ></input>
-    <view class="element-name">Year</view>
-      <input maxlength="9" name="year" placeholder="year built" value="{{building.year}}"></input>
-    <view class="element-name">Architect(s)</view>
-      <input maxlength="40" name="architects" placeholder="architect(s)..." value="{{building.architects}}"></input>
-    <view class="element-name">Style</view>
-      <input name="architectural_style" placeholder="ex. modern, art deco, victorian..." value="{{building.architectural_style}}"></input>
-      <view class="element-name">Building Description</view>
-        <textarea maxlength="1500" class="wide" name="description" placeholder="ex. special elements, who lived here, stories about the building..." value="{{building.description}}"></textarea>
-  <view class="element-section">Location information</view>
-    <view class="element-name">Address*</view>
-      <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}" value="{{building.address}}"></input>
-     <view class="element-name">Old Street Names</view>
-        <input maxlength="100" name="old_address" placeholder="if known" value="{{building.old_address}}"></input>
-      <view class="element-name">Former Neighborhood</view>
-        <input maxlength="25" name="neighborhood" placeholder="if known" value="{{building.neighborhood}}"></input>
-    <view class="element-section">Additional Images (Image Slider)</view>
-      <view class="align-pic">
-            <image class="cam-icon" src='/icons/camera.png' bindtap="takeSliderPhoto"></image>   
-        <!-- how to get multiple photos to upload into slider with bunch of icons -->
-        <view wx:for="{{imgSliderUrl}}" wx:for-item="url">
-          <view class="added-pic">
-            <image mode="aspectFit" class="img-upload img-upload-slider" src='{{url}}'></image>
-            <image bindtap="removePic" data-index="{{index}}" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
+    </view>
+      <view class="element-name">Photo credit*</view>
+        <input maxlength="30"name="main_photo_credit" placeholder="who took this photo?" value="{{building.main_photo_credit}}" ></input>
+      <view class="element-name">Year</view>
+        <input maxlength="9" name="year" placeholder="year built" value="{{building.year}}"></input>
+      <view class="element-name">Architect(s)</view>
+        <input maxlength="40" name="architects" placeholder="architect(s)..." value="{{building.architects}}"></input>
+      <view class="element-name">Style</view>
+        <input name="architectural_style" placeholder="ex. modern, art deco, victorian..." value="{{building.architectural_style}}"></input>
+        <view class="element-name">Building Description</view>
+          <textarea maxlength="1500" class="wide" name="description" placeholder="ex. special elements, who lived here, stories about the building..." value="{{building.description}}"></textarea>
+    <view class="element-section">Location information</view>
+      <view class="element-name">Address*</view>
+        <input name="Address" placeholder="address of building" bindtap="chooseLocation" value="{{address}}" value="{{building.address}}"></input>
+      <view class="element-name">Old Street Names</view>
+          <input maxlength="100" name="old_address" placeholder="if known" value="{{building.old_address}}"></input>
+        <view class="element-name">Former Neighborhood</view>
+          <input maxlength="25" name="neighborhood" placeholder="if known" value="{{building.neighborhood}}"></input>
+      <view class="element-section">Additional Images (Image Slider)</view>
+        <view class="align-pic">
+              <image class="cam-icon" src='/icons/camera.png' bindtap="takeSliderPhoto"></image>   
+          <!-- how to get multiple photos to upload into slider with bunch of icons -->
+          <view wx:for="{{imgSliderUrl}}" wx:for-item="url">
+            <view class="added-pic">
+              <image mode="aspectFit" class="img-upload img-upload-slider" src='{{url}}'></image>
+              <image bindtap="removePic" data-index="{{index}}" class="remove" mode="aspectFit" src='/icons/remove.png'></image>
+            </view>
           </view>
         </view>
-      </view>
-      <block wx:if="{{!login}}">
-        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">LOGIN</button>
-        <view class="login-caption">You need to login to edit a building</view>
-      </block>
-      <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
-  </form>
-</view>
-  <view class="edit-bar" bindtap="destroyBuilding" data-id="{{building.id}}" wx:if="{{userId == building.user_id}}">
-    <view class="text-edit trash">Destroy building...forever :(</view>
-    <image class="icon space trash" src='/icons/delete.png' ></image>
+        <block wx:if="{{!login}}">
+          <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn btn-black" data-id="{{user.id}}">LOGIN</button>
+          <view class="login-caption">You need to login to edit a building</view>
+        </block>
+        <button wx:else class="btn btn-black"form-type="submit" data-id="{{user.id}}">SUBMIT</button>
+    </form>
   </view>
-<van-toast id="van-toast"/>
-
+    <view class="edit-bar" bindtap="destroyBuilding" data-id="{{building.id}}" wx:if="{{userId == building.user_id}}">
+      <view class="text-edit trash">Destroy building...forever :(</view>
+      <image class="icon space trash" src='/icons/delete.png' ></image>
+    </view>
+  <van-toast id="van-toast"/>
+</view>

@@ -49,7 +49,7 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 5px;
-  margin-bottom: 5rpx;
+  margin-bottom: 35rpx;
   position: relative;
 }
 
@@ -76,10 +76,11 @@
 }
 
 .card-product .p {
-  font-size: 28rpx;
+  font-size: 24rpx;
   line-height: 1.4;
   opacity: .7;
   font-weight: 400;
+  margin-left: 17rpx;
 }
 
 .space-p {
@@ -98,8 +99,8 @@
 }
 
 .marker-time{
-  height: 35rpx;
-  width: 35rpx;
+  height: 30rpx;
+  width: 30rpx;
   margin-right: 20rpx;
   margin-top: 8rpx;
 }
@@ -150,7 +151,7 @@
 /* WIDGET FORMATTING FOR SEARCH BAR ...MAY WANT TO SEPARATE INTO FILE AND IMPORT? */
 
 .weui-search-bar{
-position:relative;padding:8px;display:-webkit-box;display:-webkit-flex;display:flex;box-sizing:border-box;background-color:#ededed;-webkit-text-size-adjust:100%;-webkit-box-align:center;-webkit-align-items:center;align-items:center
+position:relative;padding:8px;display:-webkit-box;display:-webkit-flex;display:flex;box-sizing:border-box;background-color:#ededed;-webkit-text-size-adjust:100%;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin-bottom: 30rpx;
 }
 
 .weui-icon-search{
@@ -180,4 +181,4 @@ display:inline-block;
 width:0;
 overflow:hidden}
 
-.weui-search-bar__label{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border-radius:4px;text-align:center;color:rgba(0,0,0,.5);background:#fff;line-height:32px}.weui-search-bar__cancel-btn{margin-left:8px;line-height:32px;color:#C8039D;white-space:nowrap}
+.weui-search-bar__label{position:absolute;top:0;right:0;bottom:0;left:0;z-index:2;border-radius:4px;text-align:center;color:rgba(0,0,0,.5);background:#fff;line-height:32px}.weui-search-bar__cancel-btn{margin-left:8px;line-height:32px;color:#88006B;white-space:nowrap}

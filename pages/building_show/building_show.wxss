@@ -101,6 +101,7 @@
   font-size: 27rpx;
   font-weight:300;
   padding-right: 20rpx;
+  font-family: "Lato";
 }
 
 .slider-img {
