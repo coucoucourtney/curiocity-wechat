@@ -92,7 +92,8 @@ Page({
           complete: function (res) {
             // console.log("res", res);
             const walk = res.result.routes[0]
-            page.setData({ walk })
+            const distance = Math.round(walk.distance / 100) / 10
+            page.setData({ walk, distance })
           }
         });
 

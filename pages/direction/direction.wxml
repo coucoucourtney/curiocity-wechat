@@ -29,7 +29,7 @@ show-location
   <view class="route-info">
     <view class="block-pair">
       <image class="marker-distance" mode="aspectFit" src='/icons/road.png'/>
-      <view class="p space-p">{{walk.distance}} km</view>
+      <view class="p space-p">{{distance}} km</view>
     </view>
     <view class="block-pair">
      <image class="marker-time" mode="aspectFit"  src='/icons/time.png'/>
