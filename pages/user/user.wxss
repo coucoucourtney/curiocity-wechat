@@ -65,7 +65,7 @@
   font-size: 35rpx;
   font-weight: bold;
   margin-bottom: 5rpx;
-  position: relative;
+  out-us-text
 }
 
 .h3 {
@@ -136,6 +136,22 @@ align-items: center;
   height: 70rpx;
   background-color: #EDEDED;
   margin-bottom: 18rpx;
+}
+
+.about-us-btn {
+  text-align: center;
+  width: 100%;
+  line-height: 70rpx;
+  background-color: #88006B;
+  opacity: .8;
+  margin-bottom: 18rpx;
+}
+
+.about-us-text{
+  font-size: 25rpx;
+  /* color: rgba(0,0,0,0.8); */
+  color: white;
+  font-weight: bold; 
 }
 
 .nothing-here {

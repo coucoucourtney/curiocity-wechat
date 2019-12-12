@@ -133,8 +133,8 @@
     </view>
 </block>
 
-<view  class="end-pair" bindtap="goToAboutUs">
-  <view class="end-list">ABOUT US</view>
+<view  class="about-us-btn about-us-text" bindtap="goToAboutUs">
+  ABOUT US
 </view>
 <!--   
 <view  class="end-pair" bindtap="goToUserAgreement">
