@@ -5,7 +5,7 @@
 
 <view class="h1-about">ABOUT US</view>
 
-<view class="about-p">We developed this app to help people learn more about the city their in through the architecture.</view>
+<view class="about-p">We believe that what makes a city interesting is its history; and there's no better way to discover this than through its architecture.  We created Curiocity as a quick and easy way to access information about a city's unique and historical buildings at home or on the go. </view>
 
 <view class="h1-team">THE TEAM</view>
 
@@ -39,5 +39,11 @@
      <view class="h2">Max</view>
   </view>
   <view class="p">After a Master degree in Marketing, I have been running a distribution and commercial agency in the fashion industry in France. Looking for new challenges I moved to China in order to set up a business in the tech field.</view>
+
+  <view class="end-pair" bindtap="goToCreateBuilding">
+    <view class="end-list">CONTACT US AT</view>
+    <view class="end-list">team-curiocity@outlook.com</view>
+    <!-- <image class="plus" src="/icons/plus_solid.png" mode="aspectFit"></image> -->
+  </view>
 </view>
 

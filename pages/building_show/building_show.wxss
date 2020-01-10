@@ -70,6 +70,7 @@
 
 .h2-contributed {
   font-size: 25rpx;
+  color: #88006B;
 }
 
 /* SECTION WITH BUILDING INFO */

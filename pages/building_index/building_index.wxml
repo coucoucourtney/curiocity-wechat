@@ -1,7 +1,7 @@
 <!--pages/building_index/building_index.wxml-->
 <view class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://lc-lyUmBNQE.cn-n1.lcfile.com/210266e78c3d6e2903f4/background_img.jpeg);">
     <image class="img-logo"  mode="aspectFit" src='/logo/curiocity_high_drop.png'/>
-    <view class=".banner-p">Discover Shanghai through its special architecture ...</view>
+    <view class=".banner-p">Discovering cities through architecture...</view>
 
     <view bindtap="goToDiscoverPage" class="btn btn-ghost" >DISCOVER</view>
     <view bindtap="goToWalksPage" class="btn btn-ghost" >WALKS</view>
@@ -63,8 +63,8 @@
       </view> 
     </view>
   </view>
-  <view class="end-pair" bindtap="goToCreateBuilding">
+  <!-- <view class="end-pair" bindtap="goToCreateBuilding">
     <view class="end-list">Don't see what you're looking for?  Add it! ;)</view>
     <image class="plus" src="/icons/plus_solid.png" mode="aspectFit"></image>
-  </view>
+  </view> -->
 </view>

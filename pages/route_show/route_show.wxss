@@ -127,6 +127,10 @@
   /* position: absolute; */
   /* bottom: 27rpx; */
   padding: 20rpx;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 270rpx;
 }
 
 .h2-contributed {

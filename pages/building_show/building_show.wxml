@@ -78,14 +78,14 @@
 
 <!-- AUTHOR SECTION IF PRESENT-->
     <view class="author-info">
-      <view class="space h2-contributed">Contributed by</view>
+      <!-- <view class="space h2-contributed">Contributed by</view> -->
       <image wx:if="{{building.user.avatar == nil}}" mode="aspectFit" class="author-avatar" src="/icons/user_black.png"/>
       <image wx:else="{{building.user.avatar}}" mode="aspectFit" class="author-avatar" src="{{building.user.avatar}}"/>
       <view class="author-text">
         <view wx:if="{{building.user.wechat_name == nil}}" class="h2-contributed">Anonymous</view>
          <view wx:else class="h2-contributed">{{building.user.wechat_name}}</view>
         <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
-      <view class="level-status" wx:if="{{building.user.total_building > 10}}">
+      <!-- <view class="level-status" wx:if="{{building.user.total_building > 10}}">
         <image class="user-level" src="/icons/ambassador.png"></image>
       </view>
       <view class="level-status" wx:if="{{building.user.total_building == 10 || building.user.total_building == 9 }}" >
@@ -105,15 +105,15 @@
       </view>  
       <view class="level-status" wx:if="{{building.user.total_building == 0 }}">
         <image class="star-level" src="/icons/1.png"></image>
-      </view> 
+      </view>  -->
     </view>
  </view>
 <!-- EDIT/DELETE PANEL (ONLY ALLOWED TO DELETE OWN, NOT ALLOWED TO DELETE CURIOCITY TEAMS ENTRIES -->
-  <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}" wx:if="{{building.user.user_type != 'admin'}}">
+  <!-- <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}" wx:if="{{building.user.user_type != 'admin'}}"> -->
   <!-- <view class="edit-bar color" bindtap="editBuilding" data-id="{{building.id}}"> -->
-    <view class="text-edit">ADD SOME INFO :)</view>
-    <image class="icon" src='/icons/edit.png'></image>
-  </view>
+    <!-- <view class="text-edit">ADD SOME INFO :)</view> -->
+    <!-- <image class="icon" src='/icons/edit.png'></image> -->
+  <!-- </view> -->
 
 
     <!-- testing different markers -->
