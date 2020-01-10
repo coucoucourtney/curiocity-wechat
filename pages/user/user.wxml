@@ -13,7 +13,7 @@
           <image mode="aspectFill" class="star-level" src="/icons/1.png"></image>
         </view> -->
           <!-- USER LEVEL RATINGS AND ICONS SOFT CODE -->
-        <view class="level-status" wx:if="{{user.buildings.length > 10}}">
+        <!-- <view class="level-status" wx:if="{{user.buildings.length > 10}}">
           <view class="h3">AMBASSADOR</view>
           <image class="user-level" src="/icons/ambassador.png"></image>
         </view>
@@ -40,7 +40,7 @@
 
         <view class="level-status" wx:if="{{user.buildings.length == 0 }}">
           <image class="star-level" src="/icons/1.png"></image>
-        </view>
+        </view> -->
       
         <!-- <view class="description"> -->
         <!-- <view> -->
@@ -107,7 +107,7 @@
     </view>
 
     <!-- YOUR CONTRIBUTIONS ------------------------------------ -->
-        <view class="end-pair">
+        <!-- <view class="end-pair">
           <view class="end-list">YOUR CONTRIBUTIONS</view>
             <view>
               <image class="plus" src="/icons/plus.png" bindtap="addBuilding" mode="aspectFit"></image>
@@ -123,14 +123,14 @@
                 <view class="card-product-infos">
                   <view class="info-section">
                     <view class="h2">{{building.name}}</view>
-                  </view>
+                  </view> -->
                     <!-- <image class="favorite" mode="aspectFit" bindTap="" src='/icons/star_empty.png'/> -->
-                </view>
+                <!-- </view>
               </view> 
             </view>
         </view>
       <view wx:if="{{user.buildings.length == 0}}" bindtap="addBuilding" class="nothing-here">Sharing is caring. <text class="link">Add a building</text> :)</view>
-    </view>
+    </view> -->
 </block>
 
 <view  class="about-us-btn about-us-text" bindtap="goToAboutUs">

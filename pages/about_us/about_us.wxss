@@ -34,7 +34,7 @@
   width: 100%;
   height: 70rpx;
   background-color: #EDEDED;
-  margin-bottom: 18rpx;
+  /* margin-bottom: 18rpx; */
   font-size: 25rpx;
   padding-left: 30rpx;
   /* color: rgba(0,0,0,0.8); */
@@ -59,7 +59,8 @@
 .infos {
   display: flex;
   align-items: center;
-  margin-left: 100rpx;
+  margin-left: 55rpx;
+  margin-top: 50rpx;
 }
 
 .infos .h2 {
@@ -68,14 +69,22 @@
 }
 
 .p {
-  text-align: center;
-  padding: 30rpx;
-  margin-bottom: 50rpx;
+  text-align: justify;
+  font-size: 27rpx;
+  font-weight: 300;
+  padding: 40rpx;
+  padding-right: 40rpx;
+  padding-bottom: 55rpx;
+  border-bottom: solid 2rpx  #EDEDED;
 }
 
 .about-p {
-  text-align: center;
-  padding: 30rpx;
+  text-align: justify;
+  padding: 40rpx;
+  font-size: 27rpx;
+  font-weight: 300;
+  padding-right: 45rpx;
+  padding-right: 45rpx;
 }
 
 .banner {
@@ -93,3 +102,22 @@
   margin-bottom: 20rpx;
 }
 
+.end-pair {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 70rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #88006B;
+  /* background-color: #C8039D; */
+  padding: 20rpx 0;
+}
+
+.end-list{
+  font-size: 25rpx;
+  /* color: rgba(0,0,0,0.8); */
+  color: white;
+  font-weight: bold;
+  /* margin-left: 15px; */
+}
